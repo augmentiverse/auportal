@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Augmentiverse social preview</title>
+  <desc id="desc">A dark editorial cover with gold accents for Augmentiverse.org.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1015" />
+      <stop offset="55%" stop-color="#10131a" />
+      <stop offset="100%" stop-color="#090b10" />
+    </linearGradient>
+    <radialGradient id="halo" cx="72%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="#e8cc7a" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#e8cc7a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="rule" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a84c" />
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#halo)" />
+
+  <g opacity="0.18" stroke="#ffffff" stroke-width="1">
+    <path d="M0 140H1200" />
+    <path d="M0 315H1200" />
+    <path d="M0 490H1200" />
+    <path d="M220 0V630" />
+    <path d="M600 0V630" />
+    <path d="M980 0V630" />
+  </g>
+
+  <g opacity="0.4" stroke="#c9a84c" stroke-width="1.2" fill="none">
+    <circle cx="915" cy="190" r="84" />
+    <circle cx="915" cy="190" r="158" opacity="0.55" />
+    <path d="M706 0 1160 452" />
+  </g>
+
+  <g transform="translate(88 106)">
+    <text x="0" y="0" fill="#c9a84c" font-family="'JetBrains Mono', monospace" font-size="20" letter-spacing="5.8">AUGMENTIVERSE.ORG</text>
+    <rect x="0" y="32" width="230" height="2" fill="url(#rule)" />
+
+    <text x="0" y="188" fill="#f0ede6" font-family="'Cormorant Garamond', Georgia, serif" font-size="96" font-weight="400">
+      <tspan x="0" dy="0">The Augmentiverse</tspan>
+      <tspan x="0" dy="92">Framework</tspan>
+    </text>
+
+    <text x="2" y="350" fill="#b8b4ac" font-family="'DM Sans', Arial, sans-serif" font-size="31" letter-spacing="0.2">
+      <tspan x="2" dy="0">An AR-first, standards-aligned path to persistent,</tspan>
+      <tspan x="2" dy="46">interoperable spatial computing.</tspan>
+    </text>
+
+    <text x="2" y="500" fill="#f0ede6" font-family="'JetBrains Mono', monospace" font-size="18" letter-spacing="3.2">
+      RESEARCH / OPEN STANDARDS / SPATIAL REALITY
+    </text>
+  </g>
+</svg>
