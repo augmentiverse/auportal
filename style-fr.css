@@ -1,0 +1,107 @@
+:root {
+  --c-bg: #06172b;
+  --c-bg-2: #0b213c;
+  --c-bg-3: #123257;
+  --c-bg-4: #1a426d;
+  --c-surface: #1f4d7d;
+  --c-border: rgba(215, 227, 244, 0.1);
+  --c-border-md: rgba(215, 227, 244, 0.18);
+
+  --c-ink: #f7f4ee;
+  --c-ink-soft: #d3def0;
+  --c-ink-muted: #96aac5;
+  --c-ink-faint: #5b7190;
+
+  --c-gold: #e8707a;
+  --c-gold-light: #ffb2b9;
+  --c-gold-dim: rgba(232, 112, 122, 0.14);
+  --c-gold-glow: rgba(232, 112, 122, 0.08);
+
+  --c-blue: #8dc5ff;
+  --c-blue-dim: rgba(141, 197, 255, 0.14);
+}
+
+body.site-fr {
+  background:
+    radial-gradient(circle at 16% 0%, rgba(141, 197, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 84% 10%, rgba(232, 112, 122, 0.12), transparent 24%),
+    linear-gradient(180deg, #06172b 0%, #0d2848 42%, #17385d 100%);
+}
+
+body.site-fr::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.015) 48%, transparent 100%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.04), transparent 28%);
+}
+
+body.site-fr #nav,
+body.site-fr .nav-mobile,
+body.site-fr .page-rail-inner {
+  background-color: rgba(8, 28, 49, 0.84);
+}
+
+body.site-fr .nav-logo-mark {
+  border-color: var(--c-gold);
+  color: var(--c-gold);
+  box-shadow: 0 0 0 1px rgba(232, 112, 122, 0.12);
+}
+
+body.site-fr .nav-logo-text em,
+body.site-fr .hero-title .accent,
+body.site-fr .btn-secondary:hover,
+body.site-fr .signal-title em {
+  color: var(--c-blue);
+}
+
+body.site-fr .hero-title .line-2 {
+  color: #edf4ff;
+}
+
+body.site-fr .hero-eyebrow-dot {
+  background: var(--c-blue);
+}
+
+body.site-fr .hero-glow,
+body.site-fr .page-hero-bg {
+  background: radial-gradient(ellipse 60% 80% at 80% 45%, rgba(141, 197, 255, 0.14) 0%, rgba(232, 112, 122, 0.08) 42%, transparent 72%);
+}
+
+body.site-fr .divider-gold {
+  background: linear-gradient(to right, var(--c-blue), rgba(232, 112, 122, 0.7), transparent);
+}
+
+body.site-fr .signal-card,
+body.site-fr .card,
+body.site-fr .device-card,
+body.site-fr .tool-card,
+body.site-fr .resource-card,
+body.site-fr .citation-box {
+  background-color: rgba(10, 30, 52, 0.78);
+}
+
+body.site-fr .signal-card-accent {
+  border-color: rgba(232, 112, 122, 0.34);
+}
+
+body.site-fr .nav-links .lang-switch {
+  border-color: rgba(232, 112, 122, 0.42);
+  color: var(--c-ink);
+  background: rgba(232, 112, 122, 0.08);
+}
+
+body.site-fr .nav-links .lang-switch:hover {
+  color: var(--c-gold-light);
+  border-color: var(--c-gold);
+  background: var(--c-gold-dim);
+}
+
+body.site-fr .footer-bottom-links a[hreflang],
+body.site-fr .nav-mobile a[hreflang] {
+  color: var(--c-blue);
+}

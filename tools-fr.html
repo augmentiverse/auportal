@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Augmentiverse Outils — Une référence complète sur les lunettes AR, les casques de calcul spatial, les SDK de développement, les plateformes de création 3D et les outils d'infrastructure qui alimentent l'écosystème Augmentiverse en 2026.">
+  <meta name="keywords" content="lunettes AR, outils AR, matériel calcul spatial, HoloLens, Apple Vision Pro, Magic Leap, Meta Ray-Ban, ARKit, ARCore, Unity, WebXR, Augmentiverse, lunettes intelligentes 2026">
+  <meta property="og:title" content="Augmentiverse Outils — Matériel, Logiciels et Infrastructure pour le calcul spatial">
+  <meta property="og:description" content="La référence définitive sur les outils qui alimentent l'Augmentiverse : lunettes AR, casques MR, SDK de développement, moteurs 3D et plateformes d'infrastructure.">
+  <meta property="og:type" content="website">
+  <title>Outils — Augmentiverse</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://augmentiverse.org/tools-fr.html">
+  <link rel="alternate" hreflang="en" href="https://augmentiverse.org/tools.html">
+  <style>
+    /* ── AJOUTS SPÉCIFIQUES À CETTE PAGE ── */
+
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: var(--sp-xl);
+    }
+    .filter-btn {
+      font-family: var(--f-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--c-border-md);
+      color: var(--c-ink-muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all var(--dur) var(--ease);
+    }
+    .filter-btn:hover { color: var(--c-ink); border-color: rgba(255,255,255,0.25); }
+    .filter-btn.active { color: var(--c-gold); border-color: var(--c-gold); background: var(--c-gold-dim); }
+
+    .device-card {
+      background: var(--c-bg-2);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+      display: flex;
+      flex-direction: column;
+    }
+    .device-card:hover {
+      border-color: var(--c-border-md);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    .device-card.featured { border-color: rgba(201,168,76,0.25); }
+    .device-card.featured:hover { border-color: rgba(201,168,76,0.5); box-shadow: 0 16px 48px rgba(201,168,76,0.08); }
+
+    .device-header {
+      padding: var(--sp-md) var(--sp-md) 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .device-badge-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .device-badge {
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .badge-consumer { background: rgba(74,143,212,0.12); color: var(--c-blue); }
+    .badge-enterprise { background: rgba(201,168,76,0.1); color: var(--c-gold); }
+    .badge-developer { background: rgba(58,170,138,0.12); color: var(--c-teal); }
+    .badge-upcoming { background: rgba(201,100,74,0.12); color: var(--c-coral); }
+    .badge-featured { background: var(--c-gold-dim); color: var(--c-gold); }
+
+    .device-price {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      color: var(--c-ink-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .device-visual {
+      height: 120px;
+      margin: var(--sp-sm) var(--sp-md);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .device-visual svg { width: 100%; height: 100%; }
+
+    .device-body { padding: 0 var(--sp-md) var(--sp-md); flex: 1; display: flex; flex-direction: column; }
+    .device-name { font-family: var(--f-display); font-size: 1.25rem; font-weight: 400; margin-bottom: 4px; }
+    .device-maker { font-family: var(--f-mono); font-size: 0.68rem; color: var(--c-gold); margin-bottom: var(--sp-sm); letter-spacing: 0.06em; }
+    .device-desc { font-size: 0.875rem; color: var(--c-ink-soft); line-height: 1.65; margin-bottom: var(--sp-sm); flex: 1; }
+
+    .device-specs {
+      background: var(--c-bg-3);
+      border-radius: var(--radius-md);
+      padding: 10px 12px;
+      margin-bottom: var(--sp-sm);
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 3px 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-key { font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-ink-muted); flex-shrink: 0; }
+    .spec-val { font-size: 0.8rem; color: var(--c-ink-soft); text-align: right; }
+    .spec-val strong { color: var(--c-ink); font-weight: 400; }
+
+    .device-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .maturity-bar-wrap { display: flex; align-items: center; gap: 8px; }
+    .maturity-label { font-family: var(--f-mono); font-size: 0.6rem; color: var(--c-ink-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .maturity-dots { display: flex; gap: 3px; }
+    .maturity-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-border-md); }
+    .maturity-dot.filled { background: var(--c-gold); }
+    .maturity-dot.filled.blue { background: var(--c-blue); }
+    .maturity-dot.filled.teal { background: var(--c-teal); }
+
+    .tool-card {
+      background: var(--c-bg-2);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-md);
+      transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-sm);
+    }
+    .tool-card:hover { border-color: var(--c-border-md); transform: translateY(-2px); }
+
+    .tool-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .tool-header { display: flex; align-items: flex-start; gap: var(--sp-sm); }
+    .tool-header-text { flex: 1; }
+    .tool-name { font-family: var(--f-display); font-size: 1.1rem; font-weight: 400; margin-bottom: 3px; }
+    .tool-maker { font-family: var(--f-mono); font-size: 0.65rem; color: var(--c-gold); letter-spacing: 0.06em; }
+    .tool-desc { font-size: 0.875rem; color: var(--c-ink-soft); line-height: 1.65; }
+    .tool-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tool-tag {
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      background: var(--c-bg-4);
+      color: var(--c-ink-muted);
+      border: 1px solid var(--c-border);
+    }
+    .tool-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; }
+    .tool-link {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 1px;
+      transition: border-color var(--dur) var(--ease);
+    }
+    .tool-link::after { content: ' ↗'; font-size: 0.7em; }
+    .tool-link:hover { border-color: var(--c-gold); }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .comp-table th {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-ink-muted);
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--c-border-md);
+      background: var(--c-bg-3);
+    }
+    .comp-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--c-border);
+      color: var(--c-ink-soft);
+      vertical-align: top;
+    }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .comp-table .t-device { font-family: var(--f-display); font-size: 0.95rem; color: var(--c-ink); }
+    .comp-table .t-check { color: var(--c-teal); font-size: 1rem; }
+    .comp-table .t-cross { color: var(--c-ink-faint); font-size: 0.9rem; }
+    .comp-table .t-partial { color: var(--c-gold); font-size: 0.9rem; }
+
+    .roadmap { display: flex; gap: 0; overflow-x: auto; margin-top: var(--sp-lg); padding-bottom: 1rem; }
+    .roadmap-col { flex: 1; min-width: 160px; padding: 0 var(--sp-sm); border-right: 1px solid var(--c-border); }
+    .roadmap-col:last-child { border-right: none; }
+    .roadmap-year {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-gold);
+      margin-bottom: var(--sp-sm);
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .roadmap-item {
+      font-size: 0.8rem;
+      color: var(--c-ink-soft);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--c-border);
+      line-height: 1.4;
+    }
+    .roadmap-item:last-child { border-bottom: none; }
+    .roadmap-item strong { color: var(--c-ink); font-weight: 400; display: block; font-size: 0.85rem; }
+    .roadmap-item.future { opacity: 0.6; }
+    .roadmap-item.future strong { font-style: italic; }
+
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-md); }
+
+    .stack-layer {
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-md);
+      padding: var(--sp-sm) var(--sp-md);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-sm);
+      transition: border-color var(--dur) var(--ease);
+    }
+    .stack-layer:hover { border-color: var(--c-border-md); }
+    .stack-layer-label {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-ink-muted);
+      min-width: 100px;
+    }
+    .stack-layer-items { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+    .stack-chip {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--c-border-md);
+      color: var(--c-ink-soft);
+      background: var(--c-bg-3);
+    }
+    .stack-chip.gold { border-color: rgba(201,168,76,0.4); color: var(--c-gold); background: var(--c-gold-dim); }
+    .stack-chip.blue { border-color: rgba(74,143,212,0.4); color: var(--c-blue); background: rgba(74,143,212,0.08); }
+    .stack-chip.teal { border-color: rgba(58,170,138,0.4); color: var(--c-teal); background: rgba(58,170,138,0.08); }
+
+    .note-box {
+      background: var(--c-bg-3);
+      border: 1px solid var(--c-border);
+      border-left: 3px solid var(--c-blue);
+      border-radius: var(--radius-md);
+      padding: var(--sp-md);
+      font-size: 0.875rem;
+      color: var(--c-ink-soft);
+      line-height: 1.65;
+    }
+    .note-box a { color: var(--c-gold); border-bottom: 1px solid rgba(201,168,76,0.3); }
+    .note-label { font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-blue); margin-bottom: 8px; }
+
+    .vis-enterprise { background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02)); }
+    .vis-consumer   { background: linear-gradient(135deg, rgba(74,143,212,0.06),  rgba(74,143,212,0.02)); }
+    .vis-prosumer   { background: linear-gradient(135deg, rgba(58,170,138,0.06),  rgba(58,170,138,0.02)); }
+    .vis-vr         { background: linear-gradient(135deg, rgba(127,119,221,0.06), rgba(127,119,221,0.02)); }
+
+    .lang-switch {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-ink-muted);
+      border: 1px solid var(--c-border-md);
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      transition: all var(--dur) var(--ease);
+    }
+    .lang-switch:hover { color: var(--c-gold); border-color: var(--c-gold); background: var(--c-gold-dim); }
+
+    @media (max-width: 768px) {
+      .roadmap { flex-direction: column; }
+      .roadmap-col { min-width: unset; border-right: none; border-bottom: 1px solid var(--c-border); padding-bottom: var(--sp-sm); margin-bottom: var(--sp-sm); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="read-progress" role="progressbar" aria-label="Progression de lecture"></div>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Navigation principale">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Accueil Augmentiverse">
+        <div class="nav-logo-mark" aria-hidden="true">A</div>
+        <span class="nav-logo-text"><em>Augmenti</em>verse</span>
+      </a>
+      <div class="nav-links" role="menubar">
+        <a href="index.html#concept" role="menuitem">Concept</a>
+        <a href="index.html#technologies" role="menuitem">Technologies</a>
+        <a href="index.html#standards" role="menuitem">Standards</a>
+        <a href="tools-fr.html" class="active" role="menuitem">Outils</a>
+        <a href="index.html#use-cases" role="menuitem">Cas d'usage</a>
+        <a href="index.html#people" role="menuitem">Personnes</a>
+        <a href="index.html#glossary" role="menuitem">Glossaire</a>
+        <a href="tools.html" class="lang-switch" role="menuitem" aria-label="Version anglaise">EN</a>
+      </div>
+      <button class="nav-toggle" aria-label="Ouvrir la navigation" aria-controls="nav-mobile" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="nav-mobile" aria-label="Navigation mobile" hidden>
+    <a href="index.html" role="menuitem">← Retour au site principal</a>
+    <a href="#hardware" role="menuitem">Matériel</a>
+    <a href="#ar-glasses" role="menuitem">Lunettes AR</a>
+    <a href="#mr-headsets" role="menuitem">Casques MR</a>
+    <a href="#vr-headsets" role="menuitem">Casques VR</a>
+    <a href="#sdks" role="menuitem">SDK et frameworks</a>
+    <a href="#engines" role="menuitem">Moteurs 3D</a>
+    <a href="#authoring" role="menuitem">Outils de création</a>
+    <a href="#infrastructure" role="menuitem">Infrastructure</a>
+    <a href="#stack" role="menuitem">Stack complet</a>
+    <a href="#comparison" role="menuitem">Comparatif des appareils</a>
+    <a href="#roadmap" role="menuitem">Feuille de route</a>
+    <a href="tools.html" role="menuitem">Version anglaise →</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     EN-TÊTE DE PAGE
+══════════════════════════════════ -->
+<header class="page-hero" role="banner">
+  <div class="page-hero-bg" aria-hidden="true"></div>
+  <div class="container">
+    <nav aria-label="Fil d'Ariane" class="breadcrumb">
+      <a href="index.html">Augmentiverse</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span>Outils</span>
+    </nav>
+
+    <div class="grid-2" style="align-items:end; gap:4rem;">
+      <div>
+        <div class="t-label t-gold" style="margin-bottom:var(--sp-sm);">Matériel · Logiciels · Infrastructure</div>
+        <h1 class="t-h1" style="font-family:var(--f-display); font-size:clamp(2.5rem,5vw,4.5rem); font-weight:300; line-height:1.05; letter-spacing:-0.02em; margin-bottom:var(--sp-md);">
+          L'écosystème d'outils<br><em>de l'Augmentiverse</em>
+        </h1>
+        <p style="font-size:1.05rem; color:var(--c-ink-soft); max-width:520px; line-height:1.7;">
+          Une référence complète sur les appareils matériels, les SDK de développement, les moteurs 3D, les outils de création et les plateformes d'infrastructure qui constituent l'écosystème technique de l'Augmentiverse — mise à jour pour 2026.
+        </p>
+        <div style="margin-top:var(--sp-md);">
+          <a href="tools.html" style="font-family:var(--f-mono); font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--c-ink-muted); border-bottom:1px solid var(--c-border-md); padding-bottom:2px;">
+            Read in English →
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="data-bar" style="flex-direction:column; gap:0;">
+          <div class="data-bar-item" style="text-align:left; display:flex; align-items:center; justify-content:space-between; border-right:none; border-bottom:1px solid var(--c-border);">
+            <div class="data-bar-label">Part de marché lunettes intelligentes (Meta, S2 2025)</div>
+            <div class="data-bar-num">82&nbsp;%</div>
+          </div>
+          <div class="data-bar-item" style="text-align:left; display:flex; align-items:center; justify-content:space-between; border-right:none; border-bottom:1px solid var(--c-border);">
+            <div class="data-bar-label">Croissance des expéditions XR mondiales en glissement annuel (2025)</div>
+            <div class="data-bar-num">44&nbsp;%</div>
+          </div>
+          <div class="data-bar-item" style="text-align:left; display:flex; align-items:center; justify-content:space-between; border-right:none; border-bottom:1px solid var(--c-border);">
+            <div class="data-bar-label">Unités Ray-Ban Meta vendues (2025)</div>
+            <div class="data-bar-num">7&nbsp;M</div>
+          </div>
+          <div class="data-bar-item" style="text-align:left; display:flex; align-items:center; justify-content:space-between; border-right:none;">
+            <div class="data-bar-label">Appareils Android compatibles ARCore (2026)</div>
+            <div class="data-bar-num">87&nbsp;%+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION RAPIDE -->
+    <div style="margin-top:var(--sp-xl); display:flex; gap:0.5rem; flex-wrap:wrap;">
+      <a href="#ar-glasses"    class="btn btn-secondary btn-sm">Lunettes AR</a>
+      <a href="#mr-headsets"   class="btn btn-secondary btn-sm">Casques MR</a>
+      <a href="#vr-headsets"   class="btn btn-secondary btn-sm">Casques VR</a>
+      <a href="#sdks"          class="btn btn-secondary btn-sm">SDK</a>
+      <a href="#engines"       class="btn btn-secondary btn-sm">Moteurs 3D</a>
+      <a href="#authoring"     class="btn btn-secondary btn-sm">Création</a>
+      <a href="#infrastructure" class="btn btn-secondary btn-sm">Infrastructure</a>
+      <a href="#comparison"    class="btn btn-ghost btn-sm">Comparatif des appareils →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════
+     INTRODUCTION — CATÉGORIES D'OUTILS
+══════════════════════════════════ -->
+<section class="section-sm" id="hardware">
+  <div class="container">
+    <div class="note-box reveal" style="margin-bottom:var(--sp-xl);">
+      <div class="note-label">Note éditoriale</div>
+      Cette page couvre les outils répartis sur cinq couches de la pile Augmentiverse : (1) le matériel d'affichage — ce que l'utilisateur porte ; (2) les SDK de développement — comment les expériences sont construites ; (3) les moteurs 3D — comment le contenu est rendu ; (4) les outils de création — comment les ressources sont produites ; et (5) l'infrastructure — comment le contenu est livré à faible latence. Toutes les spécifications et les prix sont ceux d'avril 2026. Les prix sont exprimés en dollars américains (USD) sauf indication contraire.
+    </div>
+
+    <!-- PILE TECHNOLOGIQUE AUGMENTIVERSE -->
+    <div class="reveal" style="margin-bottom:var(--sp-xl);" id="stack">
+      <div class="section-header">
+        <span class="t-label">Pile technologique Augmentiverse</span>
+        <div class="section-header-line"></div>
+      </div>
+      <p class="t-small t-muted" style="max-width:600px; margin-bottom:var(--sp-md);">L'Augmentiverse nécessite une pile complète et interopérable, de l'affichage physique jusqu'à l'infrastructure réseau. Chaque couche ci-dessous correspond aux outils présentés sur cette page.</p>
+
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div class="stack-layer" style="background:var(--c-bg-4);">
+          <div class="stack-layer-label">Couche utilisateur</div>
+          <div class="stack-layer-items">
+            <span class="stack-chip gold">Lunettes AR</span>
+            <span class="stack-chip gold">Casques MR</span>
+            <span class="stack-chip">Smartphones</span>
+            <span class="stack-chip">Casques VR</span>
+          </div>
+        </div>
+        <div class="stack-layer" style="background:var(--c-bg-3);">
+          <div class="stack-layer-label">Couche d'exécution</div>
+          <div class="stack-layer-items">
+            <span class="stack-chip gold">OpenXR 1.1</span>
+            <span class="stack-chip blue">WebXR API</span>
+            <span class="stack-chip">ARKit</span>
+            <span class="stack-chip">ARCore</span>
+            <span class="stack-chip">visionOS</span>
+            <span class="stack-chip">Android XR</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div class="stack-layer-label">Couche moteur</div>
+          <div class="stack-layer-items">
+            <span class="stack-chip gold">Unity 6</span>
+            <span class="stack-chip">Unreal Engine 5</span>
+            <span class="stack-chip teal">Three.js / Babylon.js</span>
+            <span class="stack-chip">RealityKit</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div class="stack-layer-label">Couche ressources</div>
+          <div class="stack-layer-items">
+            <span class="stack-chip gold">glTF 2.0</span>
+            <span class="stack-chip gold">OpenUSD</span>
+            <span class="stack-chip">USDZ</span>
+            <span class="stack-chip">Blender</span>
+            <span class="stack-chip">Maya / 3ds Max</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div class="stack-layer-label">Couche identité</div>
+          <div class="stack-layer-items">
+            <span class="stack-chip blue">W3C DID</span>
+            <span class="stack-chip blue">Attestations vérifiables</span>
+            <span class="stack-chip">Ceramic Network</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div class="stack-layer-label">Couche réseau</div>
+          <div class="stack-layer-items">
+            <span class="stack-chip teal">ETSI MEC</span>
+            <span class="stack-chip">5G / Wi-Fi 7</span>
+            <span class="stack-chip">AWS Wavelength</span>
+            <span class="stack-chip">Azure Edge Zones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     01 — LUNETTES AR (GRAND PUBLIC)
+══════════════════════════════════ -->
+<section class="section section-dark" id="ar-glasses" aria-labelledby="ar-glasses-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">01 — Lunettes AR et IA</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2.5rem;">
+      <h2 id="ar-glasses-heading" class="t-h2">Lunettes AR grand public<br><em>et prosumer</em></h2>
+      <p class="section-intro">Le segment matériel à la croissance la plus rapide dans l'écosystème Augmentiverse. <span style="color:var(--c-gold);">Les expéditions mondiales d'appareils XR ont progressé de 44,4&nbsp;% en glissement annuel en 2025</span>, portées quasi exclusivement par les lunettes intelligentes plutôt que par les casques VR ou MR (IDC, mars 2026). Meta détient environ 82&nbsp;% des expéditions de lunettes intelligentes (Counterpoint Research, S2 2025).</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:var(--sp-md);">
+
+      <!-- RAY-BAN META DISPLAY -->
+      <div class="device-card featured reveal">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-featured">★ Leader du marché</span>
+            <span class="device-badge badge-consumer">Grand public</span>
+          </div>
+          <div class="device-price">799&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-consumer">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="40" width="100" height="40" rx="20" fill="none" stroke="#4a8fd4" stroke-width="1.5"/>
+            <rect x="160" y="40" width="100" height="40" rx="20" fill="none" stroke="#4a8fd4" stroke-width="1.5"/>
+            <line x1="120" y1="60" x2="160" y2="60" stroke="#4a8fd4" stroke-width="1.5"/>
+            <rect x="5" y="55" width="15" height="10" rx="2" fill="#4a8fd4" opacity="0.4"/>
+            <rect x="260" y="55" width="15" height="10" rx="2" fill="#4a8fd4" opacity="0.4"/>
+            <circle cx="70" cy="60" r="12" fill="rgba(74,143,212,0.1)" stroke="#4a8fd4" stroke-width="1"/>
+            <circle cx="210" cy="60" r="12" fill="rgba(74,143,212,0.1)" stroke="#4a8fd4" stroke-width="1"/>
+            <circle cx="92" cy="52" r="4" fill="#4a8fd4" opacity="0.6"/>
+            <text x="70" y="100" text-anchor="middle" font-size="9" fill="#4a8fd4" opacity="0.7" font-family="monospace">affichage · bandeau neuronal</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Ray-Ban Meta Display</div>
+          <div class="device-maker">Meta · EssilorLuxottica · lancé en septembre 2025</div>
+          <p class="device-desc">Les lunettes AR grand public phares de Meta — le premier modèle Ray-Ban doté d'un écran intégré. Un petit écran couleur monoculaire est accompagné d'un bandeau neuronal Neural Band utilisant des capteurs EMG pour une interaction gestuelle invisible. Les lunettes intelligentes les plus vendues du marché, avec plus de 7 millions d'unités Ray-Ban Meta écoulées en 2025.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Affichage</span>
+              <span class="spec-val"><strong>600×600&nbsp;px</strong> · 42&nbsp;PPD · 20°&nbsp;FOV</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Caméra</span>
+              <span class="spec-val"><strong>12&nbsp;Mp</strong> · vidéo 1080p à 60&nbsp;i/s</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Saisie</span>
+              <span class="spec-val">Neural Band EMG · voix · tactile</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">IA</span>
+              <span class="spec-val">Meta AI · recherche visuelle · traduction en temps réel</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Plateforme</span>
+              <span class="spec-val">iOS / Android via l'application Meta View</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.meta.com/smart-glasses/" target="_blank" rel="noopener" class="card-link">meta.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- XREAL ONE PRO -->
+      <div class="device-card reveal reveal-delay-1">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-consumer">Grand public</span>
+            <span class="device-badge badge-developer">Prosumer</span>
+          </div>
+          <div class="device-price">~699&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-prosumer">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="38" width="95" height="44" rx="22" fill="none" stroke="#3aaa8a" stroke-width="1.5"/>
+            <rect x="155" y="38" width="95" height="44" rx="22" fill="none" stroke="#3aaa8a" stroke-width="1.5"/>
+            <line x1="125" y1="60" x2="155" y2="60" stroke="#3aaa8a" stroke-width="1.5"/>
+            <rect x="10" y="54" width="20" height="12" rx="2" fill="#3aaa8a" opacity="0.3"/>
+            <rect x="250" y="54" width="20" height="12" rx="2" fill="#3aaa8a" opacity="0.3"/>
+            <circle cx="77" cy="60" r="14" fill="rgba(58,170,138,0.08)" stroke="#3aaa8a" stroke-width="1"/>
+            <circle cx="203" cy="60" r="14" fill="rgba(58,170,138,0.08)" stroke="#3aaa8a" stroke-width="1"/>
+            <text x="140" y="100" text-anchor="middle" font-size="9" fill="#3aaa8a" opacity="0.7" font-family="monospace">puce X1 · 3DoF · affichage spatial</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Xreal One Pro</div>
+          <div class="device-maker">Xreal · 2025</div>
+          <p class="device-desc">Les meilleures lunettes d'affichage AR pour les passionnés de calcul spatial. La puce propriétaire X1 gère l'intégralité du traitement de l'affichage et du suivi 3DoF directement sur l'appareil, sans logiciel externe. Elles créent un écran virtuel de grande taille flottant dans l'espace — équivalent à un écran de 100 pouces. Compatibles avec tout appareil USB-C : smartphones, ordinateurs portables et consoles de jeux.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Affichage</span>
+              <span class="spec-val"><strong>Micro-OLED</strong> · 1080p par œil · 500&nbsp;nits</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Suivi</span>
+              <span class="spec-val">3DoF sur l'appareil via la puce X1</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Connexion</span>
+              <span class="spec-val">USB-C filaire · téléphone / ordinateur / console</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Plateforme</span>
+              <span class="spec-val">Nebula OS · Android / iOS / macOS / Windows</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Poids</span>
+              <span class="spec-val">~80&nbsp;g</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.xreal.com/" target="_blank" rel="noopener" class="card-link">xreal.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SNAP SPECTACLES GEN 5 -->
+      <div class="device-card reveal reveal-delay-2">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-developer">Développeurs</span>
+          </div>
+          <div class="device-price">99&nbsp;$/mois</div>
+        </div>
+        <div class="device-visual vis-consumer">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="35" width="105" height="50" rx="25" fill="none" stroke="#4a8fd4" stroke-width="1.5"/>
+            <rect x="150" y="35" width="105" height="50" rx="25" fill="none" stroke="#4a8fd4" stroke-width="1.5"/>
+            <line x1="130" y1="60" x2="150" y2="60" stroke="#4a8fd4" stroke-width="2"/>
+            <circle cx="77" cy="60" r="20" fill="rgba(74,143,212,0.08)" stroke="#4a8fd4" stroke-width="1"/>
+            <circle cx="203" cy="60" r="20" fill="rgba(74,143,212,0.08)" stroke="#4a8fd4" stroke-width="1"/>
+            <circle cx="77" cy="60" r="8" fill="rgba(74,143,212,0.15)"/>
+            <circle cx="203" cy="60" r="8" fill="rgba(74,143,212,0.15)"/>
+            <text x="140" y="103" text-anchor="middle" font-size="9" fill="#4a8fd4" opacity="0.7" font-family="monospace">46°&nbsp;FOV · suivi des mains · autonome</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Spectacles Gen 5</div>
+          <div class="device-maker">Snap Inc. · 2024 · réservé aux développeurs</div>
+          <p class="device-desc">Lunettes AR autonomes de Snap offrant l'un des champs de vision les plus larges de leur catégorie grand public (46°). Dotées du suivi des mains, de la reconnaissance gestuelle et d'une intégration native aux Snaplenses Snapchat. Accessibles aux développeurs uniquement par abonnement. Plateforme clé pour les créateurs de contenus AR sociaux et créatifs souhaitant prototyper des expériences de nouvelle génération.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">FOV</span>
+              <span class="spec-val"><strong>46°</strong> en diagonale — le plus large de sa catégorie</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Calcul</span>
+              <span class="spec-val">Autonome · processeur Snapdragon XR</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Saisie</span>
+              <span class="spec-val">Suivi des mains · voix · tactile</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Plateforme</span>
+              <span class="spec-val">Snap OS · SDK Lens Studio</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Accès</span>
+              <span class="spec-val">Abonnement développeur (99&nbsp;$/mois)</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.spectacles.com/" target="_blank" rel="noopener" class="card-link">spectacles.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TCL RAYNEO X2 -->
+      <div class="device-card reveal">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-consumer">Grand public</span>
+          </div>
+          <div class="device-price">~500–700&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-consumer">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="40" width="95" height="40" rx="20" fill="none" stroke="#4a8fd4" stroke-width="1.5"/>
+            <rect x="155" y="40" width="95" height="40" rx="20" fill="none" stroke="#4a8fd4" stroke-width="1.5"/>
+            <line x1="125" y1="60" x2="155" y2="60" stroke="#4a8fd4" stroke-width="1.5"/>
+            <rect x="72" y="52" width="11" height="16" rx="1" fill="#4a8fd4" opacity="0.3"/>
+            <rect x="197" y="52" width="11" height="16" rx="1" fill="#4a8fd4" opacity="0.3"/>
+            <text x="140" y="100" text-anchor="middle" font-size="9" fill="#4a8fd4" opacity="0.7" font-family="monospace">Micro-LED binoculaire · autonome</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">RayNeo X2</div>
+          <div class="device-maker">TCL · RayNeo · 2024–2025</div>
+          <p class="device-desc">Premières lunettes AR autonomes dotées d'affichages à guide d'onde Micro-LED binoculaires en couleur intégrale, propulsées par le Qualcomm Snapdragon XR2. Elles prennent en charge la traduction en temps réel, les fonctions d'assistant intelligent et la navigation. Parmi les lunettes AR autonomes les plus avancées sur le plan technique proposées au grand public, avec un traitement embarqué indépendant du smartphone.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Affichage</span>
+              <span class="spec-val"><strong>Micro-LED</strong> binoculaire couleur intégrale</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Processeur</span>
+              <span class="spec-val">Qualcomm Snapdragon XR2</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Fonctions</span>
+              <span class="spec-val">Navigation · traduction · assistant IA</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Calcul</span>
+              <span class="spec-val">Autonome (sans smartphone)</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot filled blue"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.rayneo.com/" target="_blank" rel="noopener" class="card-link">rayneo.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRILLIANT LABS FRAME -->
+      <div class="device-card reveal reveal-delay-1">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-developer">Développeurs</span>
+            <span class="device-badge badge-developer" style="background:rgba(58,170,138,0.08); color:var(--c-teal);">Open source</span>
+          </div>
+          <div class="device-price">~349&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-prosumer">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="42" width="85" height="36" rx="18" fill="none" stroke="#3aaa8a" stroke-width="1.2"/>
+            <rect x="155" y="42" width="85" height="36" rx="18" fill="none" stroke="#3aaa8a" stroke-width="1.2"/>
+            <line x1="125" y1="60" x2="155" y2="60" stroke="#3aaa8a" stroke-width="1.2"/>
+            <circle cx="82" cy="52" r="5" fill="#3aaa8a" opacity="0.4"/>
+            <text x="82" y="72" text-anchor="middle" font-size="7" fill="#3aaa8a" opacity="0.5" font-family="monospace">IA</text>
+            <text x="140" y="100" text-anchor="middle" font-size="9" fill="#3aaa8a" opacity="0.7" font-family="monospace">39&nbsp;g · open source · Noa IA</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Frame</div>
+          <div class="device-maker">Brilliant Labs · 2024</div>
+          <p class="device-desc">Une plateforme de lunettes AR IA open source ne pesant que 39&nbsp;g. Un micro-projecteur affiche textes et graphiques simples, propulsés par l'assistant IA Noa pour répondre aux questions en temps réel, traduire des conversations et identifier des objets. En tant que plateforme open source, les développeurs peuvent créer et publier leurs propres applications — faisant de Frame un terrain d'expérimentation créatif pour l'innovation matérielle IA.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Poids</span>
+              <span class="spec-val"><strong>39&nbsp;g</strong> — ultraléger</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Affichage</span>
+              <span class="spec-val">Micro-projecteur · textes et graphiques simples</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">IA</span>
+              <span class="spec-val">Assistant multimodal Noa · sur l'appareil + cloud</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Plateforme</span>
+              <span class="spec-val">Open source · scripts Lua · store d'applications</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot"></div>
+                <div class="maturity-dot"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://brilliant.xyz/" target="_blank" rel="noopener" class="card-link">brilliant.xyz ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- À VENIR : APPLE SMART GLASSES -->
+      <div class="device-card reveal reveal-delay-2" style="border-color:rgba(201,100,74,0.2);">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-upcoming">À venir en 2027</span>
+            <span class="device-badge badge-consumer">Grand public</span>
+          </div>
+          <div class="device-price">N.C.</div>
+        </div>
+        <div class="device-visual" style="background:linear-gradient(135deg, rgba(201,100,74,0.06), rgba(201,100,74,0.02));">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="35" y="38" width="95" height="44" rx="22" fill="none" stroke="#c96b4a" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <rect x="150" y="38" width="95" height="44" rx="22" fill="none" stroke="#c96b4a" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <line x1="130" y1="60" x2="150" y2="60" stroke="#c96b4a" stroke-width="1.5" stroke-dasharray="4,2"/>
+            <text x="140" y="88" text-anchor="middle" font-size="10" fill="#c96b4a" opacity="0.6" font-family="monospace">???</text>
+            <text x="140" y="103" text-anchor="middle" font-size="9" fill="#c96b4a" opacity="0.5" font-family="monospace">monture acétate · design «&nbsp;icône&nbsp;» · IA</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Apple Smart Glasses</div>
+          <div class="device-maker">Apple · rumeurs fin 2026 / 2027</div>
+          <p class="device-desc">Les lunettes intelligentes non encore commercialisées d'Apple, dont le lancement fin 2026 ou début 2027 est confirmé par Mark Gurman de Bloomberg. Le premier modèle sera dépourvu d'écran (caméra + microphones, propulsé par l'IA, sans affichage), pour concurrencer directement les Ray-Ban de Meta. Apple mise sur des matériaux premium — monture en acétate — avec un objectif de design qu'elle nomme en interne «&nbsp;icône&nbsp;». Une intégration poussée d'Apple Intelligence est attendue.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Affichage</span>
+              <span class="spec-val">Aucun au lancement (caméra + IA audio)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Matériau</span>
+              <span class="spec-val">Monture acétate — finition haut de gamme</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">IA</span>
+              <span class="spec-val">Apple Intelligence · intégration Siri</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Calendrier</span>
+              <span class="spec-val">Prévu fin 2026 / début 2027</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot" style="background:rgba(201,100,74,0.3)"></div>
+                <div class="maturity-dot" style="background:rgba(201,100,74,0.3)"></div>
+                <div class="maturity-dot"></div>
+                <div class="maturity-dot"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.tomsguide.com/computing/smart-glasses/apples-ai-smart-glasses-strategy-revealed-how-the-iphone-maker-plans-to-outshine-metas-ray-bans" target="_blank" rel="noopener" class="card-link">Reportage Tom's Guide ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     02 — CASQUES MR (ENTREPRISE)
+══════════════════════════════════ -->
+<section class="section" id="mr-headsets" aria-labelledby="mr-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">02 — Casques de réalité mixte</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2.5rem;">
+      <h2 id="mr-heading" class="t-h2">Casques de calcul spatial<br><em>et appareils MR</em></h2>
+      <p class="section-intro">Les casques de réalité mixte constituent la plateforme principale pour les cas d'usage fondamentaux de l'Augmentiverse — hologrammes spatiaux persistants ancrés au monde physique, avec une conscience environnementale complète. Ces appareils cartographient leur environnement physique et affichent du contenu numérique qui reste précisément en place.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:var(--sp-md);">
+
+      <!-- APPLE VISION PRO 2 -->
+      <div class="device-card featured reveal">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-featured">★ Référence du calcul spatial</span>
+            <span class="device-badge badge-enterprise">Entreprise / Grand public</span>
+          </div>
+          <div class="device-price">~3&nbsp;199&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-enterprise">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="140" cy="60" rx="110" ry="50" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <ellipse cx="140" cy="60" rx="80" ry="35" fill="rgba(201,168,76,0.05)" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <line x1="30" y1="60" x2="40" y2="60" stroke="#c9a84c" stroke-width="1.5"/>
+            <line x1="240" y1="60" x2="250" y2="60" stroke="#c9a84c" stroke-width="1.5"/>
+            <rect x="100" y="42" width="80" height="36" rx="8" fill="rgba(201,168,76,0.06)" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="120" cy="60" r="8" fill="rgba(201,168,76,0.1)" stroke="#c9a84c" stroke-width="0.8"/>
+            <circle cx="160" cy="60" r="8" fill="rgba(201,168,76,0.1)" stroke="#c9a84c" stroke-width="0.8"/>
+            <text x="140" y="103" text-anchor="middle" font-size="9" fill="#c9a84c" opacity="0.7" font-family="monospace">M2 + R1 · micro-OLED · visionOS 26</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Apple Vision Pro 2</div>
+          <div class="device-maker">Apple · lancé en octobre 2025 · visionOS 26</div>
+          <p class="device-desc">L'appareil de référence pour le calcul spatial. Deuxième génération du Vision Pro d'Apple, présentée en octobre 2025 avec une baisse de prix (~300&nbsp;€ de moins que le modèle d'origine). Tourne sous visionOS 26, qui introduit des scènes spatiales générées par l'IA, une prise en charge des médias immersifs à 180° et 360°, et une intégration d'Apple Intelligence. La conception bi-puce (M2 + R1) assure une puissance autonome et un traitement des capteurs sans latence. Contrôle par le regard, les mains et la voix — sans contrôleur physique.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Affichage</span>
+              <span class="spec-val"><strong>Micro-OLED</strong> 4K+ par œil · 3400×3840</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Puces</span>
+              <span class="spec-val">M2 (calcul) + R1 (capteurs / affichage)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Saisie</span>
+              <span class="spec-val">Suivi oculaire · gestes des mains · voix</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Système</span>
+              <span class="spec-val">visionOS 26 · Apple Intelligence</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Standard</span>
+              <span class="spec-val">OpenXR via des tiers ; visionOS natif</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+              </div>
+            </div>
+            <a href="https://www.apple.com/apple-vision-pro/" target="_blank" rel="noopener" class="card-link">apple.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOLOLENS 2 -->
+      <div class="device-card reveal reveal-delay-1">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-enterprise">Entreprise</span>
+          </div>
+          <div class="device-price">~3&nbsp;500&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-enterprise">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="30" width="180" height="60" rx="12" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <rect x="65" y="42" width="65" height="36" rx="4" fill="rgba(201,168,76,0.06)" stroke="#c9a84c" stroke-width="1"/>
+            <rect x="150" y="42" width="65" height="36" rx="4" fill="rgba(201,168,76,0.06)" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="97" cy="60" r="10" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3,2"/>
+            <circle cx="182" cy="60" r="10" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3,2"/>
+            <line x1="30" y1="50" x2="50" y2="50" stroke="#c9a84c" stroke-width="1.2"/>
+            <line x1="30" y1="70" x2="50" y2="70" stroke="#c9a84c" stroke-width="1.2"/>
+            <line x1="230" y1="50" x2="250" y2="50" stroke="#c9a84c" stroke-width="1.2"/>
+            <line x1="230" y1="70" x2="250" y2="70" stroke="#c9a84c" stroke-width="1.2"/>
+            <text x="140" y="108" text-anchor="middle" font-size="9" fill="#c9a84c" opacity="0.7" font-family="monospace">optique transparente · 52°&nbsp;FOV · Windows MR</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">HoloLens 2</div>
+          <div class="device-maker">Microsoft · 2019 · référence entreprise</div>
+          <p class="device-desc">Le casque MR entreprise le plus mature et le plus largement déployé. Affichages holographiques optiquement transparents à plus de 2500 points lumineux par radian. Suivi avancé des mains et des yeux, saisie vocale et visière relevable pour basculer entre les modes physique et holographique. Plateforme de référence pour l'AR industrielle : chirurgie, fabrication, maintenance sur le terrain et formation. Profondément intégré à Microsoft Azure et Azure Remote Assist.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Affichage</span>
+              <span class="spec-val"><strong>Guide d'onde</strong> · 2K par œil · 52°&nbsp;FOV</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Suivi</span>
+              <span class="spec-val">Yeux + mains + voix · capteur de profondeur</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Plateforme</span>
+              <span class="spec-val">Windows Holographic · Azure Spatial Anchors</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Standards</span>
+              <span class="spec-val">OpenXR · prise en charge Unity / Unreal Engine</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Batterie</span>
+              <span class="spec-val">~2–3 heures (option filaire disponible)</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.microsoft.com/en-us/hololens" target="_blank" rel="noopener" class="card-link">microsoft.com/hololens ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAGIC LEAP 2 -->
+      <div class="device-card reveal reveal-delay-2">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-enterprise">Entreprise</span>
+          </div>
+          <div class="device-price">~3&nbsp;299&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-enterprise">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="45" y="35" width="190" height="50" rx="8" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <rect x="60" y="45" width="70" height="30" rx="6" fill="rgba(201,168,76,0.05)" stroke="#c9a84c" stroke-width="1"/>
+            <rect x="150" y="45" width="70" height="30" rx="6" fill="rgba(201,168,76,0.05)" stroke="#c9a84c" stroke-width="1"/>
+            <ellipse cx="95" cy="60" rx="12" ry="9" fill="none" stroke="#c9a84c" stroke-width="0.8"/>
+            <ellipse cx="185" cy="60" rx="12" ry="9" fill="none" stroke="#c9a84c" stroke-width="0.8"/>
+            <line x1="20" y1="60" x2="45" y2="60" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="20" cy="60" r="5" fill="rgba(201,168,76,0.2)" stroke="#c9a84c" stroke-width="0.8"/>
+            <text x="140" y="104" text-anchor="middle" font-size="9" fill="#c9a84c" opacity="0.7" font-family="monospace">260&nbsp;g · 70°&nbsp;FOV · AMD Zen 2 · assombrissement</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Magic Leap 2</div>
+          <div class="device-maker">Magic Leap · 2022 · entreprise</div>
+          <p class="device-desc">Le Magic Leap 2 est plus puissant et plus léger que le HoloLens 2, avec seulement 260&nbsp;g, un processeur AMD Zen 2 quadricœur et un GPU RDNA 2. Son champ de vision de 70° est le plus large de tout casque AR professionnel. Il dispose d'une fonction d'assombrissement actif unique, permettant au contenu numérique d'être plus lisible en environnement lumineux. Livré avec des manettes, il intègre également le suivi des mains et des yeux. Tourne sous Magic Leap OS, basé sur Android.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">FOV</span>
+              <span class="spec-val"><strong>70°</strong> — le plus large des casques AR entreprise</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Poids</span>
+              <span class="spec-val"><strong>260&nbsp;g</strong> — plus léger que le HoloLens 2</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Processeur</span>
+              <span class="spec-val">AMD Zen 2 quadricœur + GPU RDNA 2</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Exclusivité</span>
+              <span class="spec-val">Assombrissement actif global et segmenté</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Saisie</span>
+              <span class="spec-val">Manette + yeux + mains + voix</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot filled"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.magicleap.com/" target="_blank" rel="noopener" class="card-link">magicleap.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAMSUNG GALAXY XR -->
+      <div class="device-card reveal">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-consumer">Grand public</span>
+            <span class="device-badge badge-developer" style="background:rgba(58,170,138,0.08); color:var(--c-teal);">Android XR</span>
+          </div>
+          <div class="device-price">~1&nbsp;800&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-prosumer">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="25" width="200" height="70" rx="15" fill="none" stroke="#3aaa8a" stroke-width="1.5"/>
+            <rect x="55" y="38" width="75" height="44" rx="8" fill="rgba(58,170,138,0.06)" stroke="#3aaa8a" stroke-width="1"/>
+            <rect x="150" y="38" width="75" height="44" rx="8" fill="rgba(58,170,138,0.06)" stroke="#3aaa8a" stroke-width="1"/>
+            <ellipse cx="92" cy="60" rx="18" ry="14" fill="none" stroke="#3aaa8a" stroke-width="0.8"/>
+            <ellipse cx="187" cy="60" rx="18" ry="14" fill="none" stroke="#3aaa8a" stroke-width="0.8"/>
+            <text x="140" y="108" text-anchor="middle" font-size="9" fill="#3aaa8a" opacity="0.7" font-family="monospace">Galaxy XR · Wi-Fi 7 · BT 5.4 · 545&nbsp;g</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Samsung Galaxy XR</div>
+          <div class="device-maker">Samsung · Google · lancé en octobre 2025</div>
+          <p class="device-desc">Premier casque de calcul spatial de Samsung, lancé en octobre 2025 à 1&nbsp;800&nbsp;$. Il tourne sous Android XR — la nouvelle plateforme de Google pour casques, construite sur OpenXR 1.1, ce qui en fait le premier grand casque grand public avec une intégration OpenXR native au niveau du système. Un riche ensemble de capteurs (suivi oculaire, des mains et vocal, six caméras frontales, capteur de profondeur) associé au Wi-Fi 7 et au Bluetooth 5.4. Il se positionne comme le casque MR le plus accessible sous les 2&nbsp;000&nbsp;$ avec des caractéristiques haut de gamme.</p>
+          <div class="device-specs">
+            <div class="spec-row">
+              <span class="spec-key">Système</span>
+              <span class="spec-val"><strong>Android XR</strong> · OpenXR 1.1 natif</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Suivi</span>
+              <span class="spec-val">Yeux + mains + voix · 6 caméras · profondeur</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Connectivité</span>
+              <span class="spec-val">Wi-Fi 7 · Bluetooth 5.4</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Batterie</span>
+              <span class="spec-val">~2–2,5 h · pack batterie externe</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Poids</span>
+              <span class="spec-val">545&nbsp;g (casque) + 302&nbsp;g (batterie)</span>
+            </div>
+          </div>
+          <div class="device-footer">
+            <div class="maturity-bar-wrap">
+              <span class="maturity-label">Adéquation Augmentiverse</span>
+              <div class="maturity-dots">
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot filled teal"></div>
+                <div class="maturity-dot"></div>
+              </div>
+            </div>
+            <a href="https://www.samsung.com/global/galaxy/galaxy-xr/" target="_blank" rel="noopener" class="card-link">samsung.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     03 — CASQUES VR
+══════════════════════════════════ -->
+<section class="section section-dark" id="vr-headsets" aria-labelledby="vr-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">03 — Casques de réalité virtuelle</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2.5rem;">
+      <h2 id="vr-heading" class="t-h2">Casques de<br><em>réalité virtuelle</em></h2>
+      <p class="section-intro">La VR occupe l'extrémité pleinement virtuelle du continuum réalité–virtualité — le pendant philosophique de l'approche AR-first de l'Augmentiverse. Les casques VR restent néanmoins des outils importants pour la simulation d'entraînement, les flux de développement de contenu et les transitions vers la MR. Les plateformes VR modernes prennent également en charge des modes MR en transparence via des caméras.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:var(--sp-md);">
+
+      <div class="device-card reveal">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-consumer">Grand public</span>
+            <span class="device-badge" style="background:rgba(127,119,221,0.1); color:#afa9ec;">VR + transparence MR</span>
+          </div>
+          <div class="device-price">499&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-vr">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="28" width="220" height="64" rx="18" fill="none" stroke="#afa9ec" stroke-width="1.5"/>
+            <rect x="50" y="40" width="80" height="40" rx="8" fill="rgba(127,119,221,0.1)" stroke="#afa9ec" stroke-width="1"/>
+            <rect x="150" y="40" width="80" height="40" rx="8" fill="rgba(127,119,221,0.1)" stroke="#afa9ec" stroke-width="1"/>
+            <circle cx="90" cy="60" r="12" fill="none" stroke="#afa9ec" stroke-width="0.8"/>
+            <circle cx="190" cy="60" r="12" fill="none" stroke="#afa9ec" stroke-width="0.8"/>
+            <text x="140" y="108" text-anchor="middle" font-size="9" fill="#afa9ec" opacity="0.7" font-family="monospace">Snapdragon XR2 Gen 3 · transparence MR</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Meta Quest 3</div>
+          <div class="device-maker">Meta · 2023</div>
+          <p class="device-desc">Le casque VR autonome leader du marché, désormais doté d'une transparence MR en couleurs intégrales grâce à des capteurs de profondeur et des caméras. Processeur Snapdragon XR2 Gen 3. La plateforme la plus utilisée pour le développement et les tests WebXR. Prend en charge OpenXR, ce qui en fait une cible de développement Augmentiverse clé pour les expériences MR en transparence.</p>
+          <div class="device-specs">
+            <div class="spec-row"><span class="spec-key">Affichage</span><span class="spec-val"><strong>2064×2208</strong> par œil · optiques pancake</span></div>
+            <div class="spec-row"><span class="spec-key">Processeur</span><span class="spec-val">Snapdragon XR2 Gen 3</span></div>
+            <div class="spec-row"><span class="spec-key">Mode MR</span><span class="spec-val">Transparence couleur intégrale via caméras</span></div>
+            <div class="spec-row"><span class="spec-key">Standards</span><span class="spec-val">OpenXR · WebXR</span></div>
+          </div>
+          <div class="device-footer">
+            <a href="https://www.meta.com/quest/quest-3/" target="_blank" rel="noopener" class="card-link">meta.com/quest ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="device-card reveal reveal-delay-1">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-consumer">Grand public</span>
+            <span class="device-badge" style="background:rgba(127,119,221,0.1); color:#afa9ec;">Jeux / VR</span>
+          </div>
+          <div class="device-price">999–1&nbsp;399&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-vr">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="25" width="230" height="70" rx="20" fill="none" stroke="#afa9ec" stroke-width="1.5"/>
+            <rect x="45" y="38" width="85" height="44" rx="10" fill="rgba(127,119,221,0.08)" stroke="#afa9ec" stroke-width="1"/>
+            <rect x="150" y="38" width="85" height="44" rx="10" fill="rgba(127,119,221,0.08)" stroke="#afa9ec" stroke-width="1"/>
+            <text x="140" y="108" text-anchor="middle" font-size="9" fill="#afa9ec" opacity="0.7" font-family="monospace">PlayStation VR2 · 4K HDR OLED · suivi oculaire</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">PlayStation VR2</div>
+          <div class="device-maker">Sony · 2023</div>
+          <p class="device-desc">Casque VR de deuxième génération de Sony, nécessitant une PlayStation 5. Affichages OLED 4K HDR, suivi oculaire pour le rendu fovéal et retour haptique sur les gâchettes adaptatives. Plateforme principalement dédiée au jeu, mais de plus en plus pertinente pour les médias interactifs et les applications de simulation. Désormais compatible PC VR via adaptateur.</p>
+          <div class="device-specs">
+            <div class="spec-row"><span class="spec-key">Affichage</span><span class="spec-val"><strong>4K HDR OLED</strong> par œil · 110°&nbsp;FOV</span></div>
+            <div class="spec-row"><span class="spec-key">Suivi</span><span class="spec-val">Inside-out · oculaire · rendu fovéal</span></div>
+            <div class="spec-row"><span class="spec-key">Plateforme</span><span class="spec-val">PS5 requise · adaptateur PC disponible</span></div>
+          </div>
+          <div class="device-footer">
+            <a href="https://www.playstation.com/en-us/ps-vr2/" target="_blank" rel="noopener" class="card-link">playstation.com ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="device-card reveal reveal-delay-2">
+        <div class="device-header">
+          <div class="device-badge-row">
+            <span class="device-badge badge-developer">Développeur / Passionné</span>
+            <span class="device-badge" style="background:rgba(127,119,221,0.1); color:#afa9ec;">PC VR</span>
+          </div>
+          <div class="device-price">999&nbsp;$</div>
+        </div>
+        <div class="device-visual vis-vr">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="30" width="220" height="60" rx="14" fill="none" stroke="#afa9ec" stroke-width="1.5"/>
+            <rect x="48" y="40" width="80" height="40" rx="6" fill="rgba(127,119,221,0.08)" stroke="#afa9ec" stroke-width="1"/>
+            <rect x="152" y="40" width="80" height="40" rx="6" fill="rgba(127,119,221,0.08)" stroke="#afa9ec" stroke-width="1"/>
+            <text x="140" y="108" text-anchor="middle" font-size="9" fill="#afa9ec" opacity="0.7" font-family="monospace">Valve Index · 130°&nbsp;FOV · 144&nbsp;Hz · suivi des doigts</text>
+          </svg>
+        </div>
+        <div class="device-body">
+          <div class="device-name">Valve Index</div>
+          <div class="device-maker">Valve · 2019 · référence développeur</div>
+          <p class="device-desc">Casque PC VR haute fidélité avec un champ de vision de 130° et un taux de rafraîchissement de 144&nbsp;Hz. Les manettes Knuckle suivent les mouvements individuels des doigts. Plateforme de référence pour le développement PC VR haut de gamme via SteamVR. Largement utilisé pour le développement de contenus Augmentiverse et le prototypage avant déploiement sur des plateformes plus légères.</p>
+          <div class="device-specs">
+            <div class="spec-row"><span class="spec-key">Affichage</span><span class="spec-val">1440×1600 par œil · 130°&nbsp;FOV · 144&nbsp;Hz</span></div>
+            <div class="spec-row"><span class="spec-key">Manettes</span><span class="spec-val">Knuckles — suivi individuel des doigts</span></div>
+            <div class="spec-row"><span class="spec-key">Plateforme</span><span class="spec-val">SteamVR · OpenXR</span></div>
+          </div>
+          <div class="device-footer">
+            <a href="https://store.steampowered.com/valveindex" target="_blank" rel="noopener" class="card-link">Valve Index ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     04 — SDK DE DÉVELOPPEMENT
+══════════════════════════════════ -->
+<section class="section" id="sdks" aria-labelledby="sdk-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">04 — SDK et frameworks de développement</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2.5rem;">
+      <h2 id="sdk-heading" class="t-h2">Comment le contenu<br><em>Augmentiverse est construit</em></h2>
+      <p class="section-intro">Les SDK de développement fournissent les API fondamentales pour détecter les surfaces physiques, suivre les mouvements, ancrer le contenu et livrer des expériences aux appareils. Les SDK open standard les plus importants — OpenXR et WebXR — sont présentés dans la <a href="index.html#standards" class="link">section Standards</a>. Voici les principaux outils spécifiques aux plateformes et multiplateformes.</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(74,143,212,0.1); color:var(--c-blue);">⊕</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Apple ARKit</div>
+            <div class="tool-maker">Apple · iOS / iPadOS / visionOS</div>
+          </div>
+        </div>
+        <p class="tool-desc">Framework AR phare d'Apple, profondément intégré au matériel iPhone, iPad et Vision Pro. La détection de profondeur LiDAR sur les appareils Pro permet une détection précise des surfaces et une occlusion de l'environnement. visionOS 26 a ajouté les ancres mondiales partagées, le suivi des mains à 90&nbsp;Hz et des API d'accès caméra étendues. Compatible avec SceneKit, RealityKit, Unity et Unreal Engine.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">iOS · iPadOS · visionOS</span>
+          <span class="tool-tag">Profondeur LiDAR</span>
+          <span class="tool-tag">Ancres de localisation</span>
+          <span class="tool-tag">Gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://developer.apple.com/augmented-reality/arkit/" target="_blank" rel="noopener" class="tool-link">Documentation ARKit</a>
+          <a href="https://developer.apple.com/documentation/realitykit" target="_blank" rel="noopener" class="tool-link">RealityKit</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(74,143,212,0.1); color:var(--c-blue);">⊗</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Google ARCore</div>
+            <div class="tool-maker">Google · Android · iOS · Web</div>
+          </div>
+        </div>
+        <p class="tool-desc">La plateforme AR la plus accessible en 2026, fonctionnant sur plus de 87&nbsp;% des appareils Android actifs. L'API Geospatial utilise 15 ans de données Google Maps et Street View pour placer du contenu AR à des coordonnées réelles précises — permettant la création de contenu Augmentiverse véritablement ancré à des lieux. Ancres de terrain et de toiture, API Streetscape Geometry et classification de scènes assistée par IA. Entièrement gratuit, sans frais à l'appel.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Android · iOS</span>
+          <span class="tool-tag">API Geospatial</span>
+          <span class="tool-tag">Ancres de localisation</span>
+          <span class="tool-tag">Gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://developers.google.com/ar" target="_blank" rel="noopener" class="tool-link">Documentation ARCore</a>
+          <a href="https://developers.google.com/ar/develop/geospatial" target="_blank" rel="noopener" class="tool-link">API Geospatial</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(201,168,76,0.1); color:var(--c-gold);">◈</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Unity AR Foundation 6.x</div>
+            <div class="tool-maker">Unity Technologies · multiplateforme</div>
+          </div>
+        </div>
+        <p class="tool-desc">La solution multiplateforme pour la fragmentation AR — une API unifiée qui fonctionne sur ARKit (iOS/visionOS), ARCore (Android) et OpenXR. Unity 6 (6.3 LTS, décembre 2025) alimente tout, des applications AR mobiles aux expériences Apple Vision Pro via PolySpatial. Le suivi de codes QR et de marqueurs a été ajouté dans la version 6.4. Un seul code source, déployé sur iOS, Android et visionOS. Le framework de développement AR le plus utilisé en nombre de développeurs.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">iOS · Android · visionOS</span>
+          <span class="tool-tag">OpenXR</span>
+          <span class="tool-tag">Multiplateforme</span>
+          <span class="tool-tag">Niveau gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@6.0/manual/index.html" target="_blank" rel="noopener" class="tool-link">Documentation AR Foundation</a>
+          <a href="https://unity.com/unity/features/ar" target="_blank" rel="noopener" class="tool-link">Aperçu Unity AR</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(58,170,138,0.1); color:var(--c-teal);">⌾</div>
+          <div class="tool-header-text">
+            <div class="tool-name">WebXR Device API</div>
+            <div class="tool-maker">W3C · tous les principaux navigateurs</div>
+          </div>
+        </div>
+        <p class="tool-desc">Le seul chemin open standard natif au navigateur vers la AR, sans installation d'application. Une recommandation candidate du W3C, livrée dans Chrome, Edge, Firefox et Samsung Internet. Le module WebXR AR active les sessions immersives-ar pour les smartphones et casques. Il permet la vision de l'Augmentiverse d'un contenu spatial adressable par URL — aucune boutique d'applications requise. Voir la <a href="index.html#standards" class="link">section Standards</a> pour une couverture complète.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Natif navigateur</span>
+          <span class="tool-tag">Standard W3C</span>
+          <span class="tool-tag">Sans installation</span>
+          <span class="tool-tag">Gratuit / ouvert</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener" class="tool-link">Spécification W3C</a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API" target="_blank" rel="noopener" class="tool-link">Documentation MDN</a>
+          <a href="https://immersiveweb.dev/" target="_blank" rel="noopener" class="tool-link">Immersive Web</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(201,168,76,0.1); color:var(--c-gold);">⬡</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Vuforia Engine</div>
+            <div class="tool-maker">PTC · entreprise · AR industrielle</div>
+          </div>
+        </div>
+        <p class="tool-desc">La référence du marché pour l'AR d'entreprise et industrielle, avec un suivi basé sur des marqueurs et sans marqueurs de pointe. Atteint une précision millimétrique pour le guidage d'assemblage, la maintenance et le contrôle qualité. Compatible avec Unity et Unreal Engine. Particulièrement performant pour le suivi de cibles 3D — reconnaître et suivre des objets tridimensionnels tels que des machines industrielles. Largement déployé dans la fabrication, la santé et la formation.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Entreprise / Industrie</span>
+          <span class="tool-tag">Marqueurs image + modèle 3D</span>
+          <span class="tool-tag">HoloLens · iOS · Android</span>
+          <span class="tool-tag">Payant</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://developer.vuforia.com/" target="_blank" rel="noopener" class="tool-link">Développeur Vuforia</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(58,170,138,0.1); color:var(--c-teal);">⊕</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Snap Lens Studio</div>
+            <div class="tool-maker">Snap Inc. · création d'AR sociale</div>
+          </div>
+        </div>
+        <p class="tool-desc">La plateforme de création d'AR sociale la plus utilisée au monde, permettant aux designers et développeurs de concevoir des filtres AR, des lentilles et des expériences pour Snapchat et Spectacles. Utilisée par des millions de créateurs. Intègre le suivi corporel, le maillage du visage, le suivi des mains et la AR monde. Essentielle pour comprendre comment le contenu Augmentiverse sera consommé par les audiences grand public — Snap traite plus de 6 milliards de snaps par jour.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">AR sociale</span>
+          <span class="tool-tag">Snapchat · Spectacles</span>
+          <span class="tool-tag">Corps / visage / mains</span>
+          <span class="tool-tag">Gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://ar.snap.com/lens-studio" target="_blank" rel="noopener" class="tool-link">Lens Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     05 — MOTEURS 3D
+══════════════════════════════════ -->
+<section class="section section-dark" id="engines" aria-labelledby="engines-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">05 — Moteurs 3D et moteurs de rendu</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2.5rem;">
+      <h2 id="engines-heading" class="t-h2">Le rendu de<br><em>l'Augmentiverse</em></h2>
+      <p class="section-intro">Les moteurs 3D sont le cœur créatif et de rendu de l'Augmentiverse — les plateformes où les développeurs construisent les expériences spatiales qui s'exécutent sur les lunettes AR et les casques MR. Le choix du moteur détermine la portée multiplateforme, la fidélité visuelle et les performances.</p>
+    </div>
+
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(201,168,76,0.1); color:var(--c-gold);">◉</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Unity 6</div>
+            <div class="tool-maker">Unity Technologies · moteur AR dominant</div>
+          </div>
+        </div>
+        <p class="tool-desc">Le moteur dominant pour la AR et le calcul spatial en nombre de développeurs. Unity 6 (6.3 LTS, décembre 2025) alimente tout, des applications AR mobiles aux expériences Apple Vision Pro via PolySpatial. AR Foundation 6.x fournit une API unique pour ARKit, ARCore et OpenXR. De loin le moteur le plus utilisé pour la création de contenu Augmentiverse, avec un vaste soutien communautaire, une documentation abondante et une bibliothèque de ressources étendue.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">iOS · Android · visionOS · Windows MR</span>
+          <span class="tool-tag">OpenXR</span>
+          <span class="tool-tag">AR Foundation</span>
+          <span class="tool-tag">Niveau personnel gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://unity.com/" target="_blank" rel="noopener" class="tool-link">unity.com</a>
+          <a href="https://unity.com/unity/features/ar" target="_blank" rel="noopener" class="tool-link">Unity AR</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(58,170,138,0.1); color:var(--c-teal);">◈</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Unreal Engine 5</div>
+            <div class="tool-maker">Epic Games · fidélité photoréaliste</div>
+          </div>
+        </div>
+        <p class="tool-desc">Le moteur d'Epic offre un rendu photoréaliste pour les expériences AR haut de gamme, avec une forte intégration C++ et une fidélité visuelle inégalée grâce aux systèmes Nanite et Lumen. Particulièrement adapté à l'AR d'entreprise en architecture, en visualisation de production industrielle et en design de produit. Le modèle AR simplifie la mise en place des projets avec des pipelines de rendu optimisés. Prise en charge native d'OpenXR.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Photoréaliste</span>
+          <span class="tool-tag">AR entreprise</span>
+          <span class="tool-tag">C++ / Blueprints</span>
+          <span class="tool-tag">Royalties au-delà d'1&nbsp;M$</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://www.unrealengine.com/" target="_blank" rel="noopener" class="tool-link">unrealengine.com</a>
+          <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/augmented-reality-in-unreal-engine" target="_blank" rel="noopener" class="tool-link">Documentation AR</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(74,143,212,0.1); color:var(--c-blue);">⬡</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Three.js / Babylon.js</div>
+            <div class="tool-maker">Open source · 3D natif Web</div>
+          </div>
+        </div>
+        <p class="tool-desc">Les principales bibliothèques de rendu pour les expériences Augmentiverse basées sur WebXR. Three.js est la bibliothèque 3D Web la plus utilisée ; Babylon.js propose un framework de plus haut niveau avec physique intégrée et fonctionnalités AR natives. Toutes deux s'intègrent à la WebXR Device API pour livrer de la AR native au navigateur sans installation. Indispensables pour quiconque construit la couche web accessible de l'Augmentiverse.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Natif Web</span>
+          <span class="tool-tag">Intégration WebXR</span>
+          <span class="tool-tag">JavaScript / TypeScript</span>
+          <span class="tool-tag">Open source · gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://threejs.org/" target="_blank" rel="noopener" class="tool-link">threejs.org</a>
+          <a href="https://www.babylonjs.com/" target="_blank" rel="noopener" class="tool-link">babylonjs.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     06 — OUTILS DE CRÉATION
+══════════════════════════════════ -->
+<section class="section" id="authoring" aria-labelledby="authoring-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">06 — Création 3D et outils de ressources</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2.5rem;">
+      <h2 id="authoring-heading" class="t-h2">Créer la couche<br><em>de contenu spatial</em></h2>
+      <p class="section-intro">L'Augmentiverse nécessite des ressources 3D de haute qualité — modèles, scènes, animations et textures — créées dans des formats ouverts (glTF, OpenUSD) pour une interopérabilité maximale. Ces outils se situent au sommet de la chaîne de création de contenu.</p>
+    </div>
+
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(201,168,76,0.1); color:var(--c-gold);">▣</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Blender</div>
+            <div class="tool-maker">Blender Foundation · open source</div>
+          </div>
+        </div>
+        <p class="tool-desc">La suite de création 3D open source de référence. Export natif glTF 2.0, prise en charge d'OpenUSD, sculpture, rigging, animation, matériaux physiquement réalistes et rendu. L'outil professionnel le plus accessible pour les créateurs de contenu Augmentiverse. L'export glTF de Blender est l'une des implémentations les plus conformes et complètes disponibles. Gratuit, open source, disponible sur toutes les principales plateformes.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">glTF 2.0 natif</span>
+          <span class="tool-tag">Export OpenUSD</span>
+          <span class="tool-tag">Pipeline 3D complet</span>
+          <span class="tool-tag">Gratuit · open source</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://www.blender.org/" target="_blank" rel="noopener" class="tool-link">blender.org</a>
+          <a href="https://docs.blender.org/manual/en/latest/addons/import_export/scene_gltf2.html" target="_blank" rel="noopener" class="tool-link">Documentation export glTF</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(74,143,212,0.1); color:var(--c-blue);">▤</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Autodesk Maya et 3ds Max</div>
+            <div class="tool-maker">Autodesk · pipeline professionnel</div>
+          </div>
+        </div>
+        <p class="tool-desc">Logiciels de modélisation 3D et d'animation de référence, largement utilisés dans le cinéma, le jeu vidéo et le calcul spatial d'entreprise. Tous deux exportent vers les formats glTF et USD. Maya est particulièrement performant pour le rigging et l'animation de personnages ; 3ds Max pour la visualisation architecturale. Outils standard dans les grandes entreprises construisant du contenu Augmentiverse pour la formation industrielle et la conception de produits.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Professionnel</span>
+          <span class="tool-tag">Export glTF / USD</span>
+          <span class="tool-tag">Animation / rigging</span>
+          <span class="tool-tag">Abonnement</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://www.autodesk.com/products/maya/" target="_blank" rel="noopener" class="tool-link">Maya</a>
+          <a href="https://www.autodesk.com/products/3ds-max/" target="_blank" rel="noopener" class="tool-link">3ds Max</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(201,168,76,0.1); color:var(--c-gold);">⬡</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Adobe Substance 3D</div>
+            <div class="tool-maker">Adobe · matériaux et textures</div>
+          </div>
+        </div>
+        <p class="tool-desc">La suite de référence du secteur pour la création de matériaux physiquement réalistes. Substance Painter pour la peinture de textures ; Substance Designer pour la création procédurale de matériaux ; Substance Sampler pour les flux photogrammétrie-vers-matériau. Tous produisent des matériaux PBR entièrement compatibles avec le modèle de matériaux PBR de glTF 2.0. Indispensable pour créer des ressources Augmentiverse visuellement cohérentes s'affichant de façon uniforme sur tous les appareils.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Matériaux PBR</span>
+          <span class="tool-tag">Compatible glTF PBR</span>
+          <span class="tool-tag">Photogrammétrie</span>
+          <span class="tool-tag">Abonnement</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://www.adobe.com/products/substance3d.html" target="_blank" rel="noopener" class="tool-link">Substance 3D</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(58,170,138,0.1); color:var(--c-teal);">◉</div>
+          <div class="tool-header-text">
+            <div class="tool-name">NVIDIA Omniverse</div>
+            <div class="tool-maker">NVIDIA · plateforme de collaboration OpenUSD</div>
+          </div>
+        </div>
+        <p class="tool-desc">La plateforme de collaboration et de simulation 3D en temps réel de NVIDIA, entièrement construite sur OpenUSD. Elle permet l'édition simultanée multi-utilisateurs de scènes 3D partagées, un tracé de chemins haute fidélité et une simulation physique. Essentielle pour les équipes construisant des environnements Augmentiverse à grande échelle — jumeaux numériques d'usines, de villes ou d'installations. Membre fondateur de l'AOUSD ; Omniverse est l'implémentation de référence d'OpenUSD en production.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">OpenUSD natif</span>
+          <span class="tool-tag">Multi-utilisateurs temps réel</span>
+          <span class="tool-tag">Jumeaux numériques</span>
+          <span class="tool-tag">Niveau gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://www.nvidia.com/en-us/omniverse/" target="_blank" rel="noopener" class="tool-link">NVIDIA Omniverse</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(74,143,212,0.1); color:var(--c-blue);">◈</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Apple Reality Composer Pro</div>
+            <div class="tool-maker">Apple · création spatiale visionOS</div>
+          </div>
+        </div>
+        <p class="tool-desc">L'environnement de création natif d'Apple pour les expériences spatiales visionOS. Utilise le format Reality Composition (USDA/USDZ) et s'intègre directement à Xcode. Assemblage visuel de scènes, physique, particules et audio. Le chemin le plus rapide pour publier sur Apple Vision Pro. Reality Composer Pro travaille avec des fichiers Reality exportables en USDZ — le format de contenu spatial d'Apple construit sur OpenUSD, garantissant l'interopérabilité avec l'écosystème plus large.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">visionOS</span>
+          <span class="tool-tag">USDZ / OpenUSD</span>
+          <span class="tool-tag">Éditeur de scène visuel</span>
+          <span class="tool-tag">Gratuit (avec Xcode)</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://developer.apple.com/augmented-reality/reality-composer-pro/" target="_blank" rel="noopener" class="tool-link">Reality Composer Pro</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(58,170,138,0.1); color:var(--c-teal);">▣</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Validateur et visualiseur glTF Khronos</div>
+            <div class="tool-maker">Khronos Group · contrôle qualité</div>
+          </div>
+        </div>
+        <p class="tool-desc">Les outils de référence officiels du Khronos Group pour la validation et la prévisualisation de ressources glTF. Le validateur glTF vérifie les ressources par rapport à la spécification complète glTF 2.0 et toutes ses extensions — un contrôle qualité indispensable avant de déployer du contenu Augmentiverse. Le Sample Viewer glTF est le moteur de rendu de référence dans le navigateur ; le Khronos glTF Viewer (application iOS) permet la prévisualisation sur l'appareil en AR. Tous deux sont open source sous licence Apache 2.0.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Validation glTF 2.0</span>
+          <span class="tool-tag">Moteur de rendu de référence</span>
+          <span class="tool-tag">Visualiseur AR iOS</span>
+          <span class="tool-tag">Open source · gratuit</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://github.com/KhronosGroup/glTF-Validator" target="_blank" rel="noopener" class="tool-link">Validateur glTF</a>
+          <a href="https://github.com/KhronosGroup/glTF-Sample-Viewer" target="_blank" rel="noopener" class="tool-link">Sample Viewer</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     07 — INFRASTRUCTURE
+══════════════════════════════════ -->
+<section class="section section-dark" id="infrastructure" aria-labelledby="infra-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">07 — Infrastructure et livraison</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2.5rem;">
+      <h2 id="infra-heading" class="t-h2">Livrer du contenu spatial<br><em>à faible latence</em></h2>
+      <p class="section-intro">La AR en temps réel exige une infrastructure conçue pour minimiser la latence entre l'action et la réponse. Le contenu persistant et spatialement ancré de l'Augmentiverse requiert des architectures réseau qui maintiennent le calcul proche de l'utilisateur — et des plateformes gérant l'ancrage spatial à l'échelle du cloud.</p>
+    </div>
+
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(74,143,212,0.1); color:var(--c-blue);">⌾</div>
+          <div class="tool-header-text">
+            <div class="tool-name">Microsoft Azure Spatial Anchors</div>
+            <div class="tool-maker">Microsoft · ancrage spatial dans le cloud</div>
+          </div>
+        </div>
+        <p class="tool-desc">Azure Spatial Anchors permet du contenu spatial persistant et partagé, découvrable par plusieurs utilisateurs sur HoloLens, iOS (ARKit) et Android (ARCore). Les ancres sont stockées dans le cloud et rappelées entre les sessions — exactement ce qu'exige le principe de présence spatiale persistante de l'Augmentiverse. Intégration profonde avec HoloLens 2 et Unity. Utilisé par les entreprises pour la collaboration MR partagée.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Ancres persistantes</span>
+          <span class="tool-tag">Partage multi-utilisateurs</span>
+          <span class="tool-tag">HoloLens · iOS · Android</span>
+          <span class="tool-tag">Tarification Azure</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://azure.microsoft.com/en-us/products/spatial-anchors/" target="_blank" rel="noopener" class="tool-link">Azure Spatial Anchors</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-1">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(201,168,76,0.1); color:var(--c-gold);">⬡</div>
+          <div class="tool-header-text">
+            <div class="tool-name">API Geospatial ARCore</div>
+            <div class="tool-maker">Google · AR géolocalisée à grande échelle</div>
+          </div>
+        </div>
+        <p class="tool-desc">L'API Geospatial de Google utilise 15 ans de données Street View et Maps pour placer du contenu AR à des coordonnées réelles précises à l'échelle mondiale — sans ancrage manuel préalable. Les ancres de terrain s'appuient sur la géométrie réelle du sol ; les ancres de toiture ciblent les sommets de bâtiments. La détection de profondeur géospatiale s'étend jusqu'à 65 mètres. Il s'agit de l'infrastructure existante la plus proche de la vision Augmentiverse d'un contenu spatial mondialement adressable.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Ancres mondiales</span>
+          <span class="tool-tag">Données Street View</span>
+          <span class="tool-tag">Ancres terrain + toiture</span>
+          <span class="tool-tag">API gratuite</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://developers.google.com/ar/develop/geospatial" target="_blank" rel="noopener" class="tool-link">Documentation API Geospatial</a>
+        </div>
+      </div>
+
+      <div class="tool-card reveal reveal-delay-2">
+        <div class="tool-header">
+          <div class="tool-icon" style="background:rgba(58,170,138,0.1); color:var(--c-teal);">◉</div>
+          <div class="tool-header-text">
+            <div class="tool-name">ETSI MEC — Calcul en périphérie mobile</div>
+            <div class="tool-maker">ETSI · standard d'infrastructure réseau</div>
+          </div>
+        </div>
+        <p class="tool-desc">Le standard ETSI Multi-Access Edge Computing (MEC) permet de déployer des nœuds de calcul aux périphéries des réseaux mobiles — physiquement proches de l'appareil de l'utilisateur. La latence passe ainsi de 50 à 150&nbsp;ms (cloud centralisé) à moins de 5&nbsp;ms — indispensable pour le suivi spatial et le rendu en temps réel. AWS Wavelength, Azure Edge Zones et Google Distributed Cloud implémentent tous une infrastructure compatible MEC. C'est la couche réseau physique de l'Augmentiverse.</p>
+        <div class="tool-tags">
+          <span class="tool-tag">Latence &lt;&nbsp;5&nbsp;ms</span>
+          <span class="tool-tag">Standard ouvert</span>
+          <span class="tool-tag">Natif 5G</span>
+          <span class="tool-tag">AWS · Azure · Google</span>
+        </div>
+        <div class="tool-links">
+          <a href="https://www.etsi.org/technologies/multi-access-edge-computing" target="_blank" rel="noopener" class="tool-link">ETSI MEC</a>
+          <a href="https://aws.amazon.com/wavelength/" target="_blank" rel="noopener" class="tool-link">AWS Wavelength</a>
+          <a href="https://azure.microsoft.com/en-us/products/azure-edge-zones/" target="_blank" rel="noopener" class="tool-link">Azure Edge Zones</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TABLEAU COMPARATIF DES APPAREILS
+══════════════════════════════════ -->
+<section class="section" id="comparison" aria-labelledby="comp-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">08 — Comparatif des appareils</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2rem;">
+      <h2 id="comp-heading" class="t-h2">Matrice comparative<br><em>des appareils Augmentiverse</em></h2>
+      <p class="section-intro">Comment les appareils actuels et prochains se positionnent-ils par rapport aux trois engagements de l'Augmentiverse : affichage AR-first, prise en charge des standards ouverts et présence spatiale persistante.</p>
+    </div>
+
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="comp-table" role="table" aria-label="Matrice comparative des appareils">
+        <thead>
+          <tr>
+            <th style="min-width:160px;">Appareil</th>
+            <th>Catégorie</th>
+            <th>Affichage AR-first</th>
+            <th>OpenXR</th>
+            <th>WebXR</th>
+            <th>Ancrage spatial</th>
+            <th>Standards ouverts</th>
+            <th style="min-width:80px;">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="t-device">Apple Vision Pro 2</td>
+            <td><span class="device-badge badge-enterprise" style="font-size:0.6rem;">Casque MR</span></td>
+            <td><span class="t-check">✓</span> Optique transparente</td>
+            <td><span class="t-partial">◑</span> Via des tiers</td>
+            <td><span class="t-check">✓</span> visionOS 26</td>
+            <td><span class="t-check">✓</span> Ancres monde</td>
+            <td><span class="t-partial">◑</span> USDZ / OpenUSD</td>
+            <td>~3&nbsp;199&nbsp;$</td>
+          </tr>
+          <tr>
+            <td class="t-device">Microsoft HoloLens 2</td>
+            <td><span class="device-badge badge-enterprise" style="font-size:0.6rem;">Casque MR</span></td>
+            <td><span class="t-check">✓</span> Guide d'onde optique</td>
+            <td><span class="t-check">✓</span> Natif</td>
+            <td><span class="t-partial">◑</span> Via navigateur</td>
+            <td><span class="t-check">✓</span> Azure Spatial</td>
+            <td><span class="t-check">✓</span> OpenXR / glTF</td>
+            <td>~3&nbsp;500&nbsp;$</td>
+          </tr>
+          <tr>
+            <td class="t-device">Magic Leap 2</td>
+            <td><span class="device-badge badge-enterprise" style="font-size:0.6rem;">Casque MR</span></td>
+            <td><span class="t-check">✓</span> Optique + assombrissement</td>
+            <td><span class="t-check">✓</span> Natif</td>
+            <td><span class="t-partial">◑</span> Limité</td>
+            <td><span class="t-check">✓</span> Cartographie spatiale</td>
+            <td><span class="t-check">✓</span> OpenXR</td>
+            <td>~3&nbsp;299&nbsp;$</td>
+          </tr>
+          <tr>
+            <td class="t-device">Samsung Galaxy XR</td>
+            <td><span class="device-badge badge-consumer" style="font-size:0.6rem;">Casque MR</span></td>
+            <td><span class="t-check">✓</span> Transparence caméra</td>
+            <td><span class="t-check">✓</span> Android XR natif</td>
+            <td><span class="t-check">✓</span> Android XR</td>
+            <td><span class="t-check">✓</span> Ancres ARCore</td>
+            <td><span class="t-check">✓</span> OpenXR 1.1</td>
+            <td>~1&nbsp;800&nbsp;$</td>
+          </tr>
+          <tr>
+            <td class="t-device">Meta Quest 3</td>
+            <td><span class="device-badge badge-consumer" style="font-size:0.6rem;">VR + transparence</span></td>
+            <td><span class="t-partial">◑</span> Transparence caméra</td>
+            <td><span class="t-check">✓</span> Natif</td>
+            <td><span class="t-check">✓</span> Navigateur</td>
+            <td><span class="t-partial">◑</span> Limité</td>
+            <td><span class="t-check">✓</span> OpenXR</td>
+            <td>499&nbsp;$</td>
+          </tr>
+          <tr>
+            <td class="t-device">Xreal One Pro</td>
+            <td><span class="device-badge badge-consumer" style="font-size:0.6rem;">Lunettes AR</span></td>
+            <td><span class="t-check">✓</span> Affichage optique</td>
+            <td><span class="t-partial">◑</span> Via Android</td>
+            <td><span class="t-partial">◑</span> Limité</td>
+            <td><span class="t-partial">◑</span> Ancrage basique</td>
+            <td><span class="t-partial">◑</span> Partiel</td>
+            <td>~699&nbsp;$</td>
+          </tr>
+          <tr>
+            <td class="t-device">Ray-Ban Meta Display</td>
+            <td><span class="device-badge badge-consumer" style="font-size:0.6rem;">Lunettes AR</span></td>
+            <td><span class="t-partial">◑</span> Affichage monoculaire</td>
+            <td><span class="t-cross">✗</span> Propriétaire</td>
+            <td><span class="t-cross">✗</span> Non</td>
+            <td><span class="t-cross">✗</span> Non</td>
+            <td><span class="t-cross">✗</span> Plateforme fermée</td>
+            <td>799&nbsp;$</td>
+          </tr>
+          <tr>
+            <td class="t-device">Snap Spectacles Gen 5</td>
+            <td><span class="device-badge badge-developer" style="font-size:0.6rem;">Développeur</span></td>
+            <td><span class="t-check">✓</span> 46°&nbsp;FOV</td>
+            <td><span class="t-cross">✗</span> Non</td>
+            <td><span class="t-cross">✗</span> Non</td>
+            <td><span class="t-partial">◑</span> Suivi monde</td>
+            <td><span class="t-cross">✗</span> Spécifique Snap</td>
+            <td>99&nbsp;$/mois</td>
+          </tr>
+          <tr>
+            <td class="t-device">Smartphone (ARCore / ARKit)</td>
+            <td><span class="device-badge badge-consumer" style="font-size:0.6rem;">Mobile</span></td>
+            <td><span class="t-partial">◑</span> Superposition caméra</td>
+            <td><span class="t-partial">◑</span> Partiel</td>
+            <td><span class="t-check">✓</span> WebXR dans le navigateur</td>
+            <td><span class="t-partial">◑</span> Limité par session</td>
+            <td><span class="t-check">✓</span> ARKit / ARCore</td>
+            <td>Existant</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:var(--sp-md); display:flex; gap:var(--sp-lg); flex-wrap:wrap;">
+      <span style="font-size:0.8rem; color:var(--c-ink-soft);"><span class="t-check">✓</span> = Prise en charge complète &nbsp; <span class="t-partial">◑</span> = Prise en charge partielle &nbsp; <span class="t-cross">✗</span> = Non pris en charge</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FEUILLE DE ROUTE MATÉRIELLE
+══════════════════════════════════ -->
+<section class="section section-dark" id="roadmap" aria-labelledby="roadmap-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">09 — Feuille de route matérielle</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:var(--sp-lg);">
+      <h2 id="roadmap-heading" class="t-h2">Ce qui arrive dans la<br><em>chaîne d'outils Augmentiverse</em></h2>
+      <p class="section-intro">Principales étapes matérielles et plateformes attendues à court et moyen terme. L'inflexion la plus significative reste l'avènement de lunettes AR grand public confortables, portables toute la journée — projetées autour de 2028–2030.</p>
+    </div>
+
+    <div class="roadmap reveal">
+      <div class="roadmap-col">
+        <div class="roadmap-year">2025 — réalisé</div>
+        <div class="roadmap-item"><strong>Ray-Ban Meta Display</strong> Affichage monoculaire + Neural Band lancé en septembre 2025 (799&nbsp;$)</div>
+        <div class="roadmap-item"><strong>Apple Vision Pro 2</strong> M2+R1, visionOS 26, baisse de prix, lancé en octobre 2025</div>
+        <div class="roadmap-item"><strong>Samsung Galaxy XR</strong> Android XR + OpenXR 1.1 natif, lancé en octobre 2025</div>
+        <div class="roadmap-item"><strong>OpenXR 1.1</strong> Consolidation des extensions dans la spécification principale par Khronos</div>
+        <div class="roadmap-item"><strong>Ray-Ban Meta : triplement des ventes</strong> Ventes multipliées par 3 au S1 2025 ; 7&nbsp;M d'unités au total sur l'année</div>
+      </div>
+      <div class="roadmap-col">
+        <div class="roadmap-year">2026 — en cours</div>
+        <div class="roadmap-item"><strong>Xreal Project Aura</strong> Lunettes sous Android XR · 70°&nbsp;FOV · module de calcul externe</div>
+        <div class="roadmap-item"><strong>ASUS ROG Xreal R1</strong> Lunettes AR gaming · taux de rafraîchissement de 240&nbsp;Hz</div>
+        <div class="roadmap-item"><strong>Open Metaverse Browser</strong> Initiative de navigateur spatial open source Khronos / RP1</div>
+        <div class="roadmap-item"><strong>Apple Smart Glasses</strong> Sans affichage, propulsées par l'IA, rumeurs fin 2026</div>
+        <div class="roadmap-item"><strong>DID v1.1</strong> Recommandation candidate W3C (mars 2026)</div>
+        <div class="roadmap-item"><strong>Lunettes Android XR</strong> Plusieurs sorties OEM sur la plateforme Android XR</div>
+      </div>
+      <div class="roadmap-col">
+        <div class="roadmap-year">2027 → court terme</div>
+        <div class="roadmap-item future"><strong>Apple Smart Glasses (avec écran)</strong> Modèle avec affichage — prévu en 2027</div>
+        <div class="roadmap-item future"><strong>HoloLens 3</strong> Prochain casque entreprise de Microsoft (non confirmé)</div>
+        <div class="roadmap-item future"><strong>Meta Orion</strong> Prototype de lunettes AR · 70°&nbsp;FOV · guide d'onde carbure de silicium</div>
+        <div class="roadmap-item future"><strong>Ratification WebXR</strong> Recommandation du groupe de travail W3C attendue</div>
+      </div>
+      <div class="roadmap-col">
+        <div class="roadmap-year">2028–2030 → inflexion</div>
+        <div class="roadmap-item future"><strong>Lunettes AR grand public</strong> 15&nbsp;M d'unités/an projeté d'ici 2030 · plus de 85&nbsp;% avec affichage</div>
+        <div class="roadmap-item future"><strong>MicroLED à grande échelle</strong> Devrait devenir la technologie d'affichage standard pour la AR</div>
+        <div class="roadmap-item future"><strong>Augmentiverse à grande échelle</strong> Standards ouverts + calcul en périphérie + matériel de masse = masse critique</div>
+        <div class="roadmap-item future"><strong>AR portable toute la journée</strong> Le point d'inflexion matériel pour l'adoption grand public</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     RETOUR AU SITE PRINCIPAL
+══════════════════════════════════ -->
+<section class="section-sm" style="border-top:1px solid var(--c-border);">
+  <div class="container">
+    <div class="reveal" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--sp-md);">
+      <div>
+        <p class="t-label t-gold" style="margin-bottom:0.5rem;">Continuer à explorer</p>
+        <h3 style="font-family:var(--f-display); font-size:1.5rem; font-weight:300;">Retourner à la référence Augmentiverse complète</h3>
+      </div>
+      <div style="display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
+        <a href="index.html#concept"    class="btn btn-secondary">Concept et théorie</a>
+        <a href="index.html#standards"  class="btn btn-secondary">Standards ouverts</a>
+        <a href="tools.html"            class="btn btn-secondary">Version anglaise</a>
+        <a href="index.html#bibliography" class="btn btn-ghost btn-arrow">Bibliographie</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PIED DE PAGE
+══════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name"><em>Augmenti</em>verse</div>
+        <p class="footer-desc">Ressource de référence indépendante sur le cadre Augmentiverse et son écosystème d'outils. Données matérielles à jour en avril 2026.</p>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:var(--sp-sm);">
+          <a href="index.html"   class="btn btn-ghost btn-sm">← Site principal</a>
+          <a href="tools.html"   class="btn btn-ghost btn-sm">English version</a>
+          <a href="https://doi.org/10.3991/ijet.v21i01.59733" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Article source ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Matériel</div>
+        <div class="footer-links">
+          <a href="#ar-glasses">Lunettes AR et IA</a>
+          <a href="#mr-headsets">Casques MR</a>
+          <a href="#vr-headsets">Casques VR</a>
+          <a href="#comparison">Comparatif des appareils</a>
+          <a href="#roadmap">Feuille de route</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Logiciels</div>
+        <div class="footer-links">
+          <a href="#sdks">SDK et frameworks</a>
+          <a href="#engines">Moteurs 3D</a>
+          <a href="#authoring">Outils de création</a>
+          <a href="#infrastructure">Infrastructure</a>
+          <a href="#stack">Diagramme de pile</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Liens clés</div>
+        <div class="footer-links">
+          <a href="https://www.khronos.org/openxr/"     target="_blank" rel="noopener">OpenXR — Khronos</a>
+          <a href="https://www.w3.org/TR/webxr/"        target="_blank" rel="noopener">WebXR — W3C</a>
+          <a href="https://developers.google.com/ar"    target="_blank" rel="noopener">ARCore — Google</a>
+          <a href="https://developer.apple.com/augmented-reality/" target="_blank" rel="noopener">ARKit — Apple</a>
+          <a href="https://unity.com/unity/features/ar" target="_blank" rel="noopener">Unity AR</a>
+          <a href="https://aousd.org/"                  target="_blank" rel="noopener">OpenUSD — AOUSD</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">Augmentiverse.org — Référence outils · Données matérielles : avril 2026 · Non affilié à aucune entité commerciale</div>
+      <div class="footer-bottom-links">
+        <a href="index.html">Site principal</a>
+        <a href="tools.html">English</a>
+        <a href="index.html#bibliography">Bibliographie</a>
+        <a href="mailto:contact@augmentiverse.org">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Retour en haut de page" title="Retour en haut">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
