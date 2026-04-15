@@ -9,6 +9,26 @@ const on = (element, eventName, handler, options) => {
 };
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const isFrench = document.documentElement.lang?.toLowerCase().startsWith('fr');
+const i18n = {
+  copied: isFrench ? 'Copié' : 'Copied',
+  copyFailed: isFrench ? 'Échec de la copie' : 'Copy failed',
+  invalidEmail: isFrench
+    ? "Saisissez une adresse e-mail valide pour générer le message d'inscription."
+    : 'Enter a valid email address to generate the subscription email.',
+  openingMail: isFrench
+    ? 'Ouverture de votre messagerie avec une demande préremplie.'
+    : 'Opening your mail client with a prefilled subscription request.',
+  openingMailButton: isFrench ? 'Ouverture...' : 'Opening mail',
+  subscribe: isFrench ? "S'abonner" : 'Subscribe',
+  newsletterSubject: isFrench ? "Demande d'inscription à la newsletter Augmentiverse" : 'Augmentiverse newsletter subscription',
+  newsletterBody: email => isFrench
+    ? `Merci d'inscrire cette adresse aux actualités Augmentiverse :\n\n${email}\n\nEnvoyé depuis augmentiverse.org.`
+    : `Please subscribe this address to Augmentiverse updates:\n\n${email}\n\nSent from augmentiverse.org.`,
+  consoleMessage: isFrench
+    ? "Ressource de référence sur la voie AR-first vers une réalité spatiale partagée."
+    : 'Reference resource on the AR-first path to shared spatial reality.'
+};
 
 const nav = $('#nav');
 const navToggle = $('.nav-toggle');
@@ -329,9 +349,9 @@ function setupCopyButtons() {
         } else {
           copyTextFallback(text);
         }
-        button.textContent = 'Copied';
+        button.textContent = i18n.copied;
       } catch (error) {
-        button.textContent = 'Copy failed';
+        button.textContent = i18n.copyFailed;
       }
 
       window.setTimeout(() => {
@@ -357,29 +377,27 @@ function setupNewsletterForm() {
     if (!email || !input.checkValidity()) {
       input.reportValidity();
       if (status) {
-        status.textContent = 'Enter a valid email address to generate the subscription email.';
+        status.textContent = i18n.invalidEmail;
       }
       return;
     }
 
-    const subject = encodeURIComponent('Augmentiverse newsletter subscription');
-    const body = encodeURIComponent(
-      `Please subscribe this address to Augmentiverse updates:\n\n${email}\n\nSent from augmentiverse.org.`
-    );
+    const subject = encodeURIComponent(i18n.newsletterSubject);
+    const body = encodeURIComponent(i18n.newsletterBody(email));
 
     localStorage.setItem('augmentiverse.newsletterDraft', email);
 
     if (status) {
-      status.textContent = 'Opening your mail client with a prefilled subscription request.';
+      status.textContent = i18n.openingMail;
     }
 
-    button.textContent = 'Opening mail';
+    button.textContent = i18n.openingMailButton;
     button.disabled = true;
 
     window.location.href = `mailto:contact@augmentiverse.org?subject=${subject}&body=${body}`;
 
     window.setTimeout(() => {
-      button.textContent = 'Subscribe';
+      button.textContent = i18n.subscribe;
       button.disabled = false;
       input.value = '';
     }, 2200);
@@ -448,4 +466,4 @@ setupNewsletterForm();
 handleScroll();
 
 console.log('%cAugmentiverse.org', 'font-size:18px; font-weight:bold; color:#c9a84c;');
-console.log('%cReference resource on the AR-first path to shared spatial reality.', 'color:#b8b4ac;');
+console.log(`%c${i18n.consoleMessage}`, 'color:#b8b4ac;');
