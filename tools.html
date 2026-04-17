@@ -344,6 +344,7 @@
     }
   </style>
 </head>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 <body>
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -655,6 +656,15 @@
             <span class="device-badge badge-consumer">Consumer</span>
           </div>
           <div class="device-price">$799</div>
+          <model-viewer 
+  src="assets/meta-display.glb" 
+  alt="A 3D model of a robot" 
+  auto-rotate 
+  camera-controls 
+  ar
+  shadow-intensity="1">
+</model-viewer>
+
         </div>
         <div class="device-visual vis-consumer">
           <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
