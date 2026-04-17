@@ -317,6 +317,7 @@
       .roadmap-col { min-width: unset; border-right: none; border-bottom: 1px solid var(--c-border); padding-bottom: var(--sp-sm); margin-bottom: var(--sp-sm); }
     }
   </style>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
 
@@ -547,6 +548,15 @@
             <text x="70" y="100" text-anchor="middle" font-size="9" fill="#4a8fd4" opacity="0.7" font-family="monospace">affichage · bandeau neuronal</text>
           </svg>
         </div>
+        <model-viewer 
+  src="meta-display.glb" 
+  alt="A 3D model of a robot" 
+  auto-rotate 
+  camera-controls 
+  ar
+  shadow-intensity="1">
+</model-viewer>
+
         <div class="device-body">
           <div class="device-name">Ray-Ban Meta Display</div>
           <div class="device-maker">Meta · EssilorLuxottica · lancé en septembre 2025</div>
