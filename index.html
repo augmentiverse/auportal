@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Augmentiverse.org — The definitive reference resource on the Augmentiverse framework: an AR-first, standards-aligned path to persistent, interoperable spatial computing.">
+  <meta name="keywords" content="Augmentiverse, augmented reality, spatial computing, XR, AR, VR, MR, OpenXR, WebXR, glTF, OpenUSD, metaverse, extended reality, Elmqaddem">
+  <meta property="og:title" content="Augmentiverse — The AR-First Path to Shared Spatial Reality">
+  <meta property="og:description" content="The definitive reference on the Augmentiverse framework: persistent, interoperable digital layers anchored to the physical world.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0c0e12">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index,follow">
+  <meta property="og:url" content="https://augmentiverse.org/">
+  <meta property="og:image" content="https://augmentiverse.org/og-cover.svg">
+  <meta property="og:image:alt" content="Editorial cover for Augmentiverse.org">
+  <meta name="twitter:title" content="Augmentiverse - The AR-First Path to Shared Spatial Reality">
+  <meta name="twitter:description" content="An AR-first, standards-aligned reference on persistent spatial computing, interoperability, and open XR infrastructure.">
+  <meta name="twitter:image" content="https://augmentiverse.org/og-cover.svg">
+  <title>Augmentiverse — The AR-First Path to Shared Spatial Reality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://augmentiverse.org/">
+  <link rel="alternate" hreflang="en" href="https://augmentiverse.org/">
+  <link rel="alternate" hreflang="fr" href="https://augmentiverse.org/index-fr.html">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Augmentiverse.org",
+      "url": "https://augmentiverse.org/",
+      "description": "Independent educational resource on the Augmentiverse framework and the AR-first path to interoperable spatial computing.",
+      "inLanguage": "en",
+      "about": [
+        "Augmented reality",
+        "Spatial computing",
+        "OpenXR",
+        "WebXR",
+        "glTF",
+        "OpenUSD"
+      ]
+    }
+  </script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- READ PROGRESS -->
+<div id="read-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Augmentiverse home">
+        <div class="nav-logo-mark" aria-hidden="true">A</div>
+        <span class="nav-logo-text"><em>Augment</em>iverse</span>
+        <!--<model-viewer 
+  src="assets/augmentiverse.glb" 
+  alt="A 3D model of a robot" 
+  auto-rotate 
+  camera-controls 
+  ar
+  shadow-intensity="1">
+</model-viewer>-->
+
+      </a>
+
+      <div class="nav-links">
+        <a href="#concept">Concept</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#standards">Standards</a>
+        <a href="tools.html">Tools</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#people">People</a>
+        <a href="#glossary">Glossary</a>
+        <a href="#bibliography">Bibliography</a>
+        <a href="index-fr.html" class="lang-switch" lang="fr" hreflang="fr">FR</a>
+        <a href="#faq" class="nav-cta">FAQ</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-mobile" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation" hidden>
+    <a href="#concept">Concept</a>
+    <a href="#technologies">Technologies</a>
+    <a href="#standards">Standards</a>
+    <a href="tools.html">Tools</a>
+    <a href="#use-cases">Use Cases</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#people">People</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#bibliography">Bibliography</a>
+    <a href="#faq">FAQ</a>
+    <a href="index-fr.html" lang="fr" hreflang="fr">Français</a>
+    <a href="#newsletter">Newsletter</a>
+  </div>
+</nav>
+
+<aside class="page-rail" aria-label="On this page">
+  <div class="page-rail-inner">
+    <div class="page-rail-title">On this page</div>
+    <a class="side-nav-link" href="#hero">Overview</a>
+    <a class="side-nav-link" href="#concept">Concept</a>
+    <a class="side-nav-link" href="#technologies">Technologies</a>
+    <a class="side-nav-link" href="#standards">Standards</a>
+    <a class="side-nav-link" href="#use-cases">Use cases</a>
+    <a class="side-nav-link" href="#timeline">Timeline</a>
+    <a class="side-nav-link" href="#people">People</a>
+    <a class="side-nav-link" href="#glossary">Glossary</a>
+    <a class="side-nav-link" href="#bibliography">Bibliography</a>
+    <a class="side-nav-link" href="#faq">FAQ</a>
+    <a class="side-nav-link" href="#newsletter">Newsletter</a>
+  </div>
+</aside>
+
+<main id="main-content">
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<header class="hero" id="hero" role="banner">
+  <div class="hero-canvas" aria-hidden="true">
+    <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- Grid -->
+      <line x1="0" y1="200" x2="1400" y2="200" stroke="#fff" stroke-width="0.5"/>
+      <line x1="0" y1="400" x2="1400" y2="400" stroke="#fff" stroke-width="0.5"/>
+      <line x1="0" y1="600" x2="1400" y2="600" stroke="#fff" stroke-width="0.5"/>
+      <line x1="280" y1="0" x2="280" y2="800" stroke="#fff" stroke-width="0.5"/>
+      <line x1="700" y1="0" x2="700" y2="800" stroke="#fff" stroke-width="0.5"/>
+      <line x1="1120" y1="0" x2="1120" y2="800" stroke="#fff" stroke-width="0.5"/>
+      <!-- Diagonal accent -->
+      <line x1="700" y1="0" x2="1400" y2="800" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+      <!-- Circles -->
+      <circle cx="700" cy="400" r="180" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="700" cy="400" r="320" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.4"/>
+      <circle cx="700" cy="400" r="480" fill="none" stroke="#fff" stroke-width="0.2" opacity="0.2"/>
+      <!-- Glow -->
+      <ellipse cx="700" cy="350" rx="300" ry="200" fill="url(#g1)"/>
+      <!-- Corner mark -->
+      <text x="20" y="780" fill="#c9a84c" font-size="11" font-family="monospace" opacity="0.5">augmentiverse.org</text>
+    </svg>
+  </div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot" aria-hidden="true"></div>
+        <span class="t-label">Reference resource · Spatial computing · Est. 2026</span>
+      </div>
+
+      <h1 class="hero-title">
+        The <span class="accent">Augment</span>iverse
+        <span class="line-2">Framework</span>
+      </h1>
+     
+      <p class="hero-sub">
+        An AR-first, standards-aligned path to persistent, interoperable spatial computing —
+        the grounded alternative to the Metaverse myth, built on open protocols and physical reality.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#concept" class="btn btn-primary btn-arrow">Explore the concept</a>
+        <a href="#standards" class="btn btn-secondary">Technical standards</a>
+        <a href="https://doi.org/10.3991/ijet.v21i01.59733" target="_blank" rel="noopener" class="btn btn-ghost">
+          Primary paper ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-meta" role="region" aria-label="Key statistics">
+      <div class="hero-meta-item">
+        <div class="hero-meta-num" data-target="120" data-prefix="$" data-suffix="B">$0B</div>
+        <div class="hero-meta-label">Global AR market 2025</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num" data-target="29.7" data-suffix="%">0%</div>
+        <div class="hero-meta-label">AR market CAGR 2026–33</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num" data-target="6" data-suffix="">0</div>
+        <div class="hero-meta-label">Core open standards</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num" data-target="85.6" data-prefix="$" data-suffix="B">$0B</div>
+        <div class="hero-meta-label">Spatial computing by 2030</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════
+     01 — CONCEPT & THEORY
+══════════════════════════════════ -->
+
+
+<section id="concept" class="section" aria-labelledby="concept-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">01 — Concept &amp; theory</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="grid-2" style="gap:5rem; align-items:start;">
+      <div class="reveal">
+        <div class="section-title-block">
+          <div class="divider-gold"></div>
+          <h2 id="concept-heading" class="t-h1">Beyond the<br><em>Metaverse myth</em></h2>
+        </div>
+
+        <div class="pullquote">
+          <p class="pullquote-text">"The Augmentiverse is not a product or a platform — it is a conceptual framework for building the next layer of the internet on top of physical reality, not in replacement of it."</p>
+          <span class="pullquote-source">Elmqaddem, iJET vol. 21 no. 01, 2026</span>
+        </div>
+
+        <p class="t-body t-muted" style="margin-bottom:1rem;">
+          The term <strong style="color:var(--c-ink);">Augmentiverse</strong> was introduced in January 2026 by researcher N. Elmqaddem in the
+          <em>International Journal of Emerging Technologies in Learning</em>
+          (<a href="https://online-journals.org/index.php/i-jet/article/view/59733" target="_blank" rel="noopener" class="link">iJET, Vol. 21 No. 01, pp. 59–72</a>).
+          The paper offers a rigorous reframing of where immersive computing is genuinely heading, as distinct from the over-hyped Metaverse narrative of the early 2020s.
+        </p>
+        <p class="t-body t-muted">
+          Where the Metaverse implied a totalising virtual replacement for reality — popularised by Meta's 2021 rebrand and billions of dollars in investment that ultimately disappointed — the Augmentiverse proposes something far more achievable and more consequential: a persistent, standards-compliant layer of digital content anchored to and aware of the physical world.
+        </p>
+
+        <div class="citation-actions" style="margin-top:2rem;">
+          <a href="#bibliography" class="btn btn-ghost btn-sm btn-arrow">Primary source</a>
+          <button type="button" class="btn btn-secondary btn-sm" data-copy="Elmqaddem, N. (2026). From Metaverse Myth to Augmentiverse Reality: AR Smart Glasses and Standards-Led Convergence for Interoperability and Spatial Computing. International Journal of Emerging Technologies in Learning (iJET), 21(01), 59-72. doi:10.3991/ijet.v21i01.59733">Copy citation</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="reveal reveal-delay-1" style="margin-bottom:2rem;">
+          <h3 class="t-h3" style="margin-bottom:1rem; color:var(--c-gold);">Three defining commitments</h3>
+
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            <div class="highlight-box">
+              <div class="highlight-box-label">01 · AR-first design</div>
+              <p class="t-small t-muted">Digital content is built from the ground up to coexist with the physical environment, not replace it. The real world is the canvas, not an obstacle to be overcome.</p>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-box-label">02 · Open standards compliance</div>
+              <p class="t-small t-muted">Interoperability is non-negotiable. Content, identity, and assets must travel freely across devices and platforms via ratified, royalty-free protocols — never proprietary APIs that create platform lock-in.</p>
+            </div>
+            <div class="highlight-box">
+              <div class="highlight-box-label">03 · Persistent spatial presence</div>
+              <p class="t-small t-muted">Digital objects remain where they are placed in physical space. Discoverable and consistent for all users, over time, on any conformant device. The opposite of ephemeral, app-siloed AR filters.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <h3 class="t-h3" style="margin-bottom:1rem;">Theoretical foundations</h3>
+          <p class="t-small t-muted" style="margin-bottom:0.75rem;">The framework builds on two foundational intellectual pillars:</p>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <div class="resource-card">
+              <div class="resource-icon">◎</div>
+              <div>
+                <div class="resource-title">Reality–Virtuality Continuum</div>
+                <div class="resource-meta">Milgram &amp; Kishino · 1994</div>
+                <p class="t-small t-muted" style="margin-top:4px;">The definitive taxonomy of immersive environments from physical to virtual. The Augmentiverse sits in the AR/MR zone. <a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener" class="link" style="font-size:0.8rem;">doi ↗</a></p>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div class="resource-icon">⬡</div>
+              <div>
+                <div class="resource-title">Spatial Computing</div>
+                <div class="resource-meta">Greenwold · MIT, 2003</div>
+                <p class="t-small t-muted" style="margin-top:4px;">Computing that "retains and manipulates referents to real objects and spaces." Later adopted by Apple (2023). <a href="https://acg.media.mit.edu/people/simong/thesis/SpatialComputing.pdf" target="_blank" rel="noopener" class="link" style="font-size:0.8rem;">thesis ↗</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DATA BAR -->
+    <div class="data-bar reveal" style="margin-top:4rem;">
+      <div class="data-bar-item">
+        <div class="data-bar-num" data-target="120" data-prefix="$" data-suffix="B">$120B</div>
+        <div class="data-bar-label">AR market 2025</div>
+      </div>
+      <div class="data-bar-item">
+        <div class="data-bar-num" data-target="85.6" data-prefix="$" data-suffix="B">$85.6B</div>
+        <div class="data-bar-label">Spatial computing by 2030</div>
+      </div>
+      <div class="data-bar-item">
+        <div class="data-bar-num" data-target="33" data-suffix="%">33%</div>
+        <div class="data-bar-label">CAGR — spatial computing</div>
+      </div>
+      <div class="data-bar-item">
+        <div class="data-bar-num" data-target="40" data-prefix="+" data-suffix="%">+40%</div>
+        <div class="data-bar-label">Industrial XR growth 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     02 — TECHNOLOGIES (AR/VR/MR/XR)
+══════════════════════════════════ -->
+<section id="technologies" class="section section-dark" aria-labelledby="tech-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">02 — Technologies</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal">
+      <h2 id="tech-heading" class="t-h1" style="margin-bottom:0.5rem;">The reality–virtuality<br><em>continuum</em></h2>
+      <p class="section-intro" style="margin-bottom:2rem;">
+        Based on <a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener" class="link">Milgram &amp; Kishino (1994)</a>.
+        The Augmentiverse occupies the AR and MR zones — reality-anchored, not reality-replacing.
+      </p>
+    </div>
+
+    <!-- SPECTRUM -->
+    <div class="spectrum-container reveal">
+      <div class="spectrum-bar" aria-label="Reality to virtuality spectrum">
+        <div class="spectrum-marker" data-pos="15" style="background:#4a8fd4;" title="AR zone"></div>
+        <div class="spectrum-marker" data-pos="38" style="background:#7f77dd;" title="MR zone — Augmentiverse"></div>
+        <div class="spectrum-marker" data-pos="75" style="background:#c96b4a;" title="VR zone"></div>
+      </div>
+      <div class="spectrum-nodes">
+        <div class="spectrum-node"><div class="spectrum-node-label t-label" style="color:var(--c-blue);">Real world</div></div>
+        <div class="spectrum-node"><div class="spectrum-node-label t-label" style="color:var(--c-blue);">AR</div></div>
+        <div class="spectrum-node"><div class="spectrum-node-label t-label" style="color:#7f77dd;">MR</div></div>
+        <div class="spectrum-node"><div class="spectrum-node-label t-label" style="color:var(--c-coral);">VR</div></div>
+        <div class="spectrum-node"><div class="spectrum-node-label t-label" style="color:var(--c-coral);">Virtual</div></div>
+      </div>
+      <div style="text-align:center; margin-top:0.5rem;">
+        <span class="t-label" style="color:var(--c-gold);">← Augmentiverse zone →</span>
+      </div>
+    </div>
+
+    <!-- XR CARDS -->
+    <div class="tab-nav reveal" style="margin-top:3rem;" role="tablist" aria-label="Technology types">
+      <button class="tab-btn active" role="tab" aria-selected="true">AR</button>
+      <button class="tab-btn" role="tab" aria-selected="false">VR</button>
+      <button class="tab-btn" role="tab" aria-selected="false">MR</button>
+      <button class="tab-btn" role="tab" aria-selected="false">XR</button>
+    </div>
+
+    <div class="reveal">
+      <div class="tab-pane active" id="tab-ar" role="tabpanel">
+        <div class="grid-2" style="align-items:start;">
+          <div>
+            <div class="card card-gold">
+              <span class="card-tag card-tag-blue">Augmented Reality</span>
+              <h3 class="card-title">Digital overlaid on physical reality</h3>
+              <p class="card-body">Digital information is overlaid on the user's view of the real world via a camera or transparent display. The real world is not replaced — it is annotated. AR content does not necessarily understand or deeply interact with its physical surroundings; it annotates rather than responds to reality.</p>
+              <p class="card-body"><strong style="color:var(--c-ink);">Augmentiverse relevance:</strong> AR is the foundational layer. The Augmentiverse extends current AR by requiring spatial anchoring and open standards — moving from ephemeral overlays to persistent, discoverable spatial content.</p>
+              <div class="card-links">
+                <a href="https://developers.google.com/ar" target="_blank" rel="noopener" class="card-link">Google ARCore</a>
+                <a href="https://developer.apple.com/augmented-reality/" target="_blank" rel="noopener" class="card-link">Apple ARKit</a>
+                <a href="https://ar.snap.com/lens-studio" target="_blank" rel="noopener" class="card-link">Snap Lens Studio</a>
+                <a href="https://www.meta.com/smart-glasses/" target="_blank" rel="noopener" class="card-link">Meta Ray-Ban</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="t-label" style="margin-bottom:1rem;">Key characteristics</p>
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-blue); min-width:80px;">Immersion</span>
+                <span class="t-small t-muted">Low — the real world remains primary</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-blue); min-width:80px;">Hardware</span>
+                <span class="t-small t-muted">Smartphone, smart glasses, tablet — no headset required</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-blue); min-width:80px;">Anchoring</span>
+                <span class="t-small t-muted">Weak — content often resets between sessions</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-blue); min-width:80px;">Standards</span>
+                <span class="t-small t-muted"><a href="https://www.w3.org/TR/webxr-ar-module-1/" target="_blank" rel="noopener" class="link">WebXR AR Module</a>, ARCore, ARKit</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-blue); min-width:80px;">Examples</span>
+                <span class="t-small t-muted">Pokémon Go, Google Maps AR, IKEA Place, Snapchat filters</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-vr" role="tabpanel">
+        <div class="grid-2" style="align-items:start;">
+          <div>
+            <div class="card" style="border-color:rgba(127,119,221,0.25);">
+              <span class="card-tag" style="background:rgba(127,119,221,0.12); color:#afa9ec;">Virtual Reality</span>
+              <h3 class="card-title">Full immersion in synthetic environments</h3>
+              <p class="card-body">A fully immersive, computer-generated environment that replaces the user's view of the real world entirely. VR occupies the far virtual end of Milgram's continuum. Users have no visual awareness of their physical surroundings while immersed.</p>
+              <p class="card-body"><strong style="color:var(--c-ink);">Augmentiverse relevance:</strong> VR is the opposite of the Augmentiverse's philosophy. However, VR training environments and simulation tools feed skills and content back into the physical-world-first Augmentiverse stack.</p>
+              <div class="card-links">
+                <a href="https://www.meta.com/quest/" target="_blank" rel="noopener" class="card-link">Meta Quest 3</a>
+                <a href="https://www.playstation.com/en-us/ps-vr2/" target="_blank" rel="noopener" class="card-link">PlayStation VR2</a>
+                <a href="https://store.steampowered.com/steamvr" target="_blank" rel="noopener" class="card-link">SteamVR</a>
+                <a href="https://www.valvesoftware.com/en/index/headset" target="_blank" rel="noopener" class="card-link">Valve Index</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="t-label" style="margin-bottom:1rem;">Key characteristics</p>
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:#afa9ec; min-width:80px;">Immersion</span>
+                <span class="t-small t-muted">Total — the real world is invisible</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:#afa9ec; min-width:80px;">Hardware</span>
+                <span class="t-small t-muted">Head-mounted display (HMD) required</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:#afa9ec; min-width:80px;">Anchoring</span>
+                <span class="t-small t-muted">None — environments are fully synthetic</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:#afa9ec; min-width:80px;">Standards</span>
+                <span class="t-small t-muted"><a href="https://www.khronos.org/openxr/" target="_blank" rel="noopener" class="link">OpenXR 1.1</a>, <a href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener" class="link">WebXR</a></span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:#afa9ec; min-width:80px;">Examples</span>
+                <span class="t-small t-muted">VR training simulators, Horizon Worlds, Beat Saber, VR therapy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-mr" role="tabpanel">
+        <div class="grid-2" style="align-items:start;">
+          <div>
+            <div class="card card-gold">
+              <span class="card-tag card-tag-gold">Mixed Reality ★ Augmentiverse Core</span>
+              <h3 class="card-title">Spatial computing at its fullest</h3>
+              <p class="card-body">Digital objects are spatially anchored to and deeply aware of the physical world. MR systems map their environment — holograms stay fixed in space as you move, can be occluded behind real surfaces, and interact with real objects. This is the Augmentiverse's primary mode of experience.</p>
+              <p class="card-body"><strong style="color:var(--c-gold);">Why MR is the Augmentiverse's home:</strong> It satisfies all three commitments — AR-first, spatially persistent, and the target of OpenXR and WebXR AR module standards.</p>
+              <div class="card-links">
+                <a href="https://learn.microsoft.com/en-us/hololens/" target="_blank" rel="noopener" class="card-link">Microsoft HoloLens</a>
+                <a href="https://www.apple.com/apple-vision-pro/" target="_blank" rel="noopener" class="card-link">Apple Vision Pro</a>
+                <a href="https://www.magicleap.com/" target="_blank" rel="noopener" class="card-link">Magic Leap 2</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="t-label" style="margin-bottom:1rem;">Key characteristics</p>
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-gold); min-width:80px;">Immersion</span>
+                <span class="t-small t-muted">Partial — real world visible and primary</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-gold); min-width:80px;">Hardware</span>
+                <span class="t-small t-muted">Spatial computing headset required</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-gold); min-width:80px;">Anchoring</span>
+                <span class="t-small t-muted">Strong — holograms persist and occlude correctly</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-gold); min-width:80px;">Standards</span>
+                <span class="t-small t-muted"><a href="https://www.khronos.org/openxr/" target="_blank" rel="noopener" class="link">OpenXR</a>, <a href="https://www.w3.org/TR/webxr-ar-module-1/" target="_blank" rel="noopener" class="link">WebXR AR</a>, OpenUSD</span>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:baseline;">
+                <span class="t-label" style="color:var(--c-gold); min-width:80px;">Examples</span>
+                <span class="t-small t-muted">HoloLens surgery, Vision Pro spatial apps, MR design tools</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-xr" role="tabpanel">
+        <div class="grid-2" style="align-items:start;">
+          <div>
+            <div class="card">
+              <span class="card-tag card-tag-teal">Extended Reality</span>
+              <h3 class="card-title">The umbrella term for all immersive tech</h3>
+              <p class="card-body">XR is not itself a technology — it is a collective label used in standards documents, policy frameworks, and enterprise strategy to refer to AR, VR, and MR without enumerating each. The term appears in OpenXR's name, in W3C's Immersive Web Working Group, and in ETSI's infrastructure standards.</p>
+              <p class="card-body"><strong style="color:var(--c-ink);">Relationship to Augmentiverse:</strong> The Augmentiverse uses XR standards (especially OpenXR and WebXR) as its runtime foundation but specifically prioritises the AR/MR end of the XR spectrum.</p>
+              <div class="card-links">
+                <a href="https://www.khronos.org/openxr/" target="_blank" rel="noopener" class="card-link">OpenXR — Khronos</a>
+                <a href="https://www.w3.org/immersive-web/" target="_blank" rel="noopener" class="card-link">W3C Immersive Web</a>
+                <a href="https://metaverse-standards.org/" target="_blank" rel="noopener" class="card-link">Metaverse Standards Forum</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="t-label" style="margin-bottom:1rem;">XR vs Augmentiverse</p>
+            <div class="highlight-box">
+              <div class="highlight-box-label">Key distinction</div>
+              <p class="t-small t-muted">XR is a definitional umbrella encompassing all immersive technologies. The Augmentiverse is a normative framework — it specifies <em>how</em> immersive technologies should be built (AR-first, open standards, persistent) rather than simply categorising them.</p>
+            </div>
+            <div style="margin-top:1rem;">
+              <p class="t-small t-muted">The Augmentiverse uses XR's standards infrastructure while taking a strong architectural position: digital content should enrich the physical world, not replace it. This is a philosophical commitment that XR as a category does not impose.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     03 — TECHNICAL STANDARDS
+══════════════════════════════════ -->
+<section id="standards" class="section" aria-labelledby="standards-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">03 — Technical standards</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:3rem;">
+      <h2 id="standards-heading" class="t-h1">The open standards<br><em>that make it possible</em></h2>
+      <p class="section-intro">
+        The Augmentiverse is not a product — it is an ecosystem whose viability depends entirely on cross-industry coordination around open, ratified protocols. Without interoperability, persistent spatial content fragments into proprietary silos. Six foundational standards form its technical architecture.
+      </p>
+    </div>
+
+    <div class="grid-2" style="gap:var(--sp-md);">
+      <div class="card card-gold reveal">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+          <span class="card-tag card-tag-gold">XR Runtime</span>
+          <div class="std-pill">
+            <div class="std-pill-dot" style="background:#c9a84c;"></div>
+            OpenXR 1.1
+          </div>
+        </div>
+        <h3 class="card-title">OpenXR — Khronos Group</h3>
+        <p class="card-body">A royalty-free, open standard providing a common API for XR hardware and software. OpenXR 1.1 consolidates multiple extensions into the core specification, dramatically reducing fragmentation. Where previously developers had to target each headset separately via proprietary APIs, OpenXR enables a single codebase to run across devices from Meta, Microsoft, Valve, Sony, HTC, and Pico. The fundamental runtime layer of the Augmentiverse.</p>
+        <div class="card-links">
+          <a href="https://www.khronos.org/openxr/" target="_blank" rel="noopener" class="card-link">Overview</a>
+          <a href="https://registry.khronos.org/OpenXR/" target="_blank" rel="noopener" class="card-link">Spec registry</a>
+          <a href="https://github.com/KhronosGroup/OpenXR-Docs" target="_blank" rel="noopener" class="card-link">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+          <span class="card-tag card-tag-blue">Web Standard</span>
+          <div class="std-pill">
+            <div class="std-pill-dot" style="background:#4a8fd4;"></div>
+            W3C CRD
+          </div>
+        </div>
+        <h3 class="card-title">WebXR Device API — W3C</h3>
+        <p class="card-body">A W3C Candidate Recommendation enabling AR and VR experiences directly in web browsers without app installation. Developed by the W3C Immersive Web Working Group; shipped in Chrome, Edge, Firefox, and Samsung Internet. The WebXR AR Module specifically enables immersive-ar sessions. Critical for the Augmentiverse: a shared AR layer must be accessible via URL, not locked to an app store.</p>
+        <div class="card-links">
+          <a href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener" class="card-link">W3C spec</a>
+          <a href="https://www.w3.org/TR/webxr-ar-module-1/" target="_blank" rel="noopener" class="card-link">AR module</a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API" target="_blank" rel="noopener" class="card-link">MDN docs</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+          <span class="card-tag card-tag-teal">3D Format</span>
+          <div class="std-pill">
+            <div class="std-pill-dot" style="background:#3aaa8a;"></div>
+            ISO/IEC 12113
+          </div>
+        </div>
+        <h3 class="card-title">glTF 2.0 — Khronos Group</h3>
+        <p class="card-body">The "JPEG of 3D" — a royalty-free specification for efficient transmission and loading of 3D scenes and models. Recognised as ISO/IEC 12113:2022. Supports physically-based rendering (PBR) and is the primary format for web-based and real-time 3D content. glTF minimises asset size and runtime processing. Essential for authoring Augmentiverse content once and deploying it everywhere.</p>
+        <div class="card-links">
+          <a href="https://www.khronos.org/gltf/" target="_blank" rel="noopener" class="card-link">Overview</a>
+          <a href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html" target="_blank" rel="noopener" class="card-link">Spec 2.0</a>
+          <a href="https://github.com/KhronosGroup/glTF" target="_blank" rel="noopener" class="card-link">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+          <span class="card-tag card-tag-gold">3D Scene</span>
+          <div class="std-pill">
+            <div class="std-pill-dot" style="background:#c9a84c;"></div>
+            AOUSD Core 1.0
+          </div>
+        </div>
+        <h3 class="card-title">OpenUSD — Alliance for OpenUSD</h3>
+        <p class="card-body">Universal Scene Description — originally developed by Pixar, now governed by AOUSD (Apple, Nvidia, Pixar, Adobe, Epic Games, IKEA, Unity, Meta). OpenUSD is a high-performance format for composing large-scale 3D scenes. AOUSD and Khronos have a formal liaison to align OpenUSD and glTF. OpenUSD Core Spec 1.0 is now available.</p>
+        <div class="card-links">
+          <a href="https://aousd.org/" target="_blank" rel="noopener" class="card-link">AOUSD</a>
+          <a href="https://openusd.org/release/index.html" target="_blank" rel="noopener" class="card-link">Docs</a>
+          <a href="https://www.khronos.org/blog/building-bridges-in-3d-aousd-and-khronos-collaborate-on-openusd-and-gltf-interoperability" target="_blank" rel="noopener" class="card-link">AOUSD–Khronos liaison</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+          <span class="card-tag card-tag-blue">Identity</span>
+          <div class="std-pill">
+            <div class="std-pill-dot" style="background:#4a8fd4;"></div>
+            W3C CR — Mar 2026
+          </div>
+        </div>
+        <h3 class="card-title">DIDs &amp; Verifiable Credentials — W3C</h3>
+        <p class="card-body">Decentralised Identifiers (DIDs v1.1) and Verifiable Credentials (VC Data Model 2.0) enable portable, self-sovereign digital identity. Users carry persistent identity across spatial environments without platform lock-in. DIDs are cryptographically verifiable without any central authority. Essential for Augmentiverse content authorship, access control, and persistent user presence.</p>
+        <div class="card-links">
+          <a href="https://www.w3.org/TR/did-1.1/" target="_blank" rel="noopener" class="card-link">DID v1.1</a>
+          <a href="https://www.w3.org/TR/vc-data-model-2.0/" target="_blank" rel="noopener" class="card-link">VC 2.0</a>
+          <a href="https://w3c-ccg.github.io/did-primer/" target="_blank" rel="noopener" class="card-link">Primer</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1rem;">
+          <span class="card-tag card-tag-teal">Infrastructure</span>
+          <div class="std-pill">
+            <div class="std-pill-dot" style="background:#3aaa8a;"></div>
+            ETSI MEC ISG
+          </div>
+        </div>
+        <h3 class="card-title">Mobile Edge Computing — ETSI</h3>
+        <p class="card-body">Real-time AR requires sub-20ms latency for spatial tracking and rendering. Mobile edge computing places compute nodes physically close to the user — at base stations or local data centres — eliminating round-trip latency to centralised cloud infrastructure. Persistent spatial content that responds to the world in real time cannot tolerate high-latency connections. Standardised by ETSI's MEC Industry Specification Group.</p>
+        <div class="card-links">
+          <a href="https://www.etsi.org/technologies/multi-access-edge-computing" target="_blank" rel="noopener" class="card-link">ETSI MEC</a>
+          <a href="https://www.etsi.org/committee/1425-mec" target="_blank" rel="noopener" class="card-link">MEC ISG</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     04 — USE CASES
+══════════════════════════════════ -->
+<section id="use-cases" class="section section-dark" aria-labelledby="usecases-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">04 — Real-world applications</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:3rem;">
+      <h2 id="usecases-heading" class="t-h1">Where the Augmentiverse<br><em>is already emerging</em></h2>
+      <p class="section-intro">The Augmentiverse is not a future state — its constituent technologies are already deployed across critical sectors. The following applications illustrate what persistent, standards-aligned AR enables today.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="card-tag card-tag-teal" style="margin-bottom:0.75rem;">Healthcare</div>
+        <h3 class="card-title">Surgical planning &amp; medical training</h3>
+        <p class="card-body">AR overlays provide surgeons with real-time anatomical data during procedures. VR simulations train clinicians in high-fidelity environments. XR-enabled digital twins allow personalised treatment planning. A 2025 systematic review confirmed XR effectiveness in medical education and surgical planning across 21 peer-reviewed studies.</p>
+        <div class="highlight-box" style="margin:0.75rem 0;">
+          <div class="highlight-box-label">Market data</div>
+          <p class="t-small t-muted">Healthcare AR: $610M (2018) → projected $4.2B (2026) · CAGR 33.9%</p>
+        </div>
+        <div class="card-links">
+          <a href="https://journals.sagepub.com/doi/10.1177/23821205251342315" target="_blank" rel="noopener" class="card-link">Systematic review 2025</a>
+          <a href="https://itif.org/publications/2025/06/02/arvrs-potential-in-health-care/" target="_blank" rel="noopener" class="card-link">ITIF analysis</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div class="card-tag card-tag-gold" style="margin-bottom:0.75rem;">Manufacturing</div>
+        <h3 class="card-title">Assembly guidance &amp; remote assistance</h3>
+        <p class="card-body">AR overlays real-time work instructions onto assembly tasks, reducing errors. Remote experts guide field workers via shared spatial views. Digital twins of factory floors allow simulation before physical changes. XR device shipments for industrial use grew over 40% year-over-year in 2025.</p>
+        <div class="highlight-box" style="margin:0.75rem 0;">
+          <div class="highlight-box-label">Market data</div>
+          <p class="t-small t-muted">AR IoT in manufacturing: projected $90–110B by 2030</p>
+        </div>
+        <div class="card-links">
+          <a href="https://aimultiple.com/ar-in-manufacturing" target="_blank" rel="noopener" class="card-link">XR in manufacturing 2026</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-2">
+        <div class="card-tag card-tag-blue" style="margin-bottom:0.75rem;">Education</div>
+        <h3 class="card-title">Immersive learning environments</h3>
+        <p class="card-body">AR overlays contextual information on physical materials. VR classrooms provide gamified, adaptive learning. VR training delivers up to 78% better learning outcomes than traditional methods. 30% of universities worldwide offered VR-based courses as of 2024, with 69.4% deployment growth in 2024.</p>
+        <div class="highlight-box" style="margin:0.75rem 0;">
+          <div class="highlight-box-label">Outcome data</div>
+          <p class="t-small t-muted">Up to 78% better learning outcomes vs. traditional methods</p>
+        </div>
+        <div class="card-links">
+          <a href="https://yordstudio.com/xr-trends-2026-the-future-of-ar-and-vr-for-business/" target="_blank" rel="noopener" class="card-link">XR trends 2026</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-tag card-tag-teal" style="margin-bottom:0.75rem;">Architecture</div>
+        <h3 class="card-title">Spatial design &amp; building visualisation</h3>
+        <p class="card-body">Architects overlay proposed structures onto physical sites. Stakeholders experience buildings before construction. AR allows real-time comparison of design options in situ, with multiple users sharing the same spatial view. A core Augmentiverse application: persistent content anchored to specific physical coordinates.</p>
+        <div class="card-links">
+          <a href="https://www.trimble.com/en/solutions/technologies/extended-reality" target="_blank" rel="noopener" class="card-link">Trimble XR for construction</a>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div class="card-tag card-tag-gold" style="margin-bottom:0.75rem;">Retail</div>
+        <h3 class="card-title">Product visualisation &amp; virtual try-on</h3>
+        <p class="card-body">AR allows consumers to place furniture at home (IKEA Place), try on eyewear or clothing virtually, or inspect product details in 3D. glTF and WebXR make experiences accessible via browser without app download. IKEA is an AOUSD member — reflecting strategic importance of 3D asset standards to retail.</p>
+        <div class="highlight-box" style="margin:0.75rem 0;">
+          <div class="highlight-box-label">Growth signal</div>
+          <p class="t-small t-muted">Smart glasses CAGR: 38%+ expected 2026–2033</p>
+        </div>
+      </div>
+
+      <div class="card reveal reveal-delay-2">
+        <div class="card-tag card-tag-blue" style="margin-bottom:0.75rem;">Heritage</div>
+        <h3 class="card-title">Site reconstruction &amp; museum augmentation</h3>
+        <p class="card-body">AR overlays reconstructed historical structures onto archaeological sites. Visitors activate contextual information by pointing devices at exhibits. Spatial anchoring ensures content is geographically tied to the correct physical location — exemplifying the Augmentiverse's persistent-presence principle in a public, open-access context.</p>
+        <div class="card-links">
+          <a href="https://xr.jmir.org/2024/1/e52904" target="_blank" rel="noopener" class="card-link">JMIR XR taxonomy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     05 — TIMELINE
+══════════════════════════════════ -->
+<section id="timeline" class="section" aria-labelledby="timeline-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">05 — Historical timeline</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="grid-2" style="gap:5rem; align-items:start;">
+      <div class="reveal">
+        <div class="divider-gold"></div>
+        <h2 id="timeline-heading" class="t-h1">The road to<br><em>spatial computing</em></h2>
+        <p class="t-body t-muted" style="margin-top:1rem;">Key intellectual and technological milestones in the emergence of the Augmentiverse framework — from foundational theory to current standards ratification.</p>
+        <div class="stat-block" style="margin-top:2rem; text-align:left;">
+          <div class="stat-num">60+</div>
+          <div class="stat-label">Years of intellectual history behind the concept</div>
+        </div>
+      </div>
+
+      <div class="timeline reveal reveal-delay-1">
+        <div class="tl-entry">
+          <div class="tl-year">1965</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Foundational theory</div>
+            <div class="tl-title">Sutherland — "The Ultimate Display"</div>
+            <div class="tl-body">Envisions a display room where computers control the existence of matter. Plants the conceptual seed for immersive computing. <a href="https://worrydream.com/refs/Sutherland_1965_-_The_Ultimate_Display.pdf" target="_blank" rel="noopener">Read the paper ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">1991</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Ubiquitous computing</div>
+            <div class="tl-title">Weiser — "The Computer for the 21st Century"</div>
+            <div class="tl-body">The most profound technology disappears into everyday life — the intellectual ancestor of the Augmentiverse's physical-world-first philosophy. <a href="https://www.lri.fr/~mbl/Stanford/CS477/papers/Weiser-SciAm.pdf" target="_blank" rel="noopener">Full text ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">1994</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Core taxonomy</div>
+            <div class="tl-title">Milgram &amp; Kishino — Reality–Virtuality Continuum</div>
+            <div class="tl-body">The definitive taxonomy of immersive environments. The Augmentiverse's theoretical home is in the AR/MR zone. <a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener">doi:10.1117/12.197321 ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">2003</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Spatial computing defined</div>
+            <div class="tl-title">Greenwold — Spatial Computing (MIT thesis)</div>
+            <div class="tl-body">Defines spatial computing as "human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces." <a href="https://acg.media.mit.edu/people/simong/thesis/SpatialComputing.pdf" target="_blank" rel="noopener">MIT thesis ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">2016</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Consumer breakthrough</div>
+            <div class="tl-title">Pokémon Go · HoloLens launch</div>
+            <div class="tl-body">Consumer AR reaches mass awareness (1 billion downloads). HoloLens demonstrates persistent spatial holograms professionally for the first time.</div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">2019</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Standards milestone</div>
+            <div class="tl-title">OpenXR 1.0 ratified by Khronos</div>
+            <div class="tl-body">The first stable, cross-platform XR API — the runtime interoperability foundation on which the Augmentiverse depends. <a href="https://www.khronos.org/news/permalink/khronos-releases-openxr-1.0-specification" target="_blank" rel="noopener">Announcement ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">2021</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Hype &amp; limits</div>
+            <div class="tl-title">The Metaverse moment — and its stall</div>
+            <div class="tl-body">Meta's rebrand and billions invested. Enthusiasm peaks, then stalls as hardware, content, and standards lag the vision. The Metaverse becomes a cautionary case for concept without infrastructure.</div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">2022</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Dual milestone</div>
+            <div class="tl-title">W3C DID v1.0 Recommendation · glTF → ISO standard</div>
+            <div class="tl-body">Two critical Augmentiverse pillars reach formal standardisation in the same year. <a href="https://www.w3.org/press-releases/2022/did-rec/" target="_blank" rel="noopener">DID press release ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">2023</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Spatial computing reframe</div>
+            <div class="tl-title">Apple Vision Pro · AOUSD launches · Khronos–AOUSD liaison</div>
+            <div class="tl-body">Apple reframes the category as "spatial computing." AOUSD launched with 12 new major members. Khronos and AOUSD form a formal liaison to align OpenUSD and glTF. <a href="https://aousd.org/" target="_blank" rel="noopener">AOUSD ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">2026</div>
+          <div class="tl-dot filled"></div>
+          <div>
+            <div class="tl-tag">Framework published</div>
+            <div class="tl-title">Augmentiverse paper · OpenXR 1.1 · DID v1.1</div>
+            <div class="tl-body">Elmqaddem introduces the Augmentiverse in iJET. OpenXR 1.1 consolidates extensions. W3C DID v1.1 reaches Candidate Recommendation. <a href="https://online-journals.org/index.php/i-jet/article/view/59733" target="_blank" rel="noopener">Paper ↗</a></div>
+          </div>
+        </div>
+
+        <div class="tl-entry">
+          <div class="tl-year">→ future</div>
+          <div class="tl-dot future"></div>
+          <div>
+            <div class="tl-tag">Hardware inflection</div>
+            <div class="tl-title">Mass-market AR glasses</div>
+            <div class="tl-body">Lightweight, all-day wearable AR — the hardware milestone on which the Augmentiverse's full potential depends. Eyewear market projected at 15M units by 2030, 85%+ featuring displays.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     06 — PEOPLE & ORGANISATIONS
+══════════════════════════════════ -->
+<section id="people" class="section section-dark" aria-labelledby="people-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">06 — Key people &amp; organisations</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:3rem;">
+      <h2 id="people-heading" class="t-h1">The intellectual<br><em>lineage</em></h2>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:4rem;">
+      <div class="card reveal">
+        <div class="person-role">Theorist · 1994</div>
+        <div class="person-name">Paul Milgram &amp; Fumio Kishino</div>
+        <div class="person-affil">University of Toronto / ATR Labs</div>
+        <p class="person-body">Co-authors of the Reality–Virtuality Continuum (1994). The continuum remains the definitive theoretical framework for classifying immersive technologies, and is the foundational scaffold on which the Augmentiverse positions itself along the spectrum from real to virtual.</p>
+        <div class="person-link"><a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener">Foundational paper (1994) ↗</a></div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div class="person-role">Theorist · 1991</div>
+        <div class="person-name">Mark Weiser</div>
+        <div class="person-affil">Xerox PARC (1952–1999)</div>
+        <p class="person-body">Inventor of ubiquitous computing — the idea that the most profound technology disappears into everyday life. His 1991 paper is a direct intellectual antecedent of the Augmentiverse's physical-world-first philosophy: computing as environment, not device.</p>
+        <div class="person-link"><a href="https://www.lri.fr/~mbl/Stanford/CS477/papers/Weiser-SciAm.pdf" target="_blank" rel="noopener">The Computer for the 21st Century ↗</a></div>
+      </div>
+
+      <div class="card reveal reveal-delay-2">
+        <div class="person-role">Theorist · 2003</div>
+        <div class="person-name">Simon Greenwold</div>
+        <div class="person-affil">MIT Media Lab</div>
+        <p class="person-body">Defined "spatial computing" in his 2003 MIT thesis as "human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces." This definition, later adopted by Apple in 2023, is central to the Augmentiverse's machine-understood physical world.</p>
+        <div class="person-link"><a href="https://acg.media.mit.edu/people/simong/thesis/SpatialComputing.pdf" target="_blank" rel="noopener">Spatial Computing thesis ↗</a></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="person-role">Framework author · 2026</div>
+        <div class="person-name">N. Elmqaddem</div>
+        <div class="person-affil">iJET — International Journal of Emerging Technologies in Learning</div>
+        <p class="person-body">Author of the paper introducing the Augmentiverse concept, synthesising developments in AR smart glasses, XR standards, decentralised identity, and edge computing into a coherent framework for the AR-first path to shared spatial reality.</p>
+        <div class="person-link"><a href="https://online-journals.org/index.php/i-jet/article/view/59733" target="_blank" rel="noopener">Augmentiverse paper (2026) ↗</a></div>
+      </div>
+
+      <div class="card reveal reveal-delay-1">
+        <div class="person-role">Standards leader</div>
+        <div class="person-name">Neil Trevett</div>
+        <div class="person-affil">VP Developer Ecosystems, NVIDIA · President, Khronos Group</div>
+        <p class="person-body">Leads Khronos Group's work on OpenXR and glTF; a leading advocate for open interoperability standards as the foundation for the spatial internet. Active in the Metaverse Standards Forum and the Open Metaverse Browser Initiative (launched 2026).</p>
+        <div class="person-link"><a href="https://www.khronos.org/" target="_blank" rel="noopener">Khronos Group ↗</a></div>
+      </div>
+
+      <div class="card reveal reveal-delay-2">
+        <div class="person-role">Industry theorist</div>
+        <div class="person-name">Matthew Ball</div>
+        <div class="person-affil">Author, <em>The Metaverse</em> (2022)</div>
+        <p class="person-body">Influential analyst who has extensively studied the competing terminology around spatial computing. His 2024 essay provides essential context for understanding why the Augmentiverse is a distinct and deliberate framing rather than a synonym for "spatial computing" or "metaverse."</p>
+        <div class="person-link"><a href="https://www.matthewball.co/all/metaversespatialandmore" target="_blank" rel="noopener">On Spatial Computing (2024) ↗</a></div>
+      </div>
+    </div>
+
+    <!-- ORGANISATIONS -->
+    <div class="section-header" style="margin-top:2rem;">
+      <span class="t-label">Key organisations</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card reveal" style="padding:var(--sp-md);">
+        <div class="card-tag card-tag-gold" style="margin-bottom:0.5rem;">Standards body</div>
+        <h3 class="t-h4" style="margin-bottom:0.5rem;">Khronos Group</h3>
+        <p class="t-small t-muted" style="margin-bottom:0.75rem;">Consortium of 150+ companies developing OpenXR, glTF, Vulkan, WebGL. The runtime and 3D format heart of the Augmentiverse.</p>
+        <a href="https://www.khronos.org/" target="_blank" rel="noopener" class="card-link">khronos.org</a>
+      </div>
+      <div class="card reveal reveal-delay-1" style="padding:var(--sp-md);">
+        <div class="card-tag card-tag-blue" style="margin-bottom:0.5rem;">Standards body</div>
+        <h3 class="t-h4" style="margin-bottom:0.5rem;">W3C — World Wide Web Consortium</h3>
+        <p class="t-small t-muted" style="margin-bottom:0.75rem;">Develops WebXR, DIDs, and Verifiable Credentials — ensuring the Augmentiverse is web-accessible and identity-portable.</p>
+        <a href="https://www.w3.org/" target="_blank" rel="noopener" class="card-link">w3.org</a>
+      </div>
+      <div class="card reveal reveal-delay-2" style="padding:var(--sp-md);">
+        <div class="card-tag card-tag-teal" style="margin-bottom:0.5rem;">Standards body</div>
+        <h3 class="t-h4" style="margin-bottom:0.5rem;">Alliance for OpenUSD (AOUSD)</h3>
+        <p class="t-small t-muted" style="margin-bottom:0.75rem;">Governs OpenUSD with Apple, Nvidia, Pixar, Adobe, IKEA, Epic, Unity. Formal Khronos liaison for glTF alignment.</p>
+        <a href="https://aousd.org/" target="_blank" rel="noopener" class="card-link">aousd.org</a>
+      </div>
+      <div class="card reveal" style="padding:var(--sp-md);">
+        <div class="card-tag card-tag-gold" style="margin-bottom:0.5rem;">Industry forum</div>
+        <h3 class="t-h4" style="margin-bottom:0.5rem;">Metaverse Standards Forum</h3>
+        <p class="t-small t-muted" style="margin-bottom:0.75rem;">Broad industry coordination on XR standards, including the 3D asset interoperability working group and Open Metaverse Browser Initiative (2026).</p>
+        <a href="https://metaverse-standards.org/" target="_blank" rel="noopener" class="card-link">metaverse-standards.org</a>
+      </div>
+      <div class="card reveal reveal-delay-1" style="padding:var(--sp-md);">
+        <div class="card-tag card-tag-blue" style="margin-bottom:0.5rem;">Academic publisher</div>
+        <h3 class="t-h4" style="margin-bottom:0.5rem;">iJET — Int'l Journal of Emerging Technologies in Learning</h3>
+        <p class="t-small t-muted" style="margin-bottom:0.75rem;">Peer-reviewed journal publishing the Augmentiverse framework (Jan 2026, Vol. 21 No. 01). Indexed in EBSCO, DBLP; archived in Portico.</p>
+        <a href="https://online-journals.org/index.php/i-jet" target="_blank" rel="noopener" class="card-link">online-journals.org</a>
+      </div>
+      <div class="card reveal reveal-delay-2" style="padding:var(--sp-md);">
+        <div class="card-tag card-tag-teal" style="margin-bottom:0.5rem;">Infrastructure</div>
+        <h3 class="t-h4" style="margin-bottom:0.5rem;">ETSI — European Telecommunications Standards Institute</h3>
+        <p class="t-small t-muted" style="margin-bottom:0.75rem;">Develops the Multi-Access Edge Computing (MEC) standards providing the low-latency network infrastructure essential for real-time AR.</p>
+        <a href="https://www.etsi.org/technologies/multi-access-edge-computing" target="_blank" rel="noopener" class="card-link">etsi.org/mec</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     07 — GLOSSARY
+══════════════════════════════════ -->
+<section id="glossary" class="section" aria-labelledby="glossary-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="t-label">07 — Glossary</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2rem;">
+      <h2 id="glossary-heading" class="t-h1" style="margin-bottom:1rem;">Key terms <em>defined</em></h2>
+      <div class="search-bar" style="max-width:420px;">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input type="search" class="search-input" id="gloss-search" placeholder="Search terms…" aria-label="Search glossary">
+      </div>
+      <p id="gloss-empty" class="t-small t-muted" style="display:none; margin-top:1rem;">No matching terms found.</p>
+    </div>
+
+    <div class="glossary-grid reveal">
+      <div class="gloss-entry">
+        <div class="gloss-term">Augmentiverse <span class="gloss-tag">2026</span></div>
+        <div class="gloss-def">An AR-first, standards-aligned framework for building a persistent, interoperable layer of digital content anchored to the physical world. Coined by Elmqaddem (2026) as a realistic precursor to the Metaverse. <a href="https://online-journals.org/index.php/i-jet/article/view/59733" target="_blank" rel="noopener">Source ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Augmented Reality (AR)</div>
+        <div class="gloss-def">Technology overlaying digital information on the user's view of the real world, via a camera or transparent display. Content does not necessarily understand its physical surroundings at a deep level.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Virtual Reality (VR)</div>
+        <div class="gloss-def">A fully immersive, computer-generated environment replacing the user's view of the real world entirely. Requires a head-mounted display. Occupies the far virtual end of Milgram's Reality–Virtuality Continuum.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Mixed Reality (MR)</div>
+        <div class="gloss-def">Environments where digital objects are spatially anchored to and aware of the physical world, able to occlude behind real surfaces and interact with real objects. Requires spatial mapping.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Extended Reality (XR)</div>
+        <div class="gloss-def">An umbrella term encompassing AR, VR, and MR. Not itself a technology — a collective label used in standards, policy, and enterprise contexts. Appears in OpenXR, W3C Immersive Web WG, and ETSI documentation.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Spatial Computing</div>
+        <div class="gloss-def">Computing that understands and operates in three-dimensional physical space. Defined by Greenwold (2003) as "human interaction with a machine in which the machine retains and manipulates referents to real objects and spaces." Popularised by Apple (2023). <a href="https://acg.media.mit.edu/people/simong/thesis/SpatialComputing.pdf" target="_blank" rel="noopener">Source ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Reality–Virtuality Continuum <span class="gloss-tag">Milgram 1994</span></div>
+        <div class="gloss-def">A taxonomy by Milgram &amp; Kishino (1994) describing the spectrum from fully real to fully virtual environments, with Mixed Reality in between. The foundational theoretical framework for classifying immersive technologies. <a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener">doi ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">OpenXR <span class="gloss-tag">Khronos</span></div>
+        <div class="gloss-def">A royalty-free, open API standard enabling XR applications to run across hardware from different manufacturers without rewriting code. Version 1.1 released 2024. <a href="https://www.khronos.org/openxr/" target="_blank" rel="noopener">Spec ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">WebXR <span class="gloss-tag">W3C</span></div>
+        <div class="gloss-def">A W3C Candidate Recommendation enabling AR and VR experiences in web browsers via JavaScript API, without native app installation. <a href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener">Spec ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">glTF <span class="gloss-tag">Khronos · ISO 2022</span></div>
+        <div class="gloss-def">GL Transmission Format — a royalty-free specification for efficient transmission and loading of 3D scenes and models; the "JPEG of 3D." ISO/IEC 12113:2022. <a href="https://www.khronos.org/gltf/" target="_blank" rel="noopener">Overview ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">OpenUSD <span class="gloss-tag">AOUSD</span></div>
+        <div class="gloss-def">Universal Scene Description — high-performance format for authoring and composing large-scale 3D scenes. Created by Pixar, now governed by AOUSD. Complementary to glTF for complex authoring pipelines. <a href="https://aousd.org/" target="_blank" rel="noopener">AOUSD ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Decentralised Identifier (DID) <span class="gloss-tag">W3C</span></div>
+        <div class="gloss-def">A W3C standard for cryptographically verifiable digital identity not dependent on any central registry or authority. Enables portable identity across spatial environments. DID v1.1: Candidate Recommendation (March 2026). <a href="https://www.w3.org/TR/did-1.1/" target="_blank" rel="noopener">Spec ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Verifiable Credential (VC) <span class="gloss-tag">W3C</span></div>
+        <div class="gloss-def">A cryptographically secure, tamper-evident digital credential compliant with the W3C VC Data Model. Claims can be verified without exposing personal data. <a href="https://www.w3.org/TR/vc-data-model-2.0/" target="_blank" rel="noopener">Spec v2.0 ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Spatial Anchoring</div>
+        <div class="gloss-def">The technical process of binding a digital object to a specific physical location, so it remains in place as the user moves. Fundamental to persistent AR presence. Implemented via ARCore, ARKit, HoloLens spatial mapping.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Mobile Edge Computing (MEC) <span class="gloss-tag">ETSI</span></div>
+        <div class="gloss-def">A network architecture placing compute nodes physically close to end users to achieve sub-20ms latency. Essential for real-time spatial AR. Standardised by ETSI's MEC Industry Specification Group. <a href="https://www.etsi.org/technologies/multi-access-edge-computing" target="_blank" rel="noopener">ETSI ↗</a></div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Interoperability</div>
+        <div class="gloss-def">The ability of systems, devices, and content to work together without proprietary adapters. The Augmentiverse's defining commitment: content authored once must be discoverable and renderable on any conformant device.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Digital Twin</div>
+        <div class="gloss-def">A real-time digital model of a physical object, process, or environment, synchronised with its physical counterpart via sensors and data feeds. A key Augmentiverse application in healthcare, manufacturing, and urban planning.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Metaverse</div>
+        <div class="gloss-def">A contested term for a persistent, shared, interconnected virtual world. Popularised by Neal Stephenson's 1992 novel <em>Snow Crash</em> and Meta's 2021 rebrand. The Augmentiverse proposes a more grounded, AR-first alternative trajectory.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">Persistent Spatial Presence</div>
+        <div class="gloss-def">The property of digital content that remains in a fixed physical location across time and between sessions — discoverable by multiple users, consistent across devices. One of the three core commitments of the Augmentiverse.</div>
+      </div>
+      <div class="gloss-entry">
+        <div class="gloss-term">PBR (Physically-Based Rendering)</div>
+        <div class="gloss-def">A rendering approach where materials are defined by physical properties (metallicity, roughness, reflectance) rather than arbitrary shaders. Standardised in glTF 2.0; essential for consistent visual appearance across Augmentiverse devices.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     08 — FAQ
+══════════════════════════════════ -->
+<section id="faq" class="section section-dark" aria-labelledby="faq-heading">
+  <div class="container container-sm">
+    <div class="section-header">
+      <span class="t-label">08 — FAQ</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2rem;">
+      <h2 id="faq-heading" class="t-h1">Frequently asked <em>questions</em></h2>
+    </div>
+
+    <div class="reveal">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          What exactly is the Augmentiverse?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body">
+          The Augmentiverse is an academic framework — not a product, platform, or company — introduced in a January 2026 paper by N. Elmqaddem in iJET. It describes the path to a shared, persistent layer of AR content anchored to the physical world, built on open interoperability standards. It positions itself as a more realistic and achievable alternative to the VR-centric Metaverse narrative. Think of it as the conceptual blueprint for the next layer of the internet — one built on top of reality, not as a replacement for it.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          How does the Augmentiverse differ from the Metaverse?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body">
+          The Metaverse, as popularised by Meta and others in 2021, implied a fully immersive, largely VR-based digital world intended to replace or parallel physical reality. It proved premature: the hardware, content standards, and identity infrastructure were not ready. The Augmentiverse takes the opposite approach — it is AR-first (the physical world remains primary), it is standards-first (OpenXR, WebXR, glTF, OpenUSD rather than proprietary platforms), and it is persistence-first (digital content anchored to specific physical locations, not floating in disconnected virtual spaces). Metaverse was a destination; Augmentiverse is an architecture.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Is the Augmentiverse the same as Mixed Reality?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body">
+          Mixed Reality (MR) is the primary technology mode of the Augmentiverse, but they are not identical. MR describes a technical category — environments where digital objects are spatially anchored to and aware of the physical world. The Augmentiverse is a broader framework that uses MR as its core mode but additionally specifies <em>how</em> that MR content should be built: via open standards, with persistent spatial presence, and with portable identity. You can have MR without the Augmentiverse's commitments; the Augmentiverse cannot exist without MR as its foundation.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Why does interoperability matter so much?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body">
+          Without interoperability, spatial content fragments into proprietary silos — an AR experience on Apple Vision Pro cannot be seen on a HoloLens; a 3D asset in one format cannot be loaded in another app. This is exactly what happened with the early social web before HTML standardisation, and with mobile apps today (fragmented across iOS and Android ecosystems). The Augmentiverse insists on open standards (OpenXR for runtimes, WebXR for the web, glTF for assets, DIDs for identity) precisely to prevent the spatial layer of the internet from becoming a collection of walled gardens. Interoperability is what turns individual AR experiences into a shared layer of reality.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          What hardware is needed to experience the Augmentiverse today?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body">
+          The Augmentiverse exists on a spectrum of hardware readiness today. At the basic level, any WebXR-capable smartphone or browser (Chrome, Edge) can experience web-based AR — no headset required. At the intermediate level, devices like the Apple Vision Pro and Microsoft HoloLens 2 offer true spatial MR experiences with strong anchoring. At the frontier, lightweight AR smart glasses (Meta Ray-Ban, early-stage products from Google and others) point toward the eventual all-day, low-friction wearable form factor the Augmentiverse requires at scale. Mass-market AR eyewear — the key hardware inflection point — is projected to reach 15 million units per year by 2030.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          Is the term "Augmentiverse" widely used in industry?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body">
+          Not yet — it is an academic coinage (January 2026) and has not crossed into mainstream industry usage. The dominant industry term for similar concepts is "spatial computing" (Apple's framing) or simply "XR." However, the <em>concept</em> the Augmentiverse describes — an AR-first, open-standards, persistent digital layer over physical reality — is increasingly the direction that major technology companies are taking, even if under different labels. The term may gain traction as the underlying framework becomes more widely understood, particularly in research and standards contexts where its precise commitments offer analytical value.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">
+          How can researchers cite the Augmentiverse framework?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-body">
+          The primary citation is: <br><br>
+          Elmqaddem, N. (2026). From Metaverse Myth to Augmentiverse Reality: AR Smart Glasses and Standards-Led Convergence for Interoperability and Spatial Computing. <em>International Journal of Emerging Technologies in Learning (iJET)</em>, 21(01), pp. 59–72. <a href="https://doi.org/10.3991/ijet.v21i01.59733" target="_blank" rel="noopener" class="link">doi:10.3991/ijet.v21i01.59733</a><br><br>
+          For the foundational theoretical framework: Milgram, P., Takemura, H., Utsumi, A., &amp; Kishino, F. (1994). Augmented reality: A class of displays on the reality-virtuality continuum. <em>Telemanipulator and Telepresence Technologies</em>, 2351. <a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener" class="link">doi:10.1117/12.197321</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     09 — BIBLIOGRAPHY
+══════════════════════════════════ -->
+<section id="bibliography" class="section" aria-labelledby="bib-heading">
+  <div class="container container-sm">
+    <div class="section-header">
+      <span class="t-label">09 — Bibliography</span>
+      <div class="section-header-line"></div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:2rem;">
+      <h2 id="bib-heading" class="t-h1" style="margin-bottom:1rem;">Primary sources &amp;<br><em>further reading</em></h2>
+
+      <div class="citation-box">
+        <p class="citation-text">"From Metaverse Myth to Augmentiverse Reality: AR Smart Glasses and Standards-Led Convergence for Interoperability and Spatial Computing."</p>
+        <p class="citation-meta">Elmqaddem, N. (2026) — International Journal of Emerging Technologies in Learning (iJET), Vol. 21, No. 01, pp. 59–72. &nbsp;<a href="https://doi.org/10.3991/ijet.v21i01.59733" target="_blank" rel="noopener">doi:10.3991/ijet.v21i01.59733</a></p>
+        <div class="citation-actions">
+          <button type="button" class="btn btn-secondary btn-sm" data-copy="Elmqaddem, N. (2026). From Metaverse Myth to Augmentiverse Reality: AR Smart Glasses and Standards-Led Convergence for Interoperability and Spatial Computing. International Journal of Emerging Technologies in Learning (iJET), 21(01), 59-72. doi:10.3991/ijet.v21i01.59733">Copy citation</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <label for="bib-filter" class="t-label" style="display:block; margin-bottom:0.5rem;">Filter by category:</label>
+      <select id="bib-filter" style="background:var(--c-bg-3); border:1px solid var(--c-border-md); color:var(--c-ink); padding:8px 12px; border-radius:var(--radius-sm); font-family:var(--f-mono); font-size:0.75rem; margin-bottom:1.5rem; outline:none;">
+        <option value="all">All references</option>
+        <option value="theory">Foundational theory</option>
+        <option value="standard">Standards documents</option>
+        <option value="research">Research papers</option>
+        <option value="commentary">Commentary &amp; analysis</option>
+      </select>
+    </div>
+
+    <div class="reveal">
+      <div class="bib-entry" data-cat="theory">
+        <div class="bib-num">[1]</div>
+        <div>
+          <div class="bib-title">Augmented reality: A class of displays on the reality-virtuality continuum</div>
+          <div class="bib-authors">Milgram, P., Takemura, H., Utsumi, A., &amp; Kishino, F.</div>
+          <div class="bib-venue">Telemanipulator and Telepresence Technologies, SPIE Vol. 2351, 1994</div>
+          <div class="bib-doi"><a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener">doi:10.1117/12.197321</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="theory">
+        <div class="bib-num">[2]</div>
+        <div>
+          <div class="bib-title">The computer for the 21st century</div>
+          <div class="bib-authors">Weiser, M.</div>
+          <div class="bib-venue">ACM SIGMOBILE Mobile Computing and Communications Review, 3(3), 3–11, 1999</div>
+          <div class="bib-doi"><a href="https://www.lri.fr/~mbl/Stanford/CS477/papers/Weiser-SciAm.pdf" target="_blank" rel="noopener">PDF (full text)</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="theory">
+        <div class="bib-num">[3]</div>
+        <div>
+          <div class="bib-title">Spatial Computing (MIT thesis)</div>
+          <div class="bib-authors">Greenwold, S.</div>
+          <div class="bib-venue">Massachusetts Institute of Technology, Media Lab, 2003</div>
+          <div class="bib-doi"><a href="https://acg.media.mit.edu/people/simong/thesis/SpatialComputing.pdf" target="_blank" rel="noopener">PDF (full text)</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="standard">
+        <div class="bib-num">[4]</div>
+        <div>
+          <div class="bib-title">WebXR Device API — W3C Candidate Recommendation Draft</div>
+          <div class="bib-authors">W3C Immersive Web Working Group</div>
+          <div class="bib-venue">W3C, 2025–2026</div>
+          <div class="bib-doi"><a href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener">w3.org/TR/webxr</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="standard">
+        <div class="bib-num">[5]</div>
+        <div>
+          <div class="bib-title">Decentralized Identifiers (DIDs) v1.1</div>
+          <div class="bib-authors">W3C Decentralized Identifier Working Group</div>
+          <div class="bib-venue">W3C Candidate Recommendation Snapshot, March 2026</div>
+          <div class="bib-doi"><a href="https://www.w3.org/TR/did-1.1/" target="_blank" rel="noopener">w3.org/TR/did-1.1</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="standard">
+        <div class="bib-num">[6]</div>
+        <div>
+          <div class="bib-title">Verifiable Credentials Data Model v2.0</div>
+          <div class="bib-authors">W3C Verifiable Credentials Working Group</div>
+          <div class="bib-venue">W3C Recommendation, 2024</div>
+          <div class="bib-doi"><a href="https://www.w3.org/TR/vc-data-model-2.0/" target="_blank" rel="noopener">w3.org/TR/vc-data-model-2.0</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="standard">
+        <div class="bib-num">[7]</div>
+        <div>
+          <div class="bib-title">OpenXR 1.1 Specification</div>
+          <div class="bib-authors">Khronos OpenXR Working Group</div>
+          <div class="bib-venue">The Khronos Group, 2024</div>
+          <div class="bib-doi"><a href="https://registry.khronos.org/OpenXR/" target="_blank" rel="noopener">registry.khronos.org/OpenXR</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="standard">
+        <div class="bib-num">[8]</div>
+        <div>
+          <div class="bib-title">glTF 2.0 Specification (ISO/IEC 12113:2022)</div>
+          <div class="bib-authors">Khronos 3D Formats Working Group</div>
+          <div class="bib-venue">The Khronos Group / ISO, 2022</div>
+          <div class="bib-doi"><a href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html" target="_blank" rel="noopener">Full specification</a> · <a href="https://www.khronos.org/gltf/" target="_blank" rel="noopener">Overview</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="research">
+        <div class="bib-num">[9]</div>
+        <div>
+          <div class="bib-title">Integration of AR, VR, and XR in Healthcare and Medical Education: A Systematic Review</div>
+          <div class="bib-authors">Siddiqui, M.F. et al.</div>
+          <div class="bib-venue">Journal of Primary Care &amp; Community Health, SAGE, 2025</div>
+          <div class="bib-doi"><a href="https://journals.sagepub.com/doi/10.1177/23821205251342315" target="_blank" rel="noopener">doi:10.1177/23821205251342315</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12123137/" target="_blank" rel="noopener">PMC open access</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="research">
+        <div class="bib-num">[10]</div>
+        <div>
+          <div class="bib-title">Revisiting Milgram and Kishino's Reality-Virtuality Continuum</div>
+          <div class="bib-authors">Skarbez, R., Smith, M., &amp; Whitton, M.C.</div>
+          <div class="bib-venue">Frontiers in Virtual Reality, Vol. 2, 2021</div>
+          <div class="bib-doi"><a href="https://doi.org/10.3389/frvir.2021.647997" target="_blank" rel="noopener">doi:10.3389/frvir.2021.647997</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="research">
+        <div class="bib-num">[11]</div>
+        <div>
+          <div class="bib-title">What is Diminished Virtuality? A Directional and Layer-Based Taxonomy for the Reality-Virtuality Continuum</div>
+          <div class="bib-authors">JMIR XR and Spatial Computing</div>
+          <div class="bib-venue">JMIR XR Spat Comput, 2024</div>
+          <div class="bib-doi"><a href="https://xr.jmir.org/2024/1/e52904" target="_blank" rel="noopener">xr.jmir.org/2024/1/e52904</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="research">
+        <div class="bib-num">[12]</div>
+        <div>
+          <div class="bib-title">AR/VR's Potential in Health Care</div>
+          <div class="bib-authors">ITIF — Information Technology and Innovation Foundation</div>
+          <div class="bib-venue">ITIF Report, June 2025</div>
+          <div class="bib-doi"><a href="https://itif.org/publications/2025/06/02/arvrs-potential-in-health-care/" target="_blank" rel="noopener">itif.org</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="commentary">
+        <div class="bib-num">[13]</div>
+        <div>
+          <div class="bib-title">On Spatial Computing, Metaverse, the Terms Left Behind and Ideas Renewed</div>
+          <div class="bib-authors">Ball, M.</div>
+          <div class="bib-venue">MatthewBall.co, 2024</div>
+          <div class="bib-doi"><a href="https://www.matthewball.co/all/metaversespatialandmore" target="_blank" rel="noopener">matthewball.co</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="standard">
+        <div class="bib-num">[14]</div>
+        <div>
+          <div class="bib-title">Building Bridges in 3D: AOUSD and Khronos Collaborate on OpenUSD and glTF Interoperability</div>
+          <div class="bib-authors">The Khronos Group</div>
+          <div class="bib-venue">Khronos Blog, December 2023</div>
+          <div class="bib-doi"><a href="https://www.khronos.org/blog/building-bridges-in-3d-aousd-and-khronos-collaborate-on-openusd-and-gltf-interoperability" target="_blank" rel="noopener">khronos.org blog</a></div>
+        </div>
+      </div>
+
+      <div class="bib-entry" data-cat="commentary">
+        <div class="bib-num">[15]</div>
+        <div>
+          <div class="bib-title">A Primer for Decentralized Identifiers</div>
+          <div class="bib-authors">W3C Credentials Community Group</div>
+          <div class="bib-venue">W3C Community Report, 2021</div>
+          <div class="bib-doi"><a href="https://w3c-ccg.github.io/did-primer/" target="_blank" rel="noopener">w3c-ccg.github.io/did-primer</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     10 — NEWSLETTER
+══════════════════════════════════ -->
+<section id="newsletter" class="section-sm section-darker" aria-labelledby="nl-heading">
+  <div class="container container-sm">
+    <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto;">
+      <div class="divider-gold" style="margin:0 auto var(--sp-md);"></div>
+      <h2 id="nl-heading" class="t-h2" style="margin-bottom:0.75rem;">Stay at the frontier of<br><em>spatial computing</em></h2>
+      <p class="t-body t-muted" style="margin-bottom:var(--sp-md);">Research updates, standards developments, and new Augmentiverse resources — delivered to researchers and practitioners. No more than one email per month.</p>
+      <form id="newsletter-form" style="display:flex; gap:0.75rem; max-width:440px; margin:0 auto;" aria-label="Newsletter subscription">
+        <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Insert your email address here" required aria-label="Email address" autocomplete="email">
+        <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Subscribe</button>
+      </form>
+      <p id="newsletter-status" class="newsletter-status t-small" aria-live="polite"></p>
+      <p class="t-small t-muted" style="margin-top:0.75rem;">Subscribing opens your mail client with a prefilled request to <a href="mailto:augmentiverse@gmail.com?subject=Augmentiverse%20newsletter%20subscription" class="link">augmentiverse@gmail.com</a>.</p>
+      <p class="t-small t-muted" style="margin-top:0.75rem;">No spam. Unsubscribe at any time. Academic focus.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name"><em>Augmenti</em>verse</div>
+        <p class="footer-desc">The definitive reference resource on the Augmentiverse framework — an AR-first, standards-aligned path to persistent, interoperable spatial computing.</p>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="https://doi.org/10.3991/ijet.v21i01.59733" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Primary paper ↗</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Site</div>
+        <div class="footer-links">
+          <a href="#concept">Concept &amp; theory</a>
+          <a href="#technologies">Technologies</a>
+          <a href="#standards">Standards</a>
+          <a href="tools.html">Tools &amp; stack</a>
+          <a href="#use-cases">Use cases</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#people">People &amp; orgs</a>
+          <a href="#glossary">Glossary</a>
+          <a href="#bibliography">Bibliography</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Standards</div>
+        <div class="footer-links">
+          <a href="https://www.khronos.org/openxr/" target="_blank" rel="noopener">OpenXR — Khronos</a>
+          <a href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener">WebXR — W3C</a>
+          <a href="https://www.khronos.org/gltf/" target="_blank" rel="noopener">glTF — Khronos</a>
+          <a href="https://aousd.org/" target="_blank" rel="noopener">OpenUSD — AOUSD</a>
+          <a href="https://www.w3.org/TR/did-1.1/" target="_blank" rel="noopener">DIDs v1.1 — W3C</a>
+          <a href="https://www.w3.org/TR/vc-data-model-2.0/" target="_blank" rel="noopener">VCs v2.0 — W3C</a>
+          <a href="https://www.etsi.org/technologies/multi-access-edge-computing" target="_blank" rel="noopener">MEC — ETSI</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Source</div>
+        <div class="footer-links">
+          <a href="https://online-journals.org/index.php/i-jet/article/view/59733" target="_blank" rel="noopener">Elmqaddem 2026 (iJET)</a>
+          <a href="https://doi.org/10.1117/12.197321" target="_blank" rel="noopener">Milgram &amp; Kishino 1994</a>
+          <a href="https://acg.media.mit.edu/people/simong/thesis/SpatialComputing.pdf" target="_blank" rel="noopener">Greenwold 2003 (MIT)</a>
+          <a href="https://www.lri.fr/~mbl/Stanford/CS477/papers/Weiser-SciAm.pdf" target="_blank" rel="noopener">Weiser 1991</a>
+          <a href="https://metaverse-standards.org/" target="_blank" rel="noopener">Metaverse Standards Forum</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">
+        Augmentiverse.org - Independent educational resource | Reference set reviewed April 13, 2026 | Not affiliated with any commercial entity
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#concept">About</a>
+        <a href="#bibliography">Sources</a>
+        <a href="index-fr.html" lang="fr" hreflang="fr">Français</a>
+        <a href="mailto:contact@augmentiverse.org">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
