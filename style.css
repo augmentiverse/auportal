@@ -381,7 +381,7 @@ body::before {
 }
 .hero-title {
   font-family: var(--f-display);
-  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-size: clamp(3.5rem, 9vw, 6rem);
   font-weight: 300;
   line-height: 0.95;
   letter-spacing: -0.03em;
