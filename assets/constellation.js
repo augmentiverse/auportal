@@ -24,7 +24,8 @@ export async function mountConstellation(panel) {
   let active = panel.dataset.active;
   let paused = reduced.matches;
   let visible = true;
-  let held = false;
+  let hoveredNode = null;
+  let focusedNode = null;
   let list = false;
   let frame = 0;
   let last = 0;
@@ -85,12 +86,17 @@ export async function mountConstellation(panel) {
   }
 
   function project(point) {
-    // A small oscillation around the Y axis preserves legibility and prevents nodes flipping.
-    const rotation = Math.sin(angle) * .09;
+    // Gentle depth and orbital motion; labels stay upright and links remain easy to read.
+    const rotation = Math.sin(angle) * .2;
     const x = point.x * Math.cos(rotation) + point.z * Math.sin(rotation);
     const z = -point.x * Math.sin(rotation) + point.z * Math.cos(rotation);
     const perspective = 1300 / (1300 - z);
-    return { x: 500 + x * perspective, y: 470 + point.y * perspective, z, scale: Math.max(.92, Math.min(1.08, perspective)) };
+    const orbit = Math.sin(angle * .8) * .075;
+    return {
+      x: 500 + (x * Math.cos(orbit) - point.y * Math.sin(orbit)) * perspective + Math.sin(angle) * 12,
+      y: 470 + (x * Math.sin(orbit) + point.y * Math.cos(orbit)) * perspective + Math.sin(angle * .8) * 8,
+      z, scale: Math.max(.92, Math.min(1.08, perspective))
+    };
   }
 
   function render(snap = false) {
@@ -119,9 +125,9 @@ export async function mountConstellation(panel) {
 
   function tick(now) {
     frame = 0;
-    if (paused || reduced.matches || !visible || document.hidden || held || list) return;
+    if (paused || reduced.matches || !visible || document.hidden || hoveredNode || focusedNode || list) return;
     if (now - last >= (small.matches ? 65 : 33)) {
-      angle += Math.min(now - last, 70) * .00014;
+      angle += Math.min(now - last, 100) * .00035;
       last = now;
       render();
     }
@@ -134,8 +140,10 @@ export async function mountConstellation(panel) {
     pauseButton.setAttribute('aria-pressed', String(paused));
     pauseButton.disabled = reduced.matches;
     if (reduced.matches) pauseButton.textContent = arabic ? 'حركة مخفّضة' : french ? 'Animation réduite' : 'Motion reduced';
-    panel.dataset.motion = !paused && !reduced.matches && visible && !held && !list && !document.hidden ? 'playing' : 'paused';
-    if (!paused && !reduced.matches && visible && !held && !list && !document.hidden) { last = performance.now(); frame = requestAnimationFrame(tick); }
+    const playing = !paused && !reduced.matches && visible && !list && !document.hidden;
+    // Hold only the interactive graph while a link is targeted, keeping the sky alive.
+    panel.dataset.motion = playing ? 'playing' : 'paused';
+    if (playing && !hoveredNode && !focusedNode) { last = performance.now(); frame = requestAnimationFrame(tick); }
   }
   listen(pauseButton, 'click', () => {
     paused = !paused;
@@ -150,13 +158,28 @@ export async function mountConstellation(panel) {
     sync();
   });
   listen(select, 'change', () => { active = select.value; angle = 0; layout(); sync(); });
-  listen(stage, 'pointerenter', () => { held = true; sync(); });
-  listen(stage, 'pointerleave', () => { held = stage.contains(document.activeElement); describe(active); sync(); });
-  listen(stage, 'focusin', event => { held = true; if (event.target.dataset.node) describe(event.target.dataset.node); sync(); });
-  listen(stage, 'focusout', () => { held = false; describe(active); sync(); });
+  listen(stage, 'focusin', event => {
+    focusedNode = event.target.closest('[data-node]');
+    describe(focusedNode?.dataset.node || hoveredNode?.dataset.node || active);
+    sync();
+  });
+  listen(stage, 'focusout', event => {
+    focusedNode = stage.contains(event.relatedTarget) ? event.relatedTarget.closest('[data-node]') : null;
+    describe(focusedNode?.dataset.node || hoveredNode?.dataset.node || active);
+    sync();
+  });
   links.forEach(anchor => {
-    listen(anchor, 'pointerenter', () => describe(anchor.dataset.node));
-    listen(anchor, 'pointerleave', () => describe(active));
+    listen(anchor, 'pointerenter', event => {
+      if (event.pointerType === 'touch') return;
+      hoveredNode = anchor;
+      describe(anchor.dataset.node);
+      sync();
+    });
+    listen(anchor, 'pointerleave', () => {
+      hoveredNode = null;
+      describe(focusedNode?.dataset.node || active);
+      sync();
+    });
   });
   listen(document, 'visibilitychange', sync);
   listen(reduced, 'change', () => { paused = reduced.matches; layout(); sync(); });
