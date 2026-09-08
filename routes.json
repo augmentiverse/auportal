@@ -1,0 +1,1034 @@
+[
+  {
+    "url": "/",
+    "title": "The world is the interface",
+    "description": "Explore the Augmentiverse: an AR-first framework for open standards, persistent spatial presence and shared physical reality.",
+    "category": "Reference",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/concept/",
+    "title": "A digital layer grounded in reality",
+    "description": "Definition, principles, conceptual comparisons and theoretical foundations of the Augmentiverse.",
+    "category": "Reference",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/",
+    "title": "Technologies — The spatial technology atlas.",
+    "description": "Understand the role of each technology, from foundational spatial systems to complementary infrastructure and future research.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/augmented-reality/",
+    "title": "Augmented reality — Experience",
+    "description": "Digital information, situated in the physical world. AR-first is the framework’s central commitment: use the physical environment as the reference for digital experiences.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/mixed-reality/",
+    "title": "Mixed reality — Experience",
+    "description": "Physical and digital elements share a spatial frame. Spatially aware AR and MR provide the experience layer. An MR application still needs deliberate choices about persistence and interoperability to align with the framework.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/virtual-reality/",
+    "title": "Virtual reality — Experience",
+    "description": "Immersive simulation in a predominantly digital environment. VR contributes simulations, content pipelines and runtime standards. It is complementary to the framework’s physical-world-first emphasis.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/extended-reality/",
+    "title": "Extended reality — Experience",
+    "description": "A shared vocabulary for AR, MR and VR. The Augmentiverse draws on XR infrastructure while making a more specific architectural commitment to AR-first, persistent and interoperable experiences.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/spatial-computing/",
+    "title": "Spatial computing — Spatial systems",
+    "description": "Computation that refers to real objects and spaces. It is the broader technical setting for the framework. The Augmentiverse adds commitments about openness, persistent presence and the primacy of physical reality.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/spatial-anchoring/",
+    "title": "Spatial anchoring — Spatial systems",
+    "description": "Keeping digital content connected to a physical place. Anchoring operationalises persistent spatial presence. A durable content service also needs discovery, access control, versioning and maintenance of the underlying spatial map.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/digital-twins/",
+    "title": "Digital twins — Spatial systems",
+    "description": "Digital representations linked to physical systems. Twins can supply spatial context and operational data for AR views. They support the framework but are not required for every anchored experience.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/artificial-intelligence/",
+    "title": "Artificial intelligence — Infrastructure",
+    "description": "Perception, interpretation and assistance for spatial systems. AI can help a spatial application interpret surroundings and present relevant assistance. Human oversight and clear uncertainty remain essential when outputs affect the physical world.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/iot/",
+    "title": "Internet of Things — Infrastructure",
+    "description": "Connecting physical observations to digital applications. IoT supplies changing real-world information for digital twins and contextual AR. It is an optional integration layer rather than a defining commitment.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/edge-computing/",
+    "title": "Edge computing — Infrastructure",
+    "description": "Processing closer to people, devices and data. Some spatial workloads can use nearby services for shared state, media or inference. Local tracking should remain robust when connectivity degrades.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/5g-6g/",
+    "title": "5G and the 6G horizon — Infrastructure",
+    "description": "Network capabilities today and a research horizon for tomorrow. Mobile networks can connect distributed spatial services. Wi-Fi and local operation can also support AR; neither 5G nor 6G defines the framework.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/technologies/3d-content/",
+    "title": "3D content — Spatial systems",
+    "description": "Reusable geometry, materials and scenes for spatial experiences. Content portability connects authoring to delivery. Shared formats help, while consistent units, coordinate systems, extensions and licensing remain necessary.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/",
+    "title": "Standards — Interoperability, layer by layer.",
+    "description": "Explore the specifications connecting runtimes, 3D content, identity, rendering and spatial data. Status and version belong to each document.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/openxr/",
+    "title": "OpenXR — Runtime",
+    "description": "A common interface between XR applications and device runtimes. The native runtime layer connects applications to compatible XR hardware. It does not define a global spatial map or shared identity service.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/webxr/",
+    "title": "WebXR Device API — Runtime",
+    "description": "An interface for immersive experiences delivered through the web. URL-addressable experiences support web distribution. Browser availability and session modes depend on the browser, operating system and device.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/webxr-ar/",
+    "title": "WebXR Augmented Reality Module — Runtime",
+    "description": "AR-specific capabilities built on the WebXR Device API. It provides the web AR session model. Hit testing, anchors and other capabilities are specified separately and must be checked on the target implementation.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/gltf/",
+    "title": "glTF — Content",
+    "description": "Efficient delivery of 3D scenes and assets. The delivery layer lets content travel from an authoring workflow to real-time applications. Extensions require explicit compatibility checks.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/openusd/",
+    "title": "OpenUSD — Content",
+    "description": "Composition and interchange for complex 3D scenes. It supports durable scene authoring and collaboration. glTF and OpenUSD address different workflow needs, so conversion must account for what each representation preserves.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/webgl/",
+    "title": "WebGL — Rendering",
+    "description": "GPU-accelerated graphics in the browser. A browser application can use WebGL to render glTF assets or other spatial content. This reference site’s constellation uses SVG and HTML and does not require WebGL.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/webgpu/",
+    "title": "WebGPU — Rendering",
+    "description": "Modern GPU rendering and compute for the web. It can support advanced rendering and compute workloads where the platform supports the required capabilities. Integration with immersive presentation must be checked separately.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/decentralized-identifiers/",
+    "title": "Decentralized Identifiers — Identity",
+    "description": "Identifiers whose control can be independently verified. DIDs are one possible building block for portable authorship and identity. The framework’s interoperability goal does not require a blockchain or one universal identity provider.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/verifiable-credentials/",
+    "title": "Verifiable Credentials — Identity",
+    "description": "Tamper-evident claims exchanged between issuers, holders and verifiers. Credentials can support portable qualifications, permissions or provenance in spatial services. They complement identifiers and access policies.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/etsi-mec/",
+    "title": "ETSI MEC — Infrastructure",
+    "description": "An architectural framework for services at the network edge. MEC can support distributed spatial services with nearby compute. On-device tracking and graceful degradation remain important.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/geolocation/",
+    "title": "Geolocation — Spatial data",
+    "description": "Permission-based geographic location in web applications. Geographic location can help discover nearby spatial content. It is not a complete mapping, indoor positioning or precise anchor-sharing solution.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/standards/3d-tiles/",
+    "title": "3D Tiles — Spatial data",
+    "description": "Streaming large, spatially organised 3D datasets. It can provide geographic context for spatial applications and digital twins. Scene streaming and persistent anchor localisation are different problems.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/applications/",
+    "title": "Applications across ten sectors",
+    "description": "Healthcare, education, industry, heritage and other contexts for spatial technologies, with requirements and evidence distinctions.",
+    "category": "Applications",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/research/",
+    "title": "Research and the Augmentiverse publication",
+    "description": "Read the original paper, distinguish evidence from proposals, and copy or download the academic citation.",
+    "category": "Reference",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/resources/",
+    "title": "Resources and reference guides",
+    "description": "Glossary, bibliography, historical timeline, organisations, tools and frequently asked questions.",
+    "category": "Resources",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/glossary/",
+    "title": "Glossary of spatial computing",
+    "description": "Search definitions of Augmentiverse, AR, MR, XR, spatial anchoring, identity, 3D content and open standards.",
+    "category": "Resources",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/faq/",
+    "title": "Frequently asked questions",
+    "description": "Answers about the Augmentiverse, mixed reality, interoperability, hardware, research citations and languages.",
+    "category": "Resources",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/bibliography/",
+    "title": "Bibliography and primary sources",
+    "description": "Academic references, DOI links, open standards and contextual commentary, organised by source type.",
+    "category": "Resources",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/resources/tools/",
+    "title": "Tools, platforms and development pathways",
+    "description": "WebXR, native spatial development and portable 3D authoring pathways, with the original tools catalogue preserved.",
+    "category": "Resources",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/timeline/",
+    "title": "History of spatial computing",
+    "description": "A filterable timeline of immersive theory, spatial computing, XR specifications and the Augmentiverse research framework.",
+    "category": "Research",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/people-organizations/",
+    "title": "People and organisations",
+    "description": "Researchers, conceptual foundations and organisations contributing to spatial computing and open standards.",
+    "category": "Research",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/about/",
+    "title": "About the Augmentiverse reference",
+    "description": "The purpose, author, editorial method and language policy of the Augmentiverse reference site.",
+    "category": "Reference",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/contact/",
+    "title": "Contact and editorial contributions",
+    "description": "Send a correction or research reference to the existing Augmentiverse site contact.",
+    "category": "Reference",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/privacy/",
+    "title": "Privacy and site information",
+    "description": "How the reference handles browser preferences, search, third-party links and archived content.",
+    "category": "Reference",
+    "noindex": false,
+    "lang": "en"
+  },
+  {
+    "url": "/archive/editions/",
+    "title": "Original editions and migration archive",
+    "description": "Access the complete preserved English and French editions and the original tools catalogue.",
+    "category": "Reference",
+    "noindex": true,
+    "lang": "en"
+  },
+  {
+    "url": "/search/",
+    "title": "Search the reference",
+    "description": "Search all Augmentiverse concepts, technologies, standards and resources.",
+    "category": "Reference",
+    "noindex": true,
+    "lang": "en"
+  },
+  {
+    "url": "/404.html",
+    "title": "Page not found",
+    "description": "Find your way back to the Augmentiverse reference.",
+    "category": "Reference",
+    "noindex": true,
+    "lang": "en"
+  },
+  {
+    "url": "/fr/",
+    "title": "Le monde devient une interface",
+    "description": "Explorez l’Augmentiverse : un cadre centré sur la RA, les standards ouverts, la présence spatiale persistante et la réalité physique partagée.",
+    "category": "Référence",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/",
+    "title": "العالم هو الواجهة",
+    "description": "استكشف أوغمنتيفرس: إطار يضع الواقع المعزز أولًا، للمعايير المفتوحة والحضور المكاني المستمر والواقع المادي المشترك.",
+    "category": "مرجع",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/concept/",
+    "title": "Une couche numérique ancrée dans le réel",
+    "description": "Définition, principes, comparaisons conceptuelles et fondements théoriques de l’Augmentiverse.",
+    "category": "Référence",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/concept/",
+    "title": "طبقة رقمية متجذرة في الواقع",
+    "description": "تعريف أوغمنتيفرس ومبادئه ومقارناته المفاهيمية وأسسه النظرية.",
+    "category": "مرجع",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/",
+    "title": "Technologies — L’atlas des technologies spatiales.",
+    "description": "Comprenez le rôle de chaque technologie, des systèmes spatiaux fondamentaux aux infrastructures complémentaires et aux recherches futures.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/",
+    "title": "التقنيات — أطلس التقنيات المكانية.",
+    "description": "افهم دور كل تقنية، من الأنظمة المكانية الأساسية إلى البنية التحتية المكمّلة والبحوث المستقبلية.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/augmented-reality/",
+    "title": "Réalité augmentée — Expérience",
+    "description": "Des informations numériques situées dans le monde physique. La priorité à la RA est l’engagement central du cadre : utiliser l’environnement physique comme référence des expériences numériques.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/augmented-reality/",
+    "title": "الواقع المعزز — التجربة",
+    "description": "معلومات رقمية مرتبطة بمواقع في العالم المادي. وضع الواقع المعزز أولًا هو الالتزام المركزي للإطار: اعتماد البيئة المادية مرجعًا للتجارب الرقمية.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/mixed-reality/",
+    "title": "Réalité mixte — Expérience",
+    "description": "Les éléments physiques et numériques partagent un même repère spatial. La RA et la RM conscientes de l’espace constituent la couche d’expérience. Une application de RM doit encore faire des choix explicites de persistance et d’interopérabilité pour s’aligner sur le cadre.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/mixed-reality/",
+    "title": "الواقع المختلط — التجربة",
+    "description": "عناصر مادية ورقمية تتشارك إطارًا مكانيًا. يوفّر الواقع المعزز والمختلط الواعيان بالمكان طبقة التجربة. ويظل تطبيق الواقع المختلط بحاجة إلى خيارات مقصودة للاستمرارية والتشغيل البيني كي يتوافق مع الإطار.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/virtual-reality/",
+    "title": "Réalité virtuelle — Expérience",
+    "description": "Une simulation immersive dans un environnement principalement numérique. La RV apporte des simulations, des chaînes de production de contenu et des standards d’exécution. Elle complète l’accent mis par le cadre sur la primauté du monde physique.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/virtual-reality/",
+    "title": "الواقع الافتراضي — التجربة",
+    "description": "محاكاة غامرة في بيئة رقمية في معظمها. يسهم الواقع الافتراضي بالمحاكاة ومسارات إنتاج المحتوى ومعايير التشغيل. وهو يكمّل تركيز الإطار على أولوية العالم المادي.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/extended-reality/",
+    "title": "Réalité étendue — Expérience",
+    "description": "Un vocabulaire commun pour la RA, la RM et la RV. L’Augmentiverse s’appuie sur l’infrastructure XR tout en prenant un engagement architectural plus précis en faveur d’expériences centrées sur la RA, persistantes et interopérables.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/extended-reality/",
+    "title": "الواقع الممتد — التجربة",
+    "description": "مفردات مشتركة للواقع المعزز والمختلط والافتراضي. يستفيد أوغمنتيفرس من بنية XR التحتية مع التزام بنيوي أكثر تحديدًا بتجارب تضع الواقع المعزز أولًا وتتصف بالاستمرارية والتشغيل البيني.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/spatial-computing/",
+    "title": "Informatique spatiale — Systèmes spatiaux",
+    "description": "Une informatique liée aux objets et aux espaces réels. Elle constitue le contexte technique plus large du cadre. L’Augmentiverse y ajoute des engagements d’ouverture, de présence persistante et de primauté de la réalité physique.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/spatial-computing/",
+    "title": "الحوسبة المكانية — الأنظمة المكانية",
+    "description": "حوسبة ترتبط بالأشياء والأماكن الحقيقية. تمثل السياق التقني الأوسع للإطار. ويضيف أوغمنتيفرس التزامات بالانفتاح والحضور المستمر وأولوية الواقع المادي.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/spatial-anchoring/",
+    "title": "Ancrage spatial — Systèmes spatiaux",
+    "description": "Maintenir le lien entre un contenu numérique et un lieu physique. L’ancrage concrétise la présence spatiale persistante. Un service de contenu durable nécessite aussi la découverte, le contrôle d’accès, la gestion des versions et l’entretien de la carte spatiale sous-jacente.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/spatial-anchoring/",
+    "title": "التثبيت المكاني — الأنظمة المكانية",
+    "description": "الحفاظ على ارتباط المحتوى الرقمي بمكان مادي. يحوّل التثبيت الحضور المكاني المستمر إلى وظيفة عملية. وتحتاج خدمة المحتوى المستدامة أيضًا إلى الاكتشاف والتحكم في الوصول وإدارة الإصدارات وصيانة الخريطة المكانية الأساسية.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/digital-twins/",
+    "title": "Jumeaux numériques — Systèmes spatiaux",
+    "description": "Des représentations numériques liées aux systèmes physiques. Les jumeaux peuvent fournir le contexte spatial et les données opérationnelles aux vues en RA. Ils contribuent au cadre sans être requis pour chaque expérience ancrée.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/digital-twins/",
+    "title": "التوائم الرقمية — الأنظمة المكانية",
+    "description": "تمثيلات رقمية مرتبطة بأنظمة مادية. يمكن للتوائم توفير سياق مكاني وبيانات تشغيلية لعروض الواقع المعزز. وهي تدعم الإطار لكنها ليست مطلوبة لكل تجربة مثبتة.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/artificial-intelligence/",
+    "title": "Intelligence artificielle — Infrastructure",
+    "description": "Perception, interprétation et assistance pour les systèmes spatiaux. L’IA peut aider une application spatiale à interpréter l’environnement et à proposer une assistance pertinente. La supervision humaine et l’explicitation des incertitudes restent essentielles lorsque les résultats affectent le monde physique.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/artificial-intelligence/",
+    "title": "الذكاء الاصطناعي — البنية التحتية",
+    "description": "الإدراك والتفسير والمساعدة للأنظمة المكانية. يمكن للذكاء الاصطناعي مساعدة التطبيق المكاني على تفسير المحيط وتقديم مساعدة ملائمة. وتظل الرقابة البشرية ووضوح عدم اليقين ضروريين عندما تؤثر المخرجات في العالم المادي.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/iot/",
+    "title": "Internet des objets — Infrastructure",
+    "description": "Relier les observations physiques aux applications numériques. L’IoT fournit des informations évolutives du monde réel aux jumeaux numériques et à la RA contextuelle. C’est une couche d’intégration facultative, pas un engagement constitutif du cadre.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/iot/",
+    "title": "إنترنت الأشياء — البنية التحتية",
+    "description": "ربط الملاحظات المادية بالتطبيقات الرقمية. يوفّر إنترنت الأشياء معلومات متغيرة من العالم الحقيقي للتوائم الرقمية والواقع المعزز السياقي. وهو طبقة تكامل اختيارية لا التزام محدِّد للإطار.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/edge-computing/",
+    "title": "Informatique en périphérie — Infrastructure",
+    "description": "Traiter les données au plus près des personnes et des appareils. Certaines charges spatiales peuvent utiliser des services proches pour partager l’état, les médias ou l’inférence. Le suivi local doit rester robuste lorsque la connectivité se dégrade.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/edge-computing/",
+    "title": "الحوسبة الطرفية — البنية التحتية",
+    "description": "معالجة أقرب إلى الأشخاص والأجهزة والبيانات. يمكن لبعض أعباء العمل المكانية الاستفادة من خدمات قريبة للحالة المشتركة أو الوسائط أو الاستدلال. ويجب أن يظل التتبّع المحلي متينًا عند تدهور الاتصال.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/5g-6g/",
+    "title": "La 5G et l’horizon 6G — Infrastructure",
+    "description": "Les capacités réseau actuelles et un horizon de recherche pour demain. Les réseaux mobiles peuvent relier des services spatiaux distribués. Le Wi-Fi et le fonctionnement local peuvent aussi prendre en charge la RA ; ni la 5G ni la 6G ne définissent le cadre.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/5g-6g/",
+    "title": "الجيل الخامس وآفاق الجيل السادس — البنية التحتية",
+    "description": "قدرات الشبكات اليوم وآفاق البحث غدًا. يمكن للشبكات المحمولة ربط الخدمات المكانية الموزعة. ويمكن أيضًا للواي فاي والعمل المحلي دعم الواقع المعزز؛ فلا الجيل الخامس ولا السادس يعرّف الإطار.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/technologies/3d-content/",
+    "title": "Contenu 3D — Systèmes spatiaux",
+    "description": "Géométrie, matériaux et scènes réutilisables pour les expériences spatiales. La portabilité du contenu relie la création à la diffusion. Les formats communs y contribuent, mais des unités, des systèmes de coordonnées, des extensions et des licences cohérents restent nécessaires.",
+    "category": "Technologies",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/technologies/3d-content/",
+    "title": "المحتوى ثلاثي الأبعاد — الأنظمة المكانية",
+    "description": "هندسة ومواد ومشاهد قابلة لإعادة الاستخدام في التجارب المكانية. تربط قابلية نقل المحتوى التأليف بالتوزيع. وتساعد الصيغ المشتركة، مع بقاء الحاجة إلى اتساق الوحدات وأنظمة الإحداثيات والامتدادات والتراخيص.",
+    "category": "التقنيات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/",
+    "title": "Standards — L’interopérabilité, couche par couche.",
+    "description": "Explorez les spécifications qui relient exécution, contenu 3D, identité, rendu et données spatiales. Chaque document possède son propre statut et sa propre version.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/",
+    "title": "المعايير — التشغيل البيني، طبقةً بعد أخرى.",
+    "description": "استكشف المواصفات التي تربط بيئات التشغيل والمحتوى ثلاثي الأبعاد والهوية والتصيير والبيانات المكانية. لكل وثيقة حالتها وإصدارها.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/openxr/",
+    "title": "OpenXR — Exécution",
+    "description": "Une interface commune entre les applications XR et les environnements d’exécution des appareils. La couche d’exécution native relie les applications au matériel XR compatible. Elle ne définit ni carte spatiale globale ni service d’identité partagé.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/openxr/",
+    "title": "OpenXR — بيئة التشغيل",
+    "description": "واجهة مشتركة بين تطبيقات XR وبيئات تشغيل الأجهزة. تربط طبقة التشغيل الأصلية التطبيقات بعتاد XR المتوافق. ولا تعرّف خريطة مكانية عالمية أو خدمة هوية مشتركة.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/webxr/",
+    "title": "WebXR Device API — Exécution",
+    "description": "Une interface pour les expériences immersives diffusées sur le Web. Les expériences accessibles par URL facilitent la diffusion sur le Web. La disponibilité et les modes de session dépendent du navigateur, du système d’exploitation et de l’appareil.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/webxr/",
+    "title": "WebXR Device API — بيئة التشغيل",
+    "description": "واجهة للتجارب الغامرة المقدّمة عبر الويب. تدعم التجارب القابلة للوصول بعنوان URL التوزيع عبر الويب. وتعتمد الإتاحة وأنماط الجلسات على المتصفح ونظام التشغيل والجهاز.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/webxr-ar/",
+    "title": "Module de réalité augmentée WebXR — Exécution",
+    "description": "Des fonctionnalités propres à la RA, fondées sur l’API WebXR Device. Il fournit le modèle de session de RA sur le Web. Les tests d’intersection, les ancrages et d’autres fonctionnalités font l’objet de spécifications distinctes et doivent être vérifiés sur l’implémentation visée.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/webxr-ar/",
+    "title": "وحدة الواقع المعزز في WebXR — بيئة التشغيل",
+    "description": "قدرات خاصة بالواقع المعزز مبنية على واجهة WebXR Device API. توفّر نموذج جلسة الواقع المعزز على الويب. ويجري تحديد اختبار التقاطع والمراسي والقدرات الأخرى في مواصفات منفصلة، ويجب التحقق منها في التنفيذ المستهدف.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/gltf/",
+    "title": "glTF — Contenu",
+    "description": "Une diffusion efficace des scènes et des ressources 3D. La couche de diffusion permet au contenu de passer d’un processus de création aux applications en temps réel. Les extensions exigent des vérifications explicites de compatibilité.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/gltf/",
+    "title": "glTF — المحتوى",
+    "description": "نقل فعّال للمشاهد والأصول ثلاثية الأبعاد. تتيح طبقة التوزيع انتقال المحتوى من مسار التأليف إلى التطبيقات الفورية. وتتطلب الامتدادات تحققًا صريحًا من التوافق.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/openusd/",
+    "title": "OpenUSD — Contenu",
+    "description": "Composition et échange de scènes 3D complexes. Il favorise la création durable de scènes et la collaboration. glTF et OpenUSD répondent à des besoins différents ; leur conversion doit tenir compte des éléments préservés par chaque représentation.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/openusd/",
+    "title": "OpenUSD — المحتوى",
+    "description": "تركيب المشاهد ثلاثية الأبعاد المعقدة وتبادلها. يدعم تأليف المشاهد والتعاون على نحو مستدام. ويعالج glTF وOpenUSD احتياجات مختلفة في سير العمل، لذا يجب أن يراعي التحويل ما يحافظ عليه كل تمثيل.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/webgl/",
+    "title": "WebGL — Rendu",
+    "description": "Graphismes accélérés par GPU dans le navigateur. Une application Web peut utiliser WebGL pour afficher des ressources glTF ou d’autres contenus spatiaux. La constellation de ce site utilise SVG et HTML et ne nécessite pas WebGL.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/webgl/",
+    "title": "WebGL — التصيير",
+    "description": "رسوم مسرّعة بوحدة معالجة الرسومات في المتصفح. يمكن لتطبيق المتصفح استخدام WebGL لعرض أصول glTF أو غيرها من المحتويات المكانية. وتستخدم كوكبة هذا الموقع SVG وHTML ولا تتطلب WebGL.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/webgpu/",
+    "title": "WebGPU — Rendu",
+    "description": "Rendu et calcul modernes sur GPU pour le Web. Il peut prendre en charge du rendu avancé et des calculs lorsque la plateforme propose les capacités requises. L’intégration à la présentation immersive doit être vérifiée séparément.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/webgpu/",
+    "title": "WebGPU — التصيير",
+    "description": "تصيير وحساب حديثان باستخدام GPU للويب. يمكنه دعم التصيير المتقدم وأعباء الحساب حين توفّر المنصة القدرات اللازمة. ويجب التحقق من تكامله مع العرض الغامر بصورة منفصلة.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/decentralized-identifiers/",
+    "title": "Identifiants décentralisés — Identité",
+    "description": "Des identifiants dont le contrôle peut être vérifié indépendamment. Les DID peuvent contribuer à la portabilité de l’attribution et de l’identité. L’objectif d’interopérabilité du cadre n’exige ni blockchain ni fournisseur d’identité universel.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/decentralized-identifiers/",
+    "title": "المعرّفات اللامركزية — الهوية",
+    "description": "معرّفات يمكن التحقق بصورة مستقلة من التحكم فيها. تمثّل معرّفات DID مكوّنًا ممكنًا لنسبة المحتوى والهوية القابلتين للنقل. ولا يفرض هدف التشغيل البيني في الإطار استخدام بلوكتشين أو مزوّد هوية عالمي واحد.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/verifiable-credentials/",
+    "title": "Justificatifs vérifiables — Identité",
+    "description": "Des assertions dont l’altération est détectable, échangées entre émetteurs, détenteurs et vérificateurs. Les justificatifs peuvent permettre la portabilité des qualifications, des autorisations ou de la provenance dans les services spatiaux. Ils complètent les identifiants et les politiques d’accès.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/verifiable-credentials/",
+    "title": "بيانات الاعتماد القابلة للتحقق — الهوية",
+    "description": "إفادات قابلة لكشف العبث يتبادلها المُصدرون والحاملون والمتحققون. يمكن لبيانات الاعتماد دعم مؤهلات أو أذونات أو معلومات منشأ قابلة للنقل ضمن الخدمات المكانية. وهي تكمّل المعرّفات وسياسات الوصول.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/etsi-mec/",
+    "title": "ETSI MEC — Infrastructure",
+    "description": "Un cadre architectural pour les services en périphérie du réseau. MEC peut soutenir des services spatiaux distribués grâce au calcul de proximité. Le suivi sur l’appareil et un fonctionnement dégradé maîtrisé restent importants.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/etsi-mec/",
+    "title": "ETSI MEC — البنية التحتية",
+    "description": "إطار بنيوي للخدمات عند حافة الشبكة. يمكن لـ MEC دعم خدمات مكانية موزعة عبر حساب قريب. ويظل التتبّع على الجهاز واستمرار العمل بشكل مناسب عند تراجع القدرات أمرين مهمين.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/geolocation/",
+    "title": "Géolocalisation — Données spatiales",
+    "description": "La localisation géographique dans les applications Web, soumise à autorisation. La position géographique peut aider à découvrir les contenus spatiaux proches. Ce n’est pas une solution complète de cartographie, de positionnement intérieur ou de partage précis des ancrages.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/geolocation/",
+    "title": "تحديد الموقع الجغرافي — البيانات المكانية",
+    "description": "تحديد الموقع الجغرافي في تطبيقات الويب بإذن المستخدم. يمكن للموقع الجغرافي المساعدة في اكتشاف المحتوى المكاني القريب. وليس حلًا متكاملًا لرسم الخرائط أو تحديد الموضع داخل المباني أو المشاركة الدقيقة للمراسي.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/standards/3d-tiles/",
+    "title": "3D Tiles — Données spatiales",
+    "description": "Diffusion progressive de grands jeux de données 3D organisés spatialement. Il peut fournir un contexte géographique aux applications spatiales et aux jumeaux numériques. La diffusion de scènes et la localisation d’ancrages persistants sont des problèmes distincts.",
+    "category": "Standards",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/standards/3d-tiles/",
+    "title": "3D Tiles — البيانات المكانية",
+    "description": "بث مجموعات بيانات ثلاثية الأبعاد كبيرة ومنظّمة مكانيًا. يمكنها توفير سياق جغرافي للتطبيقات المكانية والتوائم الرقمية. وبث المشاهد وتحديد موضع المراسي المستمرة مسألتان مختلفتان.",
+    "category": "المعايير",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/applications/",
+    "title": "Des applications dans dix secteurs",
+    "description": "Santé, éducation, industrie, patrimoine et autres contextes des technologies spatiales, avec leurs exigences et les niveaux de preuve associés.",
+    "category": "Applications",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/applications/",
+    "title": "تطبيقات في عشرة قطاعات",
+    "description": "الصحة والتعليم والصناعة والتراث وغيرها من سياقات التقنيات المكانية، مع المتطلبات والتمييز بين مستويات الأدلة.",
+    "category": "التطبيقات",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/research/",
+    "title": "La recherche et la publication Augmentiverse",
+    "description": "Lisez l’article original, distinguez les preuves des propositions et copiez ou téléchargez la citation académique.",
+    "category": "Référence",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/research/",
+    "title": "البحث ومنشور أوغمنتيفرس",
+    "description": "اقرأ المقال الأصلي، وميّز الأدلة عن المقترحات، وانسخ الاستشهاد الأكاديمي أو نزّله.",
+    "category": "مرجع",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/resources/",
+    "title": "Ressources et guides de référence",
+    "description": "Glossaire, bibliographie, chronologie, organisations, outils et questions fréquentes.",
+    "category": "Ressources",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/resources/",
+    "title": "الموارد والأدلة المرجعية",
+    "description": "المعجم والمراجع والتسلسل التاريخي والمؤسسات والأدوات والأسئلة الشائعة.",
+    "category": "الموارد",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/glossary/",
+    "title": "Glossaire de l’informatique spatiale",
+    "description": "Recherchez les définitions de l’Augmentiverse, de la RA, de la RM, de la XR, de l’ancrage spatial, de l’identité, du contenu 3D et des standards ouverts.",
+    "category": "Ressources",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/glossary/",
+    "title": "معجم الحوسبة المكانية",
+    "description": "ابحث عن تعريفات أوغمنتيفرس والواقع المعزز والمختلط والممتد والتثبيت المكاني والهوية والمحتوى ثلاثي الأبعاد والمعايير المفتوحة.",
+    "category": "الموارد",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/faq/",
+    "title": "Questions fréquentes",
+    "description": "Des réponses sur l’Augmentiverse, la réalité mixte, l’interopérabilité, le matériel, les citations scientifiques et les langues.",
+    "category": "Ressources",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/faq/",
+    "title": "الأسئلة الشائعة",
+    "description": "إجابات عن أوغمنتيفرس والواقع المختلط والتشغيل البيني والعتاد والاستشهادات البحثية واللغات.",
+    "category": "الموارد",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/bibliography/",
+    "title": "Bibliographie et sources primaires",
+    "description": "Références académiques, DOI, standards ouverts et commentaires contextuels, classés par type de source.",
+    "category": "Ressources",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/bibliography/",
+    "title": "المراجع والمصادر الأولية",
+    "description": "مراجع أكاديمية وروابط DOI ومعايير مفتوحة وتعليقات سياقية، منظّمة بحسب نوع المصدر.",
+    "category": "الموارد",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/resources/tools/",
+    "title": "Outils, plateformes et parcours de développement",
+    "description": "Parcours WebXR, développement spatial natif et création 3D portable, avec conservation du catalogue d’outils d’origine.",
+    "category": "Ressources",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/resources/tools/",
+    "title": "الأدوات والمنصات ومسارات التطوير",
+    "description": "مسارات WebXR والتطوير المكاني الأصلي وتأليف المحتوى ثلاثي الأبعاد القابل للنقل، مع حفظ دليل الأدوات الأصلي.",
+    "category": "الموارد",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/timeline/",
+    "title": "Histoire de l’informatique spatiale",
+    "description": "Une chronologie filtrable des théories immersives, de l’informatique spatiale, des spécifications XR et du cadre de recherche Augmentiverse.",
+    "category": "Recherche",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/timeline/",
+    "title": "تاريخ الحوسبة المكانية",
+    "description": "تسلسل زمني قابل للتصفية لنظريات الغمر والحوسبة المكانية ومواصفات XR وإطار أوغمنتيفرس البحثي.",
+    "category": "البحث العلمي",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/people-organizations/",
+    "title": "Personnes et organisations",
+    "description": "Chercheurs, fondements conceptuels et organisations contribuant à l’informatique spatiale et aux standards ouverts.",
+    "category": "Recherche",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/people-organizations/",
+    "title": "الأشخاص والمؤسسات",
+    "description": "الباحثون والأسس المفاهيمية والمؤسسات المساهمة في الحوسبة المكانية والمعايير المفتوحة.",
+    "category": "البحث العلمي",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/about/",
+    "title": "À propos de la référence Augmentiverse",
+    "description": "Objectif, auteur, méthode éditoriale et politique linguistique du site de référence Augmentiverse.",
+    "category": "Référence",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/about/",
+    "title": "عن مرجع أوغمنتيفرس",
+    "description": "هدف موقع أوغمنتيفرس المرجعي ومؤلفه ومنهجه التحريري وسياسته اللغوية.",
+    "category": "مرجع",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/contact/",
+    "title": "Contact et contributions éditoriales",
+    "description": "Envoyez une correction ou une référence scientifique au contact existant du site Augmentiverse.",
+    "category": "Référence",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/contact/",
+    "title": "التواصل والمساهمات التحريرية",
+    "description": "أرسل تصحيحًا أو مرجعًا بحثيًا إلى جهة الاتصال الحالية في موقع أوغمنتيفرس.",
+    "category": "مرجع",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/privacy/",
+    "title": "Confidentialité et informations du site",
+    "description": "Comment le site gère les préférences du navigateur, la recherche, les liens tiers et les archives.",
+    "category": "Référence",
+    "noindex": false,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/privacy/",
+    "title": "الخصوصية ومعلومات الموقع",
+    "description": "كيفية تعامل المرجع مع تفضيلات المتصفح والبحث وروابط الجهات الأخرى والمحتوى المؤرشف.",
+    "category": "مرجع",
+    "noindex": false,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/archive/editions/",
+    "title": "Éditions d’origine et archives de migration",
+    "description": "Accédez aux éditions anglaise et française intégralement conservées et au catalogue d’outils d’origine.",
+    "category": "Référence",
+    "noindex": true,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/archive/editions/",
+    "title": "النسخ الأصلية وأرشيف الانتقال",
+    "description": "الوصول إلى النسختين الإنجليزية والفرنسية المحفوظتين كاملتين وإلى دليل الأدوات الأصلي.",
+    "category": "مرجع",
+    "noindex": true,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/search/",
+    "title": "Rechercher dans le site",
+    "description": "Recherchez parmi tous les concepts, technologies, standards et ressources de l’Augmentiverse.",
+    "category": "Référence",
+    "noindex": true,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/search/",
+    "title": "البحث في الموقع",
+    "description": "البحث في جميع مفاهيم أوغمنتيفرس وتقنياته ومعاييره وموارده.",
+    "category": "مرجع",
+    "noindex": true,
+    "lang": "ar"
+  },
+  {
+    "url": "/fr/404.html",
+    "title": "Page introuvable",
+    "description": "Retrouvez votre chemin dans la référence Augmentiverse.",
+    "category": "Référence",
+    "noindex": true,
+    "lang": "fr"
+  },
+  {
+    "url": "/ar/404.html",
+    "title": "الصفحة غير موجودة",
+    "description": "اعثر على طريق العودة إلى مرجع أوغمنتيفرس.",
+    "category": "مرجع",
+    "noindex": true,
+    "lang": "ar"
+  }
+]
